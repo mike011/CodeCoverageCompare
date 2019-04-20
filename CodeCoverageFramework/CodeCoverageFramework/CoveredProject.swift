@@ -9,7 +9,15 @@
 import Foundation
 
 class CoveredProject {
-    var coveredClasses = [String:CoveredClass]()
+    private var coveredClasses = [String:CoveredClass]()
+
+    func add(class clazz: String) {
+        coveredClasses[clazz] = CoveredClass(name: clazz)
+    }
+
+    func add(lineNumber: Int, hits: Int, toClass clazz: String) {
+        coveredClasses[clazz]?.lines.append(CoveredLine(lineNumber: lineNumber, hits: hits))
+    }
 
     func getLinesCovered() -> Int {
         var coverage = 0

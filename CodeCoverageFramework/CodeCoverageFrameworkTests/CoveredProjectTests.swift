@@ -18,17 +18,17 @@ class CoveredProjectTests: XCTestCase {
 
     func testGetCoverageOneFile() {
         let cp = CoveredProject()
-        cp.coveredClasses["dog"] = CoveredClass(name: "dog")
-        cp.coveredClasses["dog"]?.lines.append(CoveredLine(line: 21, hits: 0))
-        XCTAssertEqual(21, cp.getLinesCovered())
+        cp.add(class: "dog")
+        cp.add(lineNumber: 21, hits: 0, toClass: "dog")
+        XCTAssertEqual(1, cp.getLinesCovered())
     }
 
     func testGetCoverageMultipleFiles() {
         let cp = CoveredProject()
-        cp.coveredClasses["dog"] = CoveredClass(name: "dog")
-        cp.coveredClasses["dog"]?.lines.append(CoveredLine(line: 21, hits: 0))
-        cp.coveredClasses["cat"] = CoveredClass(name: "cat")
-        cp.coveredClasses["cat"]?.lines.append(CoveredLine(line: 20, hits: 0))
-        XCTAssertEqual(41, cp.getLinesCovered())
+        cp.add(class: "dog")
+        cp.add(lineNumber: 21, hits: 0, toClass: "dog")
+        cp.add(class: "cat")
+        cp.add(lineNumber: 20, hits: 0, toClass: "cat")
+        XCTAssertEqual(2, cp.getLinesCovered())
     }
 }

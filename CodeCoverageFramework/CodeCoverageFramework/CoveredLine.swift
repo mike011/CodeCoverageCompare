@@ -9,6 +9,6 @@
 import Foundation
 
 struct CoveredLine {
-    var line: Int
+    var lineNumber: Int
     var hits: Int
 }

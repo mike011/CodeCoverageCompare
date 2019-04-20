@@ -32,13 +32,12 @@ class Parser: NSObject, XMLParserDelegate {
         if elementName == "class" {
             if let filename = attributeDict["filename"] {
                 name = filename
-                project.coveredClasses[name] = CoveredClass(name: name)
+                project.add(class: name)
             }
         } else if elementName == "line" {
             let lineNumber = Int(attributeDict["number"] ?? "0") ?? 0
             let hits = Int(attributeDict["hits"] ?? "0") ?? 0
-            let cc = project.coveredClasses[name]
-            cc?.lines.append(CoveredLine(line: lineNumber, hits: hits))
+            project.add(lineNumber: lineNumber, hits: hits, toClass: name)
         }
     }
 }

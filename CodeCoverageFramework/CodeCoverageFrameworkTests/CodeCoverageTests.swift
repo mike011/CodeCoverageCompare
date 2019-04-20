@@ -16,4 +16,10 @@ class CodeCoverageTests: XCTestCase {
         let cp2 = CoveredProject()
         XCTAssertNil(CodeCoverage().compare(a: cp, b: cp2))
     }
+
+    func testOneNewFileAdded() {
+        let cp = CoveredProject()
+        let cp2 = CoveredProject()
+        XCTAssertNotNil(CodeCoverage().compare(a: cp, b: cp2))
+    }
 }

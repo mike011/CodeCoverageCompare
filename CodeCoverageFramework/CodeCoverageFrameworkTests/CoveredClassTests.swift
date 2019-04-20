@@ -18,14 +18,14 @@ class CoveredClassTests: XCTestCase {
 
     func testGetCoverageOneFile() {
         let cc = CoveredClass(name: "File")
-        cc.lines.append(CoveredLine(line: 25, hits: 0))
-        XCTAssertEqual(25, cc.getLinesCovered())
+        cc.lines.append(CoveredLine(lineNumber: 25, hits: 0))
+        XCTAssertEqual(1, cc.getLinesCovered())
     }
 
     func testGetCoverageMultipeFiles() {
         let cc = CoveredClass(name: "File")
-        cc.lines.append(CoveredLine(line: 25, hits: 0))
-        cc.lines.append(CoveredLine(line: 13, hits: 0))
-        XCTAssertEqual(38, cc.getLinesCovered())
+        cc.lines.append(CoveredLine(lineNumber: 25, hits: 0))
+        cc.lines.append(CoveredLine(lineNumber: 13, hits: 0))
+        XCTAssertEqual(2, cc.getLinesCovered())
     }
 }

@@ -17,6 +17,6 @@ class CoveredClass {
     }
 
     func getLinesCovered() -> Int {
-        return lines.reduce(0, {$0 + $1.line})
+        return lines.count
     }
 }
