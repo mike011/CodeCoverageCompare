@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C61E8DB226B545000F95EA9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C61E8DA226B545000F95EA9 /* main.swift */; };
-		4C61E8EB226B7EF500F95EA9 /* CodeCoverageCompareUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C61E8EA226B7EF500F95EA9 /* CodeCoverageCompareUnitTests.swift */; };
+		4C61E981226B86B300F95EA9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C61E980226B86B300F95EA9 /* main.swift */; };
+		4C61E9BE226B873700F95EA9 /* CodeCoverageFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C61E9BD226B873700F95EA9 /* CodeCoverageFramework.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		4C61E8D5226B545000F95EA9 /* CopyFiles */ = {
+		4C61E97B226B86B300F95EA9 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -24,76 +24,66 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4C61E8D7226B545000F95EA9 /* CodeCoverageCompare */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CodeCoverageCompare; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C61E8DA226B545000F95EA9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		4C61E8E8226B7EF500F95EA9 /* CodeCoverageCompareUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeCoverageCompareUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C61E8EA226B7EF500F95EA9 /* CodeCoverageCompareUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeCoverageCompareUnitTests.swift; sourceTree = "<group>"; };
-		4C61E8EC226B7EF500F95EA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C61E97D226B86B300F95EA9 /* CodeCoverageCompare */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CodeCoverageCompare; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C61E980226B86B300F95EA9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		4C61E9BD226B873700F95EA9 /* CodeCoverageFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CodeCoverageFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4C61E8D4226B545000F95EA9 /* Frameworks */ = {
+		4C61E97A226B86B300F95EA9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4C61E8E5226B7EF500F95EA9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				4C61E9BE226B873700F95EA9 /* CodeCoverageFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4C61E8CE226B545000F95EA9 = {
+		4C61E974226B86B300F95EA9 = {
 			isa = PBXGroup;
 			children = (
-				4C61E8D9226B545000F95EA9 /* CodeCoverageCompare */,
-				4C61E8E9226B7EF500F95EA9 /* CodeCoverageCompareUnitTests */,
-				4C61E8D8226B545000F95EA9 /* Products */,
+				4C61E97F226B86B300F95EA9 /* CodeCoverageCompare */,
+				4C61E97E226B86B300F95EA9 /* Products */,
+				4C61E9BC226B873700F95EA9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		4C61E8D8226B545000F95EA9 /* Products */ = {
+		4C61E97E226B86B300F95EA9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4C61E8D7226B545000F95EA9 /* CodeCoverageCompare */,
-				4C61E8E8226B7EF500F95EA9 /* CodeCoverageCompareUnitTests.xctest */,
+				4C61E97D226B86B300F95EA9 /* CodeCoverageCompare */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4C61E8D9226B545000F95EA9 /* CodeCoverageCompare */ = {
+		4C61E97F226B86B300F95EA9 /* CodeCoverageCompare */ = {
 			isa = PBXGroup;
 			children = (
-				4C61E8DA226B545000F95EA9 /* main.swift */,
+				4C61E980226B86B300F95EA9 /* main.swift */,
 			);
 			path = CodeCoverageCompare;
 			sourceTree = "<group>";
 		};
-		4C61E8E9226B7EF500F95EA9 /* CodeCoverageCompareUnitTests */ = {
+		4C61E9BC226B873700F95EA9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4C61E8EA226B7EF500F95EA9 /* CodeCoverageCompareUnitTests.swift */,
-				4C61E8EC226B7EF500F95EA9 /* Info.plist */,
+				4C61E9BD226B873700F95EA9 /* CodeCoverageFramework.framework */,
 			);
-			path = CodeCoverageCompareUnitTests;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4C61E8D6226B545000F95EA9 /* CodeCoverageCompare */ = {
+		4C61E97C226B86B300F95EA9 /* CodeCoverageCompare */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4C61E8DE226B545000F95EA9 /* Build configuration list for PBXNativeTarget "CodeCoverageCompare" */;
+			buildConfigurationList = 4C61E984226B86B300F95EA9 /* Build configuration list for PBXNativeTarget "CodeCoverageCompare" */;
 			buildPhases = (
-				4C61E8D3226B545000F95EA9 /* Sources */,
-				4C61E8D4226B545000F95EA9 /* Frameworks */,
-				4C61E8D5226B545000F95EA9 /* CopyFiles */,
+				4C61E979226B86B300F95EA9 /* Sources */,
+				4C61E97A226B86B300F95EA9 /* Frameworks */,
+				4C61E97B226B86B300F95EA9 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -101,93 +91,54 @@
 			);
 			name = CodeCoverageCompare;
 			productName = CodeCoverageCompare;
-			productReference = 4C61E8D7226B545000F95EA9 /* CodeCoverageCompare */;
+			productReference = 4C61E97D226B86B300F95EA9 /* CodeCoverageCompare */;
 			productType = "com.apple.product-type.tool";
-		};
-		4C61E8E7226B7EF500F95EA9 /* CodeCoverageCompareUnitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4C61E8ED226B7EF500F95EA9 /* Build configuration list for PBXNativeTarget "CodeCoverageCompareUnitTests" */;
-			buildPhases = (
-				4C61E8E4226B7EF500F95EA9 /* Sources */,
-				4C61E8E5226B7EF500F95EA9 /* Frameworks */,
-				4C61E8E6226B7EF500F95EA9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = CodeCoverageCompareUnitTests;
-			productName = CodeCoverageCompareUnitTests;
-			productReference = 4C61E8E8226B7EF500F95EA9 /* CodeCoverageCompareUnitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		4C61E8CF226B545000F95EA9 /* Project object */ = {
+		4C61E975226B86B300F95EA9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = charland;
 				TargetAttributes = {
-					4C61E8D6226B545000F95EA9 = {
-						CreatedOnToolsVersion = 10.2;
-					};
-					4C61E8E7226B7EF500F95EA9 = {
+					4C61E97C226B86B300F95EA9 = {
 						CreatedOnToolsVersion = 10.2;
 					};
 				};
 			};
-			buildConfigurationList = 4C61E8D2226B545000F95EA9 /* Build configuration list for PBXProject "CodeCoverageCompare" */;
+			buildConfigurationList = 4C61E978226B86B300F95EA9 /* Build configuration list for PBXProject "CodeCoverageCompare" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 4C61E8CE226B545000F95EA9;
-			productRefGroup = 4C61E8D8226B545000F95EA9 /* Products */;
+			mainGroup = 4C61E974226B86B300F95EA9;
+			productRefGroup = 4C61E97E226B86B300F95EA9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4C61E8D6226B545000F95EA9 /* CodeCoverageCompare */,
-				4C61E8E7226B7EF500F95EA9 /* CodeCoverageCompareUnitTests */,
+				4C61E97C226B86B300F95EA9 /* CodeCoverageCompare */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		4C61E8E6226B7EF500F95EA9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		4C61E8D3226B545000F95EA9 /* Sources */ = {
+		4C61E979226B86B300F95EA9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C61E8DB226B545000F95EA9 /* main.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4C61E8E4226B7EF500F95EA9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4C61E8EB226B7EF500F95EA9 /* CodeCoverageCompareUnitTests.swift in Sources */,
+				4C61E981226B86B300F95EA9 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		4C61E8DC226B545000F95EA9 /* Debug */ = {
+		4C61E982226B86B300F95EA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -248,7 +199,7 @@
 			};
 			name = Debug;
 		};
-		4C61E8DD226B545000F95EA9 /* Release */ = {
+		4C61E983226B86B300F95EA9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -302,7 +253,7 @@
 			};
 			name = Release;
 		};
-		4C61E8DF226B545000F95EA9 /* Debug */ = {
+		4C61E985226B86B300F95EA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -312,47 +263,11 @@
 			};
 			name = Debug;
 		};
-		4C61E8E0226B545000F95EA9 /* Release */ = {
+		4C61E986226B86B300F95EA9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CY96495443;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		4C61E8EE226B7EF500F95EA9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = CY96495443;
-				INFOPLIST_FILE = CodeCoverageCompareUnitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = ca.charland.CodeCoverageCompareUnitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		4C61E8EF226B7EF500F95EA9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = CY96495443;
-				INFOPLIST_FILE = CodeCoverageCompareUnitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = ca.charland.CodeCoverageCompareUnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -361,34 +276,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4C61E8D2226B545000F95EA9 /* Build configuration list for PBXProject "CodeCoverageCompare" */ = {
+		4C61E978226B86B300F95EA9 /* Build configuration list for PBXProject "CodeCoverageCompare" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4C61E8DC226B545000F95EA9 /* Debug */,
-				4C61E8DD226B545000F95EA9 /* Release */,
+				4C61E982226B86B300F95EA9 /* Debug */,
+				4C61E983226B86B300F95EA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4C61E8DE226B545000F95EA9 /* Build configuration list for PBXNativeTarget "CodeCoverageCompare" */ = {
+		4C61E984226B86B300F95EA9 /* Build configuration list for PBXNativeTarget "CodeCoverageCompare" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4C61E8DF226B545000F95EA9 /* Debug */,
-				4C61E8E0226B545000F95EA9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4C61E8ED226B7EF500F95EA9 /* Build configuration list for PBXNativeTarget "CodeCoverageCompareUnitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4C61E8EE226B7EF500F95EA9 /* Debug */,
-				4C61E8EF226B7EF500F95EA9 /* Release */,
+				4C61E985226B86B300F95EA9 /* Debug */,
+				4C61E986226B86B300F95EA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 4C61E8CF226B545000F95EA9 /* Project object */;
+	rootObject = 4C61E975226B86B300F95EA9 /* Project object */;
 }
