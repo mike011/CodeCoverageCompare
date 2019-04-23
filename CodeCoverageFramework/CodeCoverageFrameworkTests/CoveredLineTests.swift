@@ -50,4 +50,20 @@ class CoveredLineTests: XCTestCase {
 
         XCTAssertNotEqual(line1, line2)
     }
+
+    func testCompareNegativeVsPostive() {
+
+        let line1 = CoveredLine(lineNumber: 2, hits: 2)
+        let line2 = CoveredLine(lineNumber: 2, hits: -1)
+
+        XCTAssertNotEqual(line1, line2)
+    }
+
+    func testCompareBothNegative() {
+
+        let line1 = CoveredLine(lineNumber: 2, hits: -1)
+        let line2 = CoveredLine(lineNumber: 2, hits: -1)
+
+        XCTAssertEqual(line1, line2)
+    }
 }

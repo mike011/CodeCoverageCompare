@@ -80,10 +80,29 @@ class CoveredClassTests: XCTestCase {
         cc2.lines.append(CoveredLine(lineNumber: 25, hits: 1))
 
         let diff = cc.compare(to:cc2)
-        XCTAssertNil(diff)
+        XCTAssertNotNil(diff)
 
         let cc3 = CoveredClass(name: "File")
         cc3.lines.append(CoveredLine(lineNumber: 25, hits: 1))
         XCTAssertEqual(diff, cc3)
+        XCTAssertEqual(cc3.lines[0].hits, 1)
+    }
+
+    func testCompareOneLineRemoved() {
+        let cc = CoveredClass(name: "File")
+        cc.lines.append(CoveredLine(lineNumber: 24, hits: 1))
+        cc.lines.append(CoveredLine(lineNumber: 25, hits: 1))
+
+        let cc2 = CoveredClass(name: "File")
+        cc2.lines.append(CoveredLine(lineNumber: 24, hits: 1))
+
+
+        let diff = cc.compare(to:cc2)
+        XCTAssertNotNil(diff)
+
+        let cc3 = CoveredClass(name: "File")
+        cc3.lines.append(CoveredLine(lineNumber: 25, hits: -1))
+        XCTAssertEqual(diff, cc3)
+        XCTAssertEqual(cc3.lines[0].hits, -1)
     }
 }
