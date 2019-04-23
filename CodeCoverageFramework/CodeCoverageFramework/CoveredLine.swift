@@ -8,7 +8,15 @@
 
 import Foundation
 
-struct CoveredLine {
+struct CoveredLine: Equatable {
     var lineNumber: Int
     var hits: Int
+
+    static func == (lhs: CoveredLine, rhs: CoveredLine) -> Bool {
+        if (lhs.lineNumber == rhs.lineNumber) &&
+            ((lhs.hits == 0 && rhs.hits == 0) || (lhs.hits > 0 && rhs.hits > 0)) {
+            return true
+        }
+        return false
+    }
 }

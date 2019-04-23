@@ -14,12 +14,17 @@ class CodeCoverageTests: XCTestCase {
     func testEmptyProjectsHaveNoDifferences() {
         let cp = CoveredProject()
         let cp2 = CoveredProject()
-        XCTAssertNil(CodeCoverage().compare(a: cp, b: cp2))
+        XCTAssertNil(CodeCoverage().compare(base: cp, compareTo: cp2))
     }
 
     func testOneNewFileAdded() {
         let cp = CoveredProject()
+        cp.add(class: "donkey")
+        cp.add(lineNumber: 30, hits: 1, toClass: "donkey")
         let cp2 = CoveredProject()
-        XCTAssertNotNil(CodeCoverage().compare(a: cp, b: cp2))
+
+        let result = CodeCoverage().compare(base: cp, compareTo: cp2)
+        XCTAssertNotNil(result)
+
     }
 }

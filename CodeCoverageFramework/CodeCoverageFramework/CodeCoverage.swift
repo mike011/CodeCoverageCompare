@@ -13,13 +13,13 @@ public class CodeCoverage {
     public static func go(fileA: String, fileB: String) {
         let projectA = Parser(withFileName:fileA).project
         let projectB = Parser(withFileName:fileB).project
-        //CodeCoverage().compare(a: projectA, b: projectB)
+        //CodeCoverage().compare(base: projectA, compareTo: projectB)
     }
 
-    func compare(a: CoveredProject, b: CoveredProject) -> CoveredProject? {
+    func compare(base: CoveredProject, compareTo b: CoveredProject) -> CoveredProject? {
 
         // If the lines match from each project it is very unlikely that tests have been added or removed.
-        if a.getLinesCovered() == b.getLinesCovered() {
+        if base.getLinesCovered() == b.getLinesCovered() {
             return nil
         }
 

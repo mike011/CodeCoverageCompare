@@ -19,16 +19,16 @@ class CoveredProjectTests: XCTestCase {
     func testGetCoverageOneFile() {
         let cp = CoveredProject()
         cp.add(class: "dog")
-        cp.add(lineNumber: 21, hits: 0, toClass: "dog")
+        cp.add(lineNumber: 21, hits: 1, toClass: "dog")
         XCTAssertEqual(1, cp.getLinesCovered())
     }
 
     func testGetCoverageMultipleFiles() {
         let cp = CoveredProject()
         cp.add(class: "dog")
-        cp.add(lineNumber: 21, hits: 0, toClass: "dog")
+        cp.add(lineNumber: 21, hits: 1, toClass: "dog")
         cp.add(class: "cat")
-        cp.add(lineNumber: 20, hits: 0, toClass: "cat")
+        cp.add(lineNumber: 20, hits: 1, toClass: "cat")
         XCTAssertEqual(2, cp.getLinesCovered())
     }
 }

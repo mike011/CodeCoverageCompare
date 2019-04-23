@@ -17,6 +17,7 @@
 		4C61E9CB226B8A8500F95EA9 /* CoveredClassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C61E9CA226B8A8500F95EA9 /* CoveredClassTests.swift */; };
 		4C61E9CD226B8F2D00F95EA9 /* CoveredProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C61E9CC226B8F2D00F95EA9 /* CoveredProjectTests.swift */; };
 		4C61E9CF226B91B200F95EA9 /* CodeCoverageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C61E9CE226B91B200F95EA9 /* CodeCoverageTests.swift */; };
+		4C61E9D1226BEDE400F95EA9 /* CoveredLineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C61E9D0226BEDE400F95EA9 /* CoveredLineTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		4C61E9CA226B8A8500F95EA9 /* CoveredClassTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoveredClassTests.swift; sourceTree = "<group>"; };
 		4C61E9CC226B8F2D00F95EA9 /* CoveredProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoveredProjectTests.swift; sourceTree = "<group>"; };
 		4C61E9CE226B91B200F95EA9 /* CodeCoverageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeCoverageTests.swift; sourceTree = "<group>"; };
+		4C61E9D0226BEDE400F95EA9 /* CoveredLineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoveredLineTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				4C61E9A1226B86CC00F95EA9 /* Info.plist */,
 				4C61E9C9226B8A8500F95EA9 /* CodeCoverageFrameworkTests-Bridging-Header.h */,
 				4C61E9CE226B91B200F95EA9 /* CodeCoverageTests.swift */,
+				4C61E9D0226BEDE400F95EA9 /* CoveredLineTests.swift */,
 				4C61E9CA226B8A8500F95EA9 /* CoveredClassTests.swift */,
 				4C61E9CC226B8F2D00F95EA9 /* CoveredProjectTests.swift */,
 			);
@@ -231,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C61E9D1226BEDE400F95EA9 /* CoveredLineTests.swift in Sources */,
 				4C61E9CD226B8F2D00F95EA9 /* CoveredProjectTests.swift in Sources */,
 				4C61E9CB226B8A8500F95EA9 /* CoveredClassTests.swift in Sources */,
 				4C61E9CF226B91B200F95EA9 /* CodeCoverageTests.swift in Sources */,
