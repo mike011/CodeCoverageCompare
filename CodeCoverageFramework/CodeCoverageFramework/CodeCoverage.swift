@@ -24,6 +24,27 @@ public class CodeCoverage {
         }
 
         let diff = CoveredProject()
+        for baseCoveredClass in base.getClasses() {
+            if !b.getClasses().contains(baseCoveredClass) {
+                diff.add(coveredClass: baseCoveredClass)
+            } else {
+                for line in b.getClass(name: baseCoveredClass.name).lines {
+                    for baseLine in baseCoveredClass.lines {
+                        if line == baseLine {
+                            
+                        }
+                    }
+                }
+
+            }
+        }
+
+        for baseFile in b.getClasses() {
+            if !base.getClasses().contains(baseFile) {
+                
+                diff.add(coveredClass: baseFile)
+            }
+        }
         return diff
     }
 }

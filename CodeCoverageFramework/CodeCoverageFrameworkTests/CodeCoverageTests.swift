@@ -17,7 +17,7 @@ class CodeCoverageTests: XCTestCase {
         XCTAssertNil(CodeCoverage().compare(base: cp, compareTo: cp2))
     }
 
-    func testOneNewFileAdded() {
+    func testOneNewFileLineRemoved() {
         let cp = CoveredProject()
         cp.add(class: "donkey")
         cp.add(lineNumber: 30, hits: 1, toClass: "donkey")
@@ -25,6 +25,7 @@ class CodeCoverageTests: XCTestCase {
 
         let result = CodeCoverage().compare(base: cp, compareTo: cp2)
         XCTAssertNotNil(result)
-
+        XCTAssertEqual(result!.getClasses().count, 1)
+        XCTAssertEqual(result!.getClasses()[0].lines[0].hits, -1)
     }
 }

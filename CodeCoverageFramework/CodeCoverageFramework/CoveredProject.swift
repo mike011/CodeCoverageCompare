@@ -19,11 +19,23 @@ class CoveredProject {
         coveredClasses[clazz]?.lines.append(CoveredLine(lineNumber: lineNumber, hits: hits))
     }
 
+    func add(coveredClass clazz: CoveredClass) {
+        coveredClasses[clazz.name] = clazz
+    }
+
     func getLinesCovered() -> Int {
         var coverage = 0
         for (_, clazz) in coveredClasses.enumerated() {
             coverage += clazz.value.getLinesCovered()
         }
         return coverage
+    }
+
+    func getClasses() -> [CoveredClass] {
+        return coveredClasses.map { $0.1 }
+    }
+
+    func getClass(name: String) -> CoveredClass {
+        return coveredClasses[name]
     }
 }
