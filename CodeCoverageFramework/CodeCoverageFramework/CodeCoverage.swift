@@ -13,38 +13,28 @@ public class CodeCoverage {
     public static func go(fileA: String, fileB: String) {
         let projectA = Parser(withFileName:fileA).project
         let projectB = Parser(withFileName:fileB).project
-        //CodeCoverage().compare(base: projectA, compareTo: projectB)
+        let result = projectA.compare(to: projectB)
+        CodeCoverage().printTextReport(from: result)
     }
 
-    func compare(base: CoveredProject, compareTo b: CoveredProject) -> CoveredProject? {
+    func printTextReport(from: CoveredResult) {
+        from.addedClasses.printElements(withTitle: "Classes Added")
+        from.removedClasses.printElements(withTitle: "Classes Removed")
+        from.deletedLines.printElements(withTitle: "Lines Removed")
+        from.newLines.printElements(withTitle: "Lines Added")
+    }
+}
 
-        // If the lines match from each project it is very unlikely that tests have been added or removed.
-        if base.getLinesCovered() == b.getLinesCovered() {
-            return nil
-        }
-
-        let diff = CoveredProject()
-        for baseCoveredClass in base.getClasses() {
-            if !b.getClasses().contains(baseCoveredClass) {
-                diff.add(coveredClass: baseCoveredClass)
-            } else {
-                for line in b.getClass(name: baseCoveredClass.name).lines {
-                    for baseLine in baseCoveredClass.lines {
-                        if line == baseLine {
-                            
-                        }
-                    }
+extension Array where Element == CoveredClass  {
+    func printElements(withTitle title: String) {
+        if !self.isEmpty {
+            print(title)
+            for clazz in self {
+                print(clazz.name)
+                for line in clazz.lines {
+                    print("\t \(line)")
                 }
-
             }
         }
-
-        for baseFile in b.getClasses() {
-            if !base.getClasses().contains(baseFile) {
-                
-                diff.add(coveredClass: baseFile)
-            }
-        }
-        return diff
     }
 }

@@ -13,6 +13,3 @@ let a = "//Users/michael/Documents/git/CodeCoverageCompare/example/coverageA.xml
 let b = "//Users/michael/Documents/git/CodeCoverageCompare/example/coverageB.xml"
 
 CodeCoverage.go(fileA: a, fileB: b)
-
-print("Hello, World!")
-

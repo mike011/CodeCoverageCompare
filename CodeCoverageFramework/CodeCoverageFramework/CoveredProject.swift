@@ -31,11 +31,70 @@ class CoveredProject {
         return coverage
     }
 
-    func getClasses() -> [CoveredClass] {
-        return coveredClasses.map { $0.1 }
+    func getClassNames() -> [String] {
+        return coveredClasses.map { $0.1.name }
     }
 
     func getClass(name: String) -> CoveredClass {
-        return coveredClasses[name]
+        return coveredClasses[name]!
+    }
+
+    func compare(to b: CoveredProject) -> CoveredResult {
+
+        let result = CoveredResult()
+
+        // If the lines match from each project it is very unlikely that tests have been added or removed.
+        if getLinesCovered() == b.getLinesCovered() {
+            return result
+        }
+        result.removedClasses = compareClasses(base: self, to: b)
+        result.addedClasses = compareClasses(base: b, to: self)
+
+        result.deletedLines = compareChangeInLines(base: self, to: b)
+        result.newLines = compareChangeInLines(base: b, to: self)
+
+        return result
+    }
+
+    private func compareClasses(base: CoveredProject, to: CoveredProject) -> [CoveredClass] {
+        var result = [CoveredClass]()
+        for baseName in base.getClassNames() {
+            var found = false
+            if to.getClassNames().contains(baseName) {
+                found = true
+                break;
+            }
+            if !found {
+                 result.append(base.getClass(name: baseName))
+            }
+        }
+        return result
+    }
+
+    func compareChangeInLines(base: CoveredProject, to: CoveredProject) -> [CoveredClass] {
+        var result = [String:CoveredClass]()
+        for baseName in base.getClassNames() {
+            if to.getClassNames().contains(baseName) {
+                for baseLine in base.getClass(name: baseName).lines {
+                    if baseLine.hits == 0 {
+                        continue
+                    }
+                    var found = false
+                    for toLine in to.getClass(name: baseName).lines {
+                        if baseLine == toLine {
+                            found = true
+                            break
+                        }
+                    }
+                    if !found {
+                        if !result.keys.contains(baseName) {
+                            result[baseName] = CoveredClass(name: baseName)
+                        }
+                        result[baseName]!.lines.append(baseLine)
+                    }
+                }
+            }
+        }
+        return result.map({$0.1})
     }
 }
