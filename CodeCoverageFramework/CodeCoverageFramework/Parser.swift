@@ -18,6 +18,9 @@ class Parser: NSObject, XMLParserDelegate {
     init(withFileName name: String) {
         super.init()
         let url = URL(fileURLWithPath: name)
+        if !FileManager.default.fileExists(atPath: name) {
+            fatalError("File \(name) not found")
+        }
         let xmlParser = XMLParser(contentsOf: url)
         xmlParser?.delegate = self
         xmlParser?.parse()

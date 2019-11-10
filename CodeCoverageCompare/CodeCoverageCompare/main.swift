@@ -9,7 +9,17 @@
 import Foundation
 import CodeCoverageFramework
 
-let a = "//Users/michael/Documents/git/CodeCoverageCompare/example/coverageA.xml"
-let b = "//Users/michael/Documents/git/CodeCoverageCompare/example/coverageB.xml"
+let coverage = "//Users/michael.charland/git/CodeCoverageCompare/example/coverage.json"
 
-CodeCoverage.go(fileA: a, fileB: b)
+let url = URL(fileURLWithPath: coverage)
+do {
+      let data = try Data(contentsOf: url)
+      let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+      if let jsonResult = jsonResult as? Dictionary<String, AnyObject>, let person = jsonResult["person"] as? [Any] {
+                // do stuff
+      }
+  } catch {
+       // handle error
+  }
+
+//CodeCoverage.go(fileA: a, fileB: b)

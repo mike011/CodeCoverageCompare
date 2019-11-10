@@ -6,6 +6,7 @@
 //  Copyright © 2019 charland. All rights reserved.
 //
 
+import CSV
 import Foundation
 
 struct CoveredLine: Equatable {
