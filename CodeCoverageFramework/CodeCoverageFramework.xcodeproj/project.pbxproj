@@ -19,6 +19,7 @@
 		4C61E9CF226B91B200F95EA9 /* CodeCoverageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C61E9CE226B91B200F95EA9 /* CodeCoverageTests.swift */; };
 		4C61E9D1226BEDE400F95EA9 /* CoveredLineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C61E9D0226BEDE400F95EA9 /* CoveredLineTests.swift */; };
 		4C61E9E82274870E00F95EA9 /* CoveredResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C61E9E72274870E00F95EA9 /* CoveredResult.swift */; };
+		4CA6CC32237878C50010ACC9 /* Coverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6CC31237878C50010ACC9 /* Coverage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		4C61E9CE226B91B200F95EA9 /* CodeCoverageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeCoverageTests.swift; sourceTree = "<group>"; };
 		4C61E9D0226BEDE400F95EA9 /* CoveredLineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoveredLineTests.swift; sourceTree = "<group>"; };
 		4C61E9E72274870E00F95EA9 /* CoveredResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoveredResult.swift; sourceTree = "<group>"; };
+		4CA6CC31237878C50010ACC9 /* Coverage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coverage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				4C61E9C3226B87CD00F95EA9 /* CoveredProject.swift */,
 				4C61E9E72274870E00F95EA9 /* CoveredResult.swift */,
 				4C61E9C5226B87EC00F95EA9 /* Parser.swift */,
+				4CA6CC31237878C50010ACC9 /* Coverage.swift */,
 			);
 			path = CodeCoverageFramework;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				4C61E9C0226B876800F95EA9 /* CoveredLine.swift in Sources */,
 				4C61E9C4226B87CD00F95EA9 /* CoveredProject.swift in Sources */,
 				4C61E9C8226B881C00F95EA9 /* CodeCoverage.swift in Sources */,
+				4CA6CC32237878C50010ACC9 /* Coverage.swift in Sources */,
 				4C61E9C2226B87BA00F95EA9 /* CoveredClass.swift in Sources */,
 				4C61E9E82274870E00F95EA9 /* CoveredResult.swift in Sources */,
 			);

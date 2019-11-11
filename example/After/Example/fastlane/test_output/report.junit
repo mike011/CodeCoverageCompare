@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='ExampleTests.xctest' tests='2' failures='0'>
+  <testsuite name='ExampleTests.ExistingClassCoveredTests' tests='1' failures='0'>
+    <testcase classname='ExampleTests.ExistingClassCoveredTests' name='testExistingClassCoveredTests' time='0.166'/>
+  </testsuite>
+  <testsuite name='ExampleTests.NewClassCoveredTests' tests='1' failures='0'>
+    <testcase classname='ExampleTests.NewClassCoveredTests' name='testNewClassCovered' time='0.001'/>
+  </testsuite>
+</testsuites>
