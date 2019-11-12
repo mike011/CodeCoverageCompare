@@ -8,19 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		4C61E99B226B86CC00F95EA9 /* CodeCoverageFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C61E991226B86CB00F95EA9 /* CodeCoverageFramework.framework */; };
-		4C61E9A2226B86CC00F95EA9 /* CodeCoverageFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C61E994226B86CB00F95EA9 /* CodeCoverageFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4C61E9C0226B876800F95EA9 /* CoveredLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C61E9BF226B876800F95EA9 /* CoveredLine.swift */; };
-		4C61E9C2226B87BA00F95EA9 /* CoveredClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C61E9C1226B87BA00F95EA9 /* CoveredClass.swift */; };
-		4C61E9C4226B87CD00F95EA9 /* CoveredProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C61E9C3226B87CD00F95EA9 /* CoveredProject.swift */; };
-		4C61E9C6226B87EC00F95EA9 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C61E9C5226B87EC00F95EA9 /* Parser.swift */; };
-		4C61E9C8226B881C00F95EA9 /* CodeCoverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C61E9C7226B881C00F95EA9 /* CodeCoverage.swift */; };
-		4C61E9CB226B8A8500F95EA9 /* CoveredClassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C61E9CA226B8A8500F95EA9 /* CoveredClassTests.swift */; };
-		4C61E9CD226B8F2D00F95EA9 /* CoveredProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C61E9CC226B8F2D00F95EA9 /* CoveredProjectTests.swift */; };
-		4C61E9CF226B91B200F95EA9 /* CodeCoverageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C61E9CE226B91B200F95EA9 /* CodeCoverageTests.swift */; };
-		4C61E9D1226BEDE400F95EA9 /* CoveredLineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C61E9D0226BEDE400F95EA9 /* CoveredLineTests.swift */; };
-		4C61E9E82274870E00F95EA9 /* CoveredResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C61E9E72274870E00F95EA9 /* CoveredResult.swift */; };
-		4CA6CC32237878C50010ACC9 /* CoverageCompare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6CC31237878C50010ACC9 /* CoverageCompare.swift */; };
 		4CA6CD4D237A043D0010ACC9 /* Coverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6CD4C237A043D0010ACC9 /* Coverage.swift */; };
+		4CA6CD57237B616D0010ACC9 /* CoverageComparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6CD56237B616D0010ACC9 /* CoverageComparison.swift */; };
+		4CA6CD59237B619B0010ACC9 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6CD58237B619B0010ACC9 /* Row.swift */; };
+		4CA6CD5B237B61F40010ACC9 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6CD5A237B61F40010ACC9 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,23 +26,14 @@
 
 /* Begin PBXFileReference section */
 		4C61E991226B86CB00F95EA9 /* CodeCoverageFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CodeCoverageFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C61E994226B86CB00F95EA9 /* CodeCoverageFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CodeCoverageFramework.h; sourceTree = "<group>"; };
-		4C61E995226B86CB00F95EA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C61E99A226B86CC00F95EA9 /* CodeCoverageFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeCoverageFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C61E9A1226B86CC00F95EA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4C61E9BF226B876800F95EA9 /* CoveredLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoveredLine.swift; sourceTree = "<group>"; };
-		4C61E9C1226B87BA00F95EA9 /* CoveredClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoveredClass.swift; sourceTree = "<group>"; };
-		4C61E9C3226B87CD00F95EA9 /* CoveredProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoveredProject.swift; sourceTree = "<group>"; };
-		4C61E9C5226B87EC00F95EA9 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
-		4C61E9C7226B881C00F95EA9 /* CodeCoverage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeCoverage.swift; sourceTree = "<group>"; };
 		4C61E9C9226B8A8500F95EA9 /* CodeCoverageFrameworkTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CodeCoverageFrameworkTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		4C61E9CA226B8A8500F95EA9 /* CoveredClassTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoveredClassTests.swift; sourceTree = "<group>"; };
-		4C61E9CC226B8F2D00F95EA9 /* CoveredProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoveredProjectTests.swift; sourceTree = "<group>"; };
-		4C61E9CE226B91B200F95EA9 /* CodeCoverageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeCoverageTests.swift; sourceTree = "<group>"; };
-		4C61E9D0226BEDE400F95EA9 /* CoveredLineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoveredLineTests.swift; sourceTree = "<group>"; };
-		4C61E9E72274870E00F95EA9 /* CoveredResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoveredResult.swift; sourceTree = "<group>"; };
-		4CA6CC31237878C50010ACC9 /* CoverageCompare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverageCompare.swift; sourceTree = "<group>"; };
 		4CA6CD4C237A043D0010ACC9 /* Coverage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coverage.swift; sourceTree = "<group>"; };
+		4CA6CD54237B612E0010ACC9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CA6CD56237B616D0010ACC9 /* CoverageComparison.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverageComparison.swift; sourceTree = "<group>"; };
+		4CA6CD58237B619B0010ACC9 /* Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
+		4CA6CD5A237B61F40010ACC9 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,16 +76,11 @@
 		4C61E993226B86CB00F95EA9 /* CodeCoverageFramework */ = {
 			isa = PBXGroup;
 			children = (
-				4C61E9C7226B881C00F95EA9 /* CodeCoverage.swift */,
-				4C61E994226B86CB00F95EA9 /* CodeCoverageFramework.h */,
-				4C61E995226B86CB00F95EA9 /* Info.plist */,
-				4C61E9BF226B876800F95EA9 /* CoveredLine.swift */,
-				4C61E9C1226B87BA00F95EA9 /* CoveredClass.swift */,
-				4C61E9C3226B87CD00F95EA9 /* CoveredProject.swift */,
-				4C61E9E72274870E00F95EA9 /* CoveredResult.swift */,
-				4C61E9C5226B87EC00F95EA9 /* Parser.swift */,
-				4CA6CC31237878C50010ACC9 /* CoverageCompare.swift */,
+				4CA6CD54237B612E0010ACC9 /* Info.plist */,
 				4CA6CD4C237A043D0010ACC9 /* Coverage.swift */,
+				4CA6CD56237B616D0010ACC9 /* CoverageComparison.swift */,
+				4CA6CD58237B619B0010ACC9 /* Row.swift */,
+				4CA6CD5A237B61F40010ACC9 /* Utils.swift */,
 			);
 			path = CodeCoverageFramework;
 			sourceTree = "<group>";
@@ -113,10 +90,6 @@
 			children = (
 				4C61E9A1226B86CC00F95EA9 /* Info.plist */,
 				4C61E9C9226B8A8500F95EA9 /* CodeCoverageFrameworkTests-Bridging-Header.h */,
-				4C61E9CE226B91B200F95EA9 /* CodeCoverageTests.swift */,
-				4C61E9D0226BEDE400F95EA9 /* CoveredLineTests.swift */,
-				4C61E9CA226B8A8500F95EA9 /* CoveredClassTests.swift */,
-				4C61E9CC226B8F2D00F95EA9 /* CoveredProjectTests.swift */,
 			);
 			path = CodeCoverageFrameworkTests;
 			sourceTree = "<group>";
@@ -128,7 +101,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C61E9A2226B86CC00F95EA9 /* CodeCoverageFramework.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,14 +203,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C61E9C6226B87EC00F95EA9 /* Parser.swift in Sources */,
-				4C61E9C0226B876800F95EA9 /* CoveredLine.swift in Sources */,
-				4C61E9C4226B87CD00F95EA9 /* CoveredProject.swift in Sources */,
-				4C61E9C8226B881C00F95EA9 /* CodeCoverage.swift in Sources */,
-				4CA6CC32237878C50010ACC9 /* CoverageCompare.swift in Sources */,
+				4CA6CD57237B616D0010ACC9 /* CoverageComparison.swift in Sources */,
+				4CA6CD59237B619B0010ACC9 /* Row.swift in Sources */,
 				4CA6CD4D237A043D0010ACC9 /* Coverage.swift in Sources */,
-				4C61E9C2226B87BA00F95EA9 /* CoveredClass.swift in Sources */,
-				4C61E9E82274870E00F95EA9 /* CoveredResult.swift in Sources */,
+				4CA6CD5B237B61F40010ACC9 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,10 +214,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C61E9D1226BEDE400F95EA9 /* CoveredLineTests.swift in Sources */,
-				4C61E9CD226B8F2D00F95EA9 /* CoveredProjectTests.swift in Sources */,
-				4C61E9CB226B8A8500F95EA9 /* CoveredClassTests.swift in Sources */,
-				4C61E9CF226B91B200F95EA9 /* CodeCoverageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
