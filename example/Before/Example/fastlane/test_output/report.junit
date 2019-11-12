@@ -1,6 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<testsuites name='ExampleTests.xctest' tests='1' failures='0'>
+<testsuites name='ExampleTests.xctest' tests='2' failures='0'>
+  <testsuite name='ExampleTests.ExistingClassCoverageDroppedTests' tests='1' failures='0'>
+    <testcase classname='ExampleTests.ExistingClassCoverageDroppedTests' name='testExistingClassCoverageDropped' time='0.171'/>
+  </testsuite>
   <testsuite name='ExampleTests.ExistingClassCoveredTests' tests='1' failures='0'>
-    <testcase classname='ExampleTests.ExistingClassCoveredTests' name='testExistingClassCoveredTests' time='0.166'/>
+    <testcase classname='ExampleTests.ExistingClassCoveredTests' name='testExistingClassCoveredTests' time='0.001'/>
   </testsuite>
 </testsuites>

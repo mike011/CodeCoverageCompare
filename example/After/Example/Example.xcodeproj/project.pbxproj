@@ -13,7 +13,6 @@
 		4CA6CD352378F4670010ACC9 /* ExistingClassCovered.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6CD332378F4670010ACC9 /* ExistingClassCovered.swift */; };
 		4CA6CD372378F46E0010ACC9 /* ExistingClassCoveredTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6CD362378F46E0010ACC9 /* ExistingClassCoveredTests.swift */; };
 		4CA6CD392378F4EC0010ACC9 /* ExistingClassCoverageDropped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6CD382378F4EC0010ACC9 /* ExistingClassCoverageDropped.swift */; };
-		4CA6CD3B2378F5040010ACC9 /* ExistingClassCoverageDroppedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6CD3A2378F5040010ACC9 /* ExistingClassCoverageDroppedTests.swift */; };
 		4CA6CD3D2378F5400010ACC9 /* NewClassNoCoverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6CD3C2378F5400010ACC9 /* NewClassNoCoverage.swift */; };
 		4CA6CD3F2378F5610010ACC9 /* NewClassCovered.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6CD3E2378F5610010ACC9 /* NewClassCovered.swift */; };
 		4CA6CD412378F56D0010ACC9 /* NewClassCoveredTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6CD402378F56D0010ACC9 /* NewClassCoveredTests.swift */; };
@@ -39,7 +38,6 @@
 		4CA6CD332378F4670010ACC9 /* ExistingClassCovered.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExistingClassCovered.swift; sourceTree = "<group>"; };
 		4CA6CD362378F46E0010ACC9 /* ExistingClassCoveredTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExistingClassCoveredTests.swift; sourceTree = "<group>"; };
 		4CA6CD382378F4EC0010ACC9 /* ExistingClassCoverageDropped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingClassCoverageDropped.swift; sourceTree = "<group>"; };
-		4CA6CD3A2378F5040010ACC9 /* ExistingClassCoverageDroppedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingClassCoverageDroppedTests.swift; sourceTree = "<group>"; };
 		4CA6CD3C2378F5400010ACC9 /* NewClassNoCoverage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewClassNoCoverage.swift; sourceTree = "<group>"; };
 		4CA6CD3E2378F5610010ACC9 /* NewClassCovered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewClassCovered.swift; sourceTree = "<group>"; };
 		4CA6CD402378F56D0010ACC9 /* NewClassCoveredTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewClassCoveredTests.swift; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 			children = (
 				4CA6CD362378F46E0010ACC9 /* ExistingClassCoveredTests.swift */,
 				4CA6CD282378F35E0010ACC9 /* Info.plist */,
-				4CA6CD3A2378F5040010ACC9 /* ExistingClassCoverageDroppedTests.swift */,
 				4CA6CD402378F56D0010ACC9 /* NewClassCoveredTests.swift */,
 			);
 			path = ExampleTests;
@@ -229,7 +226,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CA6CD3B2378F5040010ACC9 /* ExistingClassCoverageDroppedTests.swift in Sources */,
 				4CA6CD372378F46E0010ACC9 /* ExistingClassCoveredTests.swift in Sources */,
 				4CA6CD412378F56D0010ACC9 /* NewClassCoveredTests.swift in Sources */,
 			);

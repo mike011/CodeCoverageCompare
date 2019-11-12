@@ -12,6 +12,8 @@
 		4CA6CD342378F4670010ACC9 /* ExistingClassNotCovered.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6CD322378F4670010ACC9 /* ExistingClassNotCovered.swift */; };
 		4CA6CD352378F4670010ACC9 /* ExistingClassCovered.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6CD332378F4670010ACC9 /* ExistingClassCovered.swift */; };
 		4CA6CD372378F46E0010ACC9 /* ExistingClassCoveredTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6CD362378F46E0010ACC9 /* ExistingClassCoveredTests.swift */; };
+		4CA6CD51237B55470010ACC9 /* ExistingClassCoverageDroppedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6CD50237B55470010ACC9 /* ExistingClassCoverageDroppedTests.swift */; };
+		4CA6CD53237B55650010ACC9 /* ExistingClassCoverageDropped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6CD52237B55650010ACC9 /* ExistingClassCoverageDropped.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,8 @@
 		4CA6CD322378F4670010ACC9 /* ExistingClassNotCovered.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExistingClassNotCovered.swift; sourceTree = "<group>"; };
 		4CA6CD332378F4670010ACC9 /* ExistingClassCovered.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExistingClassCovered.swift; sourceTree = "<group>"; };
 		4CA6CD362378F46E0010ACC9 /* ExistingClassCoveredTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExistingClassCoveredTests.swift; sourceTree = "<group>"; };
+		4CA6CD50237B55470010ACC9 /* ExistingClassCoverageDroppedTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExistingClassCoverageDroppedTests.swift; sourceTree = "<group>"; };
+		4CA6CD52237B55650010ACC9 /* ExistingClassCoverageDropped.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExistingClassCoverageDropped.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,7 @@
 		4CA6CD1A2378F35E0010ACC9 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				4CA6CD52237B55650010ACC9 /* ExistingClassCoverageDropped.swift */,
 				4CA6CD332378F4670010ACC9 /* ExistingClassCovered.swift */,
 				4CA6CD322378F4670010ACC9 /* ExistingClassNotCovered.swift */,
 				4CA6CD1B2378F35E0010ACC9 /* Example.h */,
@@ -87,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				4CA6CD362378F46E0010ACC9 /* ExistingClassCoveredTests.swift */,
+				4CA6CD50237B55470010ACC9 /* ExistingClassCoverageDroppedTests.swift */,
 				4CA6CD282378F35E0010ACC9 /* Info.plist */,
 			);
 			path = ExampleTests;
@@ -203,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CA6CD352378F4670010ACC9 /* ExistingClassCovered.swift in Sources */,
+				4CA6CD53237B55650010ACC9 /* ExistingClassCoverageDropped.swift in Sources */,
 				4CA6CD342378F4670010ACC9 /* ExistingClassNotCovered.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CA6CD51237B55470010ACC9 /* ExistingClassCoverageDroppedTests.swift in Sources */,
 				4CA6CD372378F46E0010ACC9 /* ExistingClassCoveredTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
