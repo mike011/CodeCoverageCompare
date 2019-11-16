@@ -13,6 +13,8 @@
 		4CA6CD59237B619B0010ACC9 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6CD58237B619B0010ACC9 /* Row.swift */; };
 		4CA6CD5B237B61F40010ACC9 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6CD5A237B61F40010ACC9 /* Utils.swift */; };
 		4CA6CD95237F24B10010ACC9 /* RowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6CD94237F24B10010ACC9 /* RowTests.swift */; };
+		4CA6CD97237F6DAC0010ACC9 /* CoverageComparisonTestsSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6CD96237F6DAC0010ACC9 /* CoverageComparisonTestsSingle.swift */; };
+		4CA6CD99237F75FA0010ACC9 /* CoverageCompareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6CD98237F75FA0010ACC9 /* CoverageCompareTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		4CA6CD58237B619B0010ACC9 /* Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
 		4CA6CD5A237B61F40010ACC9 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		4CA6CD94237F24B10010ACC9 /* RowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowTests.swift; sourceTree = "<group>"; };
+		4CA6CD96237F6DAC0010ACC9 /* CoverageComparisonTestsSingle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverageComparisonTestsSingle.swift; sourceTree = "<group>"; };
+		4CA6CD98237F75FA0010ACC9 /* CoverageCompareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverageCompareTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,8 @@
 				4C61E9A1226B86CC00F95EA9 /* Info.plist */,
 				4C61E9C9226B8A8500F95EA9 /* CodeCoverageFrameworkTests-Bridging-Header.h */,
 				4CA6CD94237F24B10010ACC9 /* RowTests.swift */,
+				4CA6CD96237F6DAC0010ACC9 /* CoverageComparisonTestsSingle.swift */,
+				4CA6CD98237F75FA0010ACC9 /* CoverageCompareTests.swift */,
 			);
 			path = CodeCoverageFrameworkTests;
 			sourceTree = "<group>";
@@ -217,6 +223,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CA6CD99237F75FA0010ACC9 /* CoverageCompareTests.swift in Sources */,
+				4CA6CD97237F6DAC0010ACC9 /* CoverageComparisonTestsSingle.swift in Sources */,
 				4CA6CD95237F24B10010ACC9 /* RowTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -41,4 +41,16 @@ class RowTests: XCTestCase {
         XCTAssertFalse(row.test)
     }
 
+    func testEquals() {
+        let row = Row(file: "file", develop: 0, pr: 0)
+        let row2 = Row(file: "file", develop: 0, pr: 0)
+        XCTAssertTrue(row == row2)
+    }
+
+    func testNotEquals() {
+        let row = Row(file: "file", develop: 0, pr: 0)
+        let row2 = Row(file: "file2", develop: 0, pr: 0)
+        XCTAssertFalse(row == row2)
+    }
+
 }

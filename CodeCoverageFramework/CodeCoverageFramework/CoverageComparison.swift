@@ -18,17 +18,19 @@ public class CoverageComparison {
         self.after = after
     }
 
-    func getFilesChanged() -> Set<Row> {
+    func getFilesChanged() -> [Row] {
         var rows = Set<Row>()
         for target in before.targets {
             for beforeFile in target.files {
                 let filename = beforeFile.name
                 let beforeCoverage = beforeFile.lineCoverage
                 var afterCoverage = 0.0
-                for afterFile in after.targets.first!.files {
-                    if afterFile.name == filename {
-                        afterCoverage = afterFile.lineCoverage
-                        break
+                for afterTarget in after.targets {
+                    for afterFile in afterTarget.files {
+                        if afterFile.name == filename {
+                            afterCoverage = afterFile.lineCoverage
+                            break
+                        }
                     }
                 }
                 rows.insert(Row(file: filename, develop: beforeCoverage, pr: afterCoverage))
@@ -40,20 +42,24 @@ public class CoverageComparison {
                 let filename = afterFile.name
                 var beforeCoverage = 0.0
                 let afterCoverage = afterFile.lineCoverage
-                for beforeFile in before.targets.first!.files {
-                    if beforeFile.name == filename {
-                        beforeCoverage = beforeFile.lineCoverage
-                        break
+                for beforeTarget in before.targets {
+                    for beforeFile in beforeTarget.files {
+                        if beforeFile.name == filename {
+                            beforeCoverage = beforeFile.lineCoverage
+                            break
+                        }
                     }
                 }
 
                 rows.insert(Row(file: filename, develop: beforeCoverage, pr: afterCoverage))
             }
         }
-        return rows
+        var result = Array(rows)
+        result.sort(by: { $0.file < $1.file })
+        return result
     }
 
-    func getRows() -> Set<Row> {
+    func getRows() -> [Row] {
         return getFilesChanged()
     }
 
@@ -71,12 +77,12 @@ public class CoverageComparison {
             }
         }
 
-        sourceRows.sort(by: { $0.file > $1.file })
+        sourceRows.sort(by: { $0.file < $1.file })
         for row in sourceRows {
             print(row.toString(devLink: devLink, prLink: prLink))
         }
 
-        testRows.sort(by: { $0.file > $1.file })
+        testRows.sort(by: { $0.file < $1.file })
         for row in testRows {
             print(row.toString(devLink: devLink, prLink: prLink))
         }
