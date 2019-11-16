@@ -21,7 +21,7 @@ platform :ios do
     sh "rm -rf ./test_output"
     scan(
         project: "Example.xcodeproj",
-        scheme: "Example",
+        scheme: "Example (After)",
         configuration: "Debug",
         xcargs: "GCC_WARN_INHIBIT_ALL_WARNINGS=YES -sdk iphonesimulator ONLY_ACTIVE_ARCH=YES VALID_ARCHS=x86_64",
         #destination: "platform=iOS Simulator,name=iPhone 8 Plus",
