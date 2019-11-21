@@ -29,5 +29,15 @@ platform :ios do
         result_bundle: true,
         output_directory: "./fastlane/test_output"
       )
+      generate_code_coverage_report
+  end
+
+  private_lane :generate_code_coverage_report do
+    slather(
+      scheme: "Example (After)",
+      proj: "Example.xcodeproj",
+      output_directory: "fastlane/test_output/slather",
+      html: true,
+    )
   end
 end
