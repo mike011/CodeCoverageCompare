@@ -11,38 +11,45 @@ import Foundation
 struct Row {
     var change: String {
         var change = ""
-        if pr == 1 {
+        if afterCoverage == 1 {
             change = "💯"
-        } else if pr == 0 {
+        } else if afterCoverage == 0 {
             change = "🚫"
-        } else if(develop > pr) {
+        } else if(beforeCoverage > afterCoverage) {
            change = "👎"
-        } else if(pr > develop) {
+        } else if(afterCoverage > beforeCoverage) {
            change = "👍"
         }
         return change
     }
     let file: String
-    let develop: Double
-    let pr: Double
+    let beforeCoverage: Double
+    let afterCoverage: Double
     var test: Bool {
         return file.contains("Test")
     }
 
-    func toString(devLink: String, prLink: String) -> String {
-        var name = file
-        if let period = file.firstIndex(of: ".") {
-            name = file.substring(to: period)
-        }
-        let developPercentage = getLink(baseURL: devLink, value: develop)
-        let prPercentage = getLink(baseURL: prLink, value: pr)
-        return "|\(change)|\(name)|\(developPercentage)|\(prPercentage)|"
+    func toString(baseURL: String) -> String {
+        let name = getLink(baseURL: baseURL)
+        return "|\(change)|\(name)|\(getPercentage(beforeCoverage))|\(getPercentage(afterCoverage))|"
     }
 
-    func getLink(baseURL: String, value: Double) -> String {
-        let url = "\(baseURL)/\(file).html"
-        let title = String(format: "%.0f", value * 100)
-        return "<a href=\(url)>\(title)%</a>"
+    private func getPercentage(_ value: Double) -> String {
+          return String(format: "%.0f", value * 100) + "%"
+      }
+
+    private func getLink(baseURL: String) -> String {
+        let name = getName()
+        let url = "\(baseURL)/\(name).html"
+        return "<a href=\(url)>\(name)%</a>"
+    }
+
+    func getName() -> String {
+        var name = file
+          if let period = file.firstIndex(of: ".") {
+              name = file.substring(to: period)
+          }
+        return name
     }
 }
 

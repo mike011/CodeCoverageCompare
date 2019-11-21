@@ -15,6 +15,7 @@
 		4CA6CD95237F24B10010ACC9 /* RowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6CD94237F24B10010ACC9 /* RowTests.swift */; };
 		4CA6CD97237F6DAC0010ACC9 /* CoverageComparisonTestsSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6CD96237F6DAC0010ACC9 /* CoverageComparisonTestsSingle.swift */; };
 		4CA6CD99237F75FA0010ACC9 /* CoverageCompareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6CD98237F75FA0010ACC9 /* CoverageCompareTests.swift */; };
+		4CD46633238613DF00343985 /* ComparisonWebPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD46632238613DF00343985 /* ComparisonWebPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		4CA6CD94237F24B10010ACC9 /* RowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowTests.swift; sourceTree = "<group>"; };
 		4CA6CD96237F6DAC0010ACC9 /* CoverageComparisonTestsSingle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverageComparisonTestsSingle.swift; sourceTree = "<group>"; };
 		4CA6CD98237F75FA0010ACC9 /* CoverageCompareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverageCompareTests.swift; sourceTree = "<group>"; };
+		4CD46632238613DF00343985 /* ComparisonWebPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparisonWebPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				4CA6CD54237B612E0010ACC9 /* Info.plist */,
+				4CD46632238613DF00343985 /* ComparisonWebPage.swift */,
 				4CA6CD4C237A043D0010ACC9 /* Coverage.swift */,
 				4CA6CD56237B616D0010ACC9 /* CoverageComparison.swift */,
 				4CA6CD58237B619B0010ACC9 /* Row.swift */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CD46633238613DF00343985 /* ComparisonWebPage.swift in Sources */,
 				4CA6CD57237B616D0010ACC9 /* CoverageComparison.swift in Sources */,
 				4CA6CD59237B619B0010ACC9 /* Row.swift in Sources */,
 				4CA6CD4D237A043D0010ACC9 /* Coverage.swift in Sources */,

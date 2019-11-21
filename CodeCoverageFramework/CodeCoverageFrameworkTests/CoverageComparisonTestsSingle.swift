@@ -34,8 +34,8 @@ class CoverageComparisonSingleTests: XCTestCase {
         XCTAssertFalse(rows.isEmpty)
         XCTAssertEqual(rows.count, 1)
         XCTAssertEqual(rows.first!.file, "name")
-        XCTAssertEqual(rows.first!.develop, 0)
-        XCTAssertEqual(rows.first!.pr, 1.0)
+        XCTAssertEqual(rows.first!.beforeCoverage, 0)
+        XCTAssertEqual(rows.first!.afterCoverage, 1.0)
         XCTAssertFalse(rows.first!.test)
     }
 
@@ -49,8 +49,8 @@ class CoverageComparisonSingleTests: XCTestCase {
         XCTAssertFalse(rows.isEmpty)
         XCTAssertEqual(rows.count, 1)
         XCTAssertEqual(rows.first!.file, "name")
-        XCTAssertEqual(rows.first!.develop, 1.0)
-        XCTAssertEqual(rows.first!.pr, 0)
+        XCTAssertEqual(rows.first!.beforeCoverage, 1.0)
+        XCTAssertEqual(rows.first!.afterCoverage, 0)
         XCTAssertFalse(rows.first!.test)
     }
 
@@ -76,13 +76,13 @@ class CoverageComparisonSingleTests: XCTestCase {
         XCTAssertEqual(rows.count, 2)
 
         XCTAssertEqual(rows[0].file, "name")
-        XCTAssertEqual(rows[0].develop, 0.0)
-        XCTAssertEqual(rows[0].pr, 1.0)
+        XCTAssertEqual(rows[0].beforeCoverage, 0.0)
+        XCTAssertEqual(rows[0].afterCoverage, 1.0)
         XCTAssertFalse(rows[0].test)
 
         XCTAssertEqual(rows[1].file, "name2")
-        XCTAssertEqual(rows[1].develop, 0.0)
-        XCTAssertEqual(rows[1].pr, 0.5)
+        XCTAssertEqual(rows[1].beforeCoverage, 0.0)
+        XCTAssertEqual(rows[1].afterCoverage, 0.5)
         XCTAssertFalse(rows[1].test)
     }
 
@@ -98,13 +98,13 @@ class CoverageComparisonSingleTests: XCTestCase {
         XCTAssertEqual(rows.count, 2)
 
         XCTAssertEqual(rows[0].file, "name")
-        XCTAssertEqual(rows[0].develop, 1.0)
-        XCTAssertEqual(rows[0].pr, 0)
+        XCTAssertEqual(rows[0].beforeCoverage, 1.0)
+        XCTAssertEqual(rows[0].afterCoverage, 0)
         XCTAssertFalse(rows[0].test)
 
         XCTAssertEqual(rows[1].file, "name2")
-        XCTAssertEqual(rows[1].develop, 0.5)
-        XCTAssertEqual(rows[1].pr, 0)
+        XCTAssertEqual(rows[1].beforeCoverage, 0.5)
+        XCTAssertEqual(rows[1].afterCoverage, 0)
         XCTAssertFalse(rows[1].test)
     }
 
@@ -131,13 +131,13 @@ class CoverageComparisonSingleTests: XCTestCase {
         XCTAssertEqual(rows.count, 2)
 
         XCTAssertEqual(rows[0].file, "name")
-        XCTAssertEqual(rows[0].develop, 0.0)
-        XCTAssertEqual(rows[0].pr, 0.6)
+        XCTAssertEqual(rows[0].beforeCoverage, 0.0)
+        XCTAssertEqual(rows[0].afterCoverage, 0.6)
         XCTAssertFalse(rows[0].test)
 
         XCTAssertEqual(rows[1].file, "testName")
-        XCTAssertEqual(rows[1].develop, 0.0)
-        XCTAssertEqual(rows[1].pr, 0.8)
+        XCTAssertEqual(rows[1].beforeCoverage, 0.0)
+        XCTAssertEqual(rows[1].afterCoverage, 0.8)
         XCTAssertFalse(rows[1].test)
     }
 

@@ -10,10 +10,12 @@ import Foundation
 
 public class CoverageComparison {
 
+    let writeLocation: URL
     let before: Project
     let after: Project
 
-    public init(before: Project, after: Project) {
+    public init(writeLocation: URL, before: Project, after: Project) {
+        self.writeLocation = writeLocation
         self.before = before
         self.after = after
     }
@@ -33,7 +35,7 @@ public class CoverageComparison {
                         }
                     }
                 }
-                rows.insert(Row(file: filename, develop: beforeCoverage, pr: afterCoverage))
+                rows.insert(Row(file: filename, beforeCoverage: beforeCoverage, afterCoverage: afterCoverage))
             }
         }
 
@@ -50,8 +52,7 @@ public class CoverageComparison {
                         }
                     }
                 }
-
-                rows.insert(Row(file: filename, develop: beforeCoverage, pr: afterCoverage))
+                rows.insert(Row(file: filename, beforeCoverage: beforeCoverage, afterCoverage: afterCoverage))
             }
         }
         var result = Array(rows)
@@ -65,7 +66,7 @@ public class CoverageComparison {
 
     public func printTable(devLink: String, prLink: String) {
         print("|Change|File|Develop|PR|")
-        print("|------|----|-------|--|")
+        print("|:----:|----|:-----:|::|")
 
         var sourceRows = [Row]()
         var testRows = [Row]()
@@ -79,12 +80,14 @@ public class CoverageComparison {
 
         sourceRows.sort(by: { $0.file < $1.file })
         for row in sourceRows {
-            print(row.toString(devLink: devLink, prLink: prLink))
+            let url = writeLocation.appendingPathComponent("\(row.getName())_comparison.html")
+            ComparisonWebPage(devLink: devLink, prLink: prLink).writeToFile(url: url)
+            print(row.toString(baseURL: prLink))
         }
 
         testRows.sort(by: { $0.file < $1.file })
         for row in testRows {
-            print(row.toString(devLink: devLink, prLink: prLink))
+            print(row.toString(baseURL: devLink))
         }
     }
 }
