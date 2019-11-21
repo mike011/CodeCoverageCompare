@@ -16,3 +16,6 @@ Here is what the output will look like:
 |💯|ExistingClassCoverageUpTests|<a href=http://www.nba.com/ExistingClassCoverageUpTests.swift.html>100%</a>|<a href=http://www.espn.com/ExistingClassCoverageUpTests.swift.html>100%</a>|
 |💯|ExistingClassCoveredTests|<a href=http://www.nba.com/ExistingClassCoveredTests.swift.html>100%</a>|<a href=http://www.espn.com/ExistingClassCoveredTests.swift.html>100%</a>|
 |💯|NewClassCoveredTests|<a href=http://www.nba.com/NewClassCoveredTests.swift.html>0%</a>|<a href=http://www.espn.com/NewClassCoveredTests.swift.html>100%</a>|
+
+
+Also can be found here: https://mike011.github.io/CodeCoverageCompare/example.html
