@@ -1,0 +1,271 @@
+14:09:40.030 xcodebuild[65126:13654333] Beginning test session ExampleTests-98D09D18-18A2-4589-B207-F2AA28C953B2 at 2019-11-22 14:09:40.030 with Xcode 10G8 on target <DVTLocalComputer: 0x7ff094cbdc60 (My Mac | x86_64h)> (10.15 (19A602))
+14:09:40.031 xcodebuild[65126:13654333] 	/Users/michael.charland/Downloads/Xcode.app/Contents/Developer/usr/bin/xcodebuild
+-scheme
+Example (After)
+-project
+Example.xcodeproj
+-configuration
+Debug
+-derivedDataPath
+/Users/michael.charland/Library/Developer/Xcode/DerivedData/Example-cmunmegopaurjncjxmtgoarsatwl
+-resultBundlePath
+./fastlane/test_output/Example (After).test_result
+-enableCodeCoverage
+YES
+GCC_WARN_INHIBIT_ALL_WARNINGS=YES
+ONLY_ACTIVE_ARCH=YES
+VALID_ARCHS=x86_64
+build
+test
+14:09:40.031 xcodebuild[65126:13654333] Launching with Xcode.IDEFoundation.Launcher.PosixSpawn
+14:09:40.033 xcodebuild[65126:13654333] Test standard output and standard error is at /Users/michael.charland/git/CodeCoverageCompare/example/After/Example/fastlane/test_output/Example (After).test_result/2_Test/Diagnostics/ExampleTests-2DD2F3F7-431E-4A8F-8574-0E34A46A1DB0/ExampleTests-B70393FD-3C8D-4036-A325-A0E55455476A/StandardOutputAndStandardError.txt
+14:09:40.037 xcodebuild[65126:13654333] Setting up test runner session
+14:09:40.037 xcodebuild[65126:13654333] Requesting a socket for communication with testmanagerd.
+14:09:40.037 xcodebuild[65126:13654333] Registering/updating daemon-based crash report observer for process names (
+    xctest
+)
+14:09:40.038 xcodebuild[65126:13654393] Got socket for DTX-layer communication.
+14:09:40.038 xcodebuild[65126:13654540] Received connection for test runner session
+14:09:40.038 xcodebuild[65126:13654393] XPC connection for control was invalidated.
+14:09:40.038 xcodebuild[65126:13654540] Listening for proxy connection request from the test bundle
+14:09:40.038 xcodebuild[65126:13654333] Test runner session acquired connection.
+14:09:40.038 xcodebuild[65126:13654333] Waiting for test process to launch.
+14:09:40.038 xcodebuild[65126:13654540] Initiating session with identifier: 98D09D18-18A2-4589-B207-F2AA28C953B2
+14:09:40.044 xcodebuild[65126:13654540] Got reply to session initiation request with identifier 98D09D18-18A2-4589-B207-F2AA28C953B2 (result:error): 30: (null)
+14:09:40.044 xcodebuild[65126:13654333] Finished requesting crash reports. Continuing with testing.
+14:09:40.045 xcodebuild[65126:13654333] Launch session started.
+14:09:40.051 xcodebuild[65126:13654333] Test process runnable PID is 65135.
+14:09:40.262 xcodebuild[65126:13654393] Handling proxy channel request from test runner
+14:09:40.262 xcodebuild[65126:13654393] Test runner is ready, running protocol 30, requires at least version 7. Control framework is running 30 and requires at least 7
+14:09:40.262 xcodebuild[65126:13654333] Test runner session successfully initiated.
+14:09:40.262 xcodebuild[65126:13654333] Whitelisting test process ID 65135
+14:09:40.281 xcodebuild[65126:13654333] Got whitelisting response from test daemon: Success
+14:09:40.281 xcodebuild[65126:13654333] Registering/updating daemon-based crash report observer for process names (
+    xctest
+)
+14:09:40.281 xcodebuild[65126:13654333] Telling test runner to start executing tests.
+14:09:40.282 xctest[65135:13654558] _IDE_startExecutingTestPlanWithProtocolVersion:30
+14:09:40.282 xctest[65135:13654558] <XCTWaiter: 0x7fb80fe073c0, state: XCTWaiterStateSucceeded>: cancelWaiting
+14:09:40.282 xctest[65135:13654543] <XCTWaiter: 0x7fb80fe073c0, state: XCTWaiterStateSucceeded> done waiting
+14:09:40.282 xctest[65135:13654543] Canceling watchdog for <XCTWaiter: 0x7fb80fe073c0, state: XCTWaiterStateInProgress>.
+14:09:40.282 xctest[65135:13654543] <XCTWaiter: 0x7fb80fe073c0, state: XCTWaiterStateSucceeded> cleaning up `IDE session ready for test plan`
+14:09:40.240 xctest[65135:13654543] Linked XCTest.framework from /Users/michael.charland/Downloads/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Versions/A/XCTest, built with Xcode 1020(10G1d), modified on Saturday, July 13, 2019 at 12:57:08 AM Eastern Daylight Time
+XCTest.framework bundle version: 14490.71
+14:09:40.241 xctest[65135:13654543] System uptime: 1 w 3 d 16:38:33
+14:09:40.241 xctest[65135:13654543] Process arguments: (
+    "/Users/michael.charland/Downloads/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Xcode/Agents/xctest",
+    "-NSTreatUnknownArgumentsAsOpen",
+    NO,
+    "-ApplePersistenceIgnoreState",
+    YES
+)
+14:09:40.241 xctest[65135:13654543] Process environment: {
+    "BUNDLER_ORIG_BUNDLER_ORIG_MANPATH" = "BUNDLER_ENVIRONMENT_PRESERVER_INTENTIONALLY_NIL";
+    "BUNDLER_ORIG_BUNDLER_VERSION" = "BUNDLER_ENVIRONMENT_PRESERVER_INTENTIONALLY_NIL";
+    "BUNDLER_ORIG_BUNDLE_BIN_PATH" = "BUNDLER_ENVIRONMENT_PRESERVER_INTENTIONALLY_NIL";
+    "BUNDLER_ORIG_BUNDLE_GEMFILE" = "BUNDLER_ENVIRONMENT_PRESERVER_INTENTIONALLY_NIL";
+    "BUNDLER_ORIG_GEM_HOME" = "/Users/michael.charland/.rvm/gems/ruby-2.6.3";
+    "BUNDLER_ORIG_GEM_PATH" = "/Users/michael.charland/.rvm/gems/ruby-2.6.3:/Users/michael.charland/.rvm/gems/ruby-2.6.3@global";
+    "BUNDLER_ORIG_MANPATH" = "BUNDLER_ENVIRONMENT_PRESERVER_INTENTIONALLY_NIL";
+    "BUNDLER_ORIG_PATH" = "/Library/Frameworks/Python.framework/Versions/3.5/bin:/Users/michael.charland/go/bin/Users/michael.charland/.rvm/gems/ruby-2.6.3/bin:/Users/michael.charland/.rvm/gems/ruby-2.6.3@global/bin:/Users/michael.charland/.rvm/rubies/ruby-2.6.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Library/Apple/bin:/Users/michael.charland/.rvm/bin";
+    "BUNDLER_ORIG_RB_USER_INSTALL" = "BUNDLER_ENVIRONMENT_PRESERVER_INTENTIONALLY_NIL";
+    "BUNDLER_ORIG_RUBYLIB" = "BUNDLER_ENVIRONMENT_PRESERVER_INTENTIONALLY_NIL";
+    "BUNDLER_ORIG_RUBYOPT" = "BUNDLER_ENVIRONMENT_PRESERVER_INTENTIONALLY_NIL";
+    "BUNDLER_VERSION" = "2.0.2";
+    "BUNDLE_BIN_PATH" = "/Users/michael.charland/.rvm/gems/ruby-2.6.3/gems/bundler-2.0.2/exe/bundle";
+    "BUNDLE_GEMFILE" = "/Users/michael.charland/git/CodeCoverageCompare/example/After/Example/Gemfile";
+    "CA_ASSERT_MAIN_THREAD_TRANSACTIONS" = 0;
+    "CA_DEBUG_TRANSACTIONS" = 0;
+    CLICOLOR = 1;
+    "DYLD_FRAMEWORK_PATH" = "/Users/michael.charland/Library/Developer/Xcode/DerivedData/Example-cmunmegopaurjncjxmtgoarsatwl/Build/Products/Debug:/Users/michael.charland/Downloads/Xcode.app/Contents/SharedFrameworks::/Users/michael.charland/Library/Developer/Xcode/DerivedData/Example-cmunmegopaurjncjxmtgoarsatwl/Build/Products/Debug:/Users/michael.charland/Downloads/Xcode.app/Contents/SharedFrameworks:";
+    "DYLD_LIBRARY_PATH" = "/Users/michael.charland/Library/Developer/Xcode/DerivedData/Example-cmunmegopaurjncjxmtgoarsatwl/Build/Products/Debug:/Users/michael.charland/Library/Developer/Xcode/DerivedData/Example-cmunmegopaurjncjxmtgoarsatwl/Build/Products/Debug";
+    "FASTLANE_LANE_NAME" = test;
+    "FASTLANE_PLATFORM_NAME" = ios;
+    "FORK_XCODE_WRITING" = true;
+    "GEM_HOME" = "/Users/michael.charland/.rvm/gems/ruby-2.6.3";
+    "GEM_PATH" = "/Users/michael.charland/.rvm/gems/ruby-2.6.3:/Users/michael.charland/.rvm/gems/ruby-2.6.3@global";
+    "GITHUB_ACCESS_TOKEN" = 6a4f2d6a010b95b5aa4b00cb47cf7c69b6275de3;
+    GOBIN = "/Users/michael.charland/go/bin";
+    GOPATH = "/Users/michael.charland/go";
+    HOME = "/Users/michael.charland";
+    IDEBuildOperationMaxNumberOfConcurrentCompileTasks = 6;
+    IDEiPhoneInternalTestBundleName = "ExampleTests.xctest";
+    IRBRC = "/Users/michael.charland/.rvm/rubies/ruby-2.6.3/.irbrc";
+    LANG = "en_US.UTF-8";
+    "LC_ALL" = "en_US.UTF-8";
+    LESS = "-R";
+    "LLVM_PROFILE_FILE" = "/var/folders/tq/jj7fk1_11r39z11zm3gl3cy5_y64xt/T/7BE4CC49-E43B-41DA-A8F7-26C02D00298E-65126-0003484B477B7FA0/129AFF4F-058D-455D-89C7-2BFCC3A93B72-%p.profraw%15x";
+    LOGNAME = "michael.charland";
+    LSCOLORS = ExFxBxDxCxegedabagacad;
+    "MATCH_PASSWORD" = "$Password123!";
+    "MTC_CRASH_ON_REPORT" = 1;
+    "MY_RUBY_HOME" = "/Users/michael.charland/.rvm/rubies/ruby-2.6.3";
+    NSApplicationQuitWithoutSuddenTermination = YES;
+    NSUnbufferedIO = YES;
+    "OS_ACTIVITY_DT_MODE" = YES;
+    PAGER = less;
+    PATH = "/Users/michael.charland/Downloads/Xcode.app/Contents/Developer/usr/bin:/Users/michael.charland/.rvm/gems/ruby-2.6.3/bin:/Library/Frameworks/Python.framework/Versions/3.5/bin:/Users/michael.charland/go/bin/Users/michael.charland/.rvm/gems/ruby-2.6.3/bin:/Users/michael.charland/.rvm/gems/ruby-2.6.3@global/bin:/Users/michael.charland/.rvm/rubies/ruby-2.6.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Library/Apple/bin:/Users/michael.charland/.rvm/bin";
+    PWD = "/Users/michael.charland/git/CodeCoverageCompare/example/After/Example";
+    RUBYLIB = "/Users/michael.charland/.rvm/gems/ruby-2.6.3/gems/bundler-2.0.2/lib";
+    RUBYOPT = "-rbundler/setup";
+    "RUBY_VERSION" = "ruby-2.6.3";
+    SHELL = "/bin/zsh";
+    SHLVL = 3;
+    "SQLITE_ENABLE_THREAD_ASSERTIONS" = 1;
+    "SSH_AUTH_SOCK" = "/private/tmp/com.apple.launchd.hrExx9fyol/Listeners";
+    TERM = "xterm-256color";
+    "TERM_PROGRAM" = "Apple_Terminal";
+    "TERM_PROGRAM_VERSION" = 433;
+    "TERM_SESSION_ID" = "2C13176F-BD74-4179-B0F9-348AB1565DD9";
+    TMPDIR = "/var/folders/tq/jj7fk1_11r39z11zm3gl3cy5_y64xt/T/";
+    USER = "michael.charland";
+    XCTestConfigurationFilePath = "/Users/michael.charland/git/CodeCoverageCompare/example/After/Example/fastlane/test_output/Example (After).test_result/2_Test/Diagnostics/ExampleTests-2DD2F3F7-431E-4A8F-8574-0E34A46A1DB0/ExampleTests-B70393FD-3C8D-4036-A325-A0E55455476A/LaunchSessions/98D09D18-18A2-4589-B207-F2AA28C953B2/remote-container/tmp/ExampleTests-98D09D18-18A2-4589-B207-F2AA28C953B2.xctestconfiguration";
+    "XPC_FLAGS" = 0x0;
+    "XPC_SERVICE_NAME" = 0;
+    ZSH = "/Users/michael.charland/.oh-my-zsh";
+    "_" = "/usr/bin/env";
+    "__CF_USER_TEXT_ENCODING" = "0x55E313BA:0x0:0x52";
+    "__XCODE_BUILT_PRODUCTS_DIR_PATHS" = "/Users/michael.charland/Library/Developer/Xcode/DerivedData/Example-cmunmegopaurjncjxmtgoarsatwl/Build/Products/Debug";
+    "__XPC_DYLD_FRAMEWORK_PATH" = "/Users/michael.charland/Library/Developer/Xcode/DerivedData/Example-cmunmegopaurjncjxmtgoarsatwl/Build/Products/Debug:/Users/michael.charland/Library/Developer/Xcode/DerivedData/Example-cmunmegopaurjncjxmtgoarsatwl/Build/Products/Debug";
+    "__XPC_DYLD_LIBRARY_PATH" = "/Users/michael.charland/Library/Developer/Xcode/DerivedData/Example-cmunmegopaurjncjxmtgoarsatwl/Build/Products/Debug:/Users/michael.charland/Library/Developer/Xcode/DerivedData/Example-cmunmegopaurjncjxmtgoarsatwl/Build/Products/Debug";
+    "__XPC_LLVM_PROFILE_FILE" = "/var/folders/tq/jj7fk1_11r39z11zm3gl3cy5_y64xt/T/7BE4CC49-E43B-41DA-A8F7-26C02D00298E-65126-0003484B477B7FA0/129AFF4F-058D-455D-89C7-2BFCC3A93B72-%p.profraw%15x";
+    "keychain_password" = "$Password123!";
+    "rvm_alias_expanded" = "";
+    "rvm_bin_flag" = "";
+    "rvm_bin_path" = "/Users/michael.charland/.rvm/bin";
+    "rvm_docs_type" = "";
+    "rvm_gemstone_package_file" = "";
+    "rvm_gemstone_url" = "";
+    "rvm_hook" = "";
+    "rvm_niceness" = "";
+    "rvm_nightly_flag" = "";
+    "rvm_only_path_flag" = "";
+    "rvm_path" = "/Users/michael.charland/.rvm";
+    "rvm_prefix" = "/Users/michael.charland";
+    "rvm_pretty_print_flag" = "";
+    "rvm_proxy" = "";
+    "rvm_quiet_flag" = "";
+    "rvm_ruby_bits" = "";
+    "rvm_ruby_file" = "";
+    "rvm_ruby_make" = "";
+    "rvm_ruby_make_install" = "";
+    "rvm_ruby_mode" = "";
+    "rvm_script_name" = "";
+    "rvm_sdk" = "";
+    "rvm_silent_flag" = "";
+    "rvm_use_flag" = "";
+    "rvm_version" = "1.29.8-next (master)";
+}
+14:09:40.242 xctest[65135:13654543] App Sandbox active: NO
+14:09:40.242 xctest[65135:13654543] Creating future for 'Acquiring IDE transport' with timeout 60.00
+14:09:40.242 xctest[65135:13654543] Creating future for 'Exchange protocol versions with daemon' with timeout 15.00
+14:09:40.243 xctest[65135:13654543] <XCTWaiter: 0x7fb7ffc00310, state: XCTWaiterStateInProgress> entering wait loop for 15.00s with expectations: `Exchange protocol versions with daemon`
+14:09:40.243 xctest[65135:13654559] <XCTWaiter: 0x7fb7ffc00310, state: XCTWaiterStateSucceeded>: cancelWaiting
+14:09:40.243 xctest[65135:13654543] <XCTWaiter: 0x7fb7ffc00310, state: XCTWaiterStateSucceeded> done waiting
+14:09:40.243 xctest[65135:13654543] Canceling watchdog for <XCTWaiter: 0x7fb7ffc00310, state: XCTWaiterStateInProgress>.
+14:09:40.243 xctest[65135:13654543] <XCTWaiter: 0x7fb7ffc00310, state: XCTWaiterStateSucceeded> cleaning up `Exchange protocol versions with daemon`
+14:09:40.243 xctest[65135:13654543] Got daemon protocol version 28
+14:09:40.243 xctest[65135:13654543] Requesting IDE connection transport
+14:09:40.243 xctest[65135:13654543] <XCTWaiter: 0x7fb80ff31410, state: XCTWaiterStateInProgress> entering wait loop for 60.00s with expectations: `Acquiring IDE transport`
+14:09:40.244 xctest[65135:13654558] Creating transport with received transport data
+14:09:40.244 xctest[65135:13654558] <XCTWaiter: 0x7fb80ff31410, state: XCTWaiterStateSucceeded>: cancelWaiting
+14:09:40.244 xctest[65135:13654543] <XCTWaiter: 0x7fb80ff31410, state: XCTWaiterStateSucceeded> done waiting
+14:09:40.244 xctest[65135:13654543] Canceling watchdog for <XCTWaiter: 0x7fb80ff31410, state: XCTWaiterStateInProgress>.
+14:09:40.244 xctest[65135:13654543] <XCTWaiter: 0x7fb80ff31410, state: XCTWaiterStateSucceeded> cleaning up `Acquiring IDE transport`
+14:09:40.244 xctest[65135:13654543] Creating connection with transport <DTXFileDescriptorTransport: 0x7fb7ffc06fa0>
+14:09:40.244 xctest[65135:13654543] Creating the proxy channel with connection <DTXConnection 0x7fb80fe00f80 : x1>
+14:09:40.286 xcodebuild[65126:13654333] Starting test plan, clearing initialization timeout timer.
+14:09:40.286 xctest[65135:13654543] Entering test execution event loop
+14:09:40.286 xctest[65135:13654543] -[XCTRunnerIDESession testBundleWillStart:]
+14:09:40.286 xctest[65135:13654543] Loading test suite...
+14:09:40.295 xctest[65135:13654543] Finished loading test suite, took 0.009s
+Test Suite 'All tests' started at 2019-11-22 14:09:40.295
+14:09:40.295 xctest[65135:13654543] Running suite...
+14:09:40.295 xctest[65135:13654543] -[XCTRunnerIDESession testSuiteWillStart:]
+14:09:40.296 xcodebuild[65126:13654333] _XCT_testSuite:All tests didStartAt:2019-11-22 19:09:40 +0000
+Test Suite 'ExampleTests.xctest' started at 2019-11-22 14:09:40.295
+14:09:40.296 xcodebuild[65126:13654333] _XCT_testSuite:ExampleTests.xctest didStartAt:2019-11-22 19:09:40 +0000
+14:09:40.295 xctest[65135:13654543] -[XCTRunnerIDESession testSuiteWillStart:]
+14:09:40.296 xctest[65135:13654543] -[XCTRunnerIDESession testSuiteWillStart:]
+Test Suite 'ExistingClassCoverageDownTests' started at 2019-11-22 14:09:40.295
+Test Case '-[ExampleTests.ExistingClassCoverageDownTests testFunctionOne]' started.
+14:09:40.296 xcodebuild[65126:13654333] _XCT_testSuite:ExistingClassCoverageDownTests didStartAt:2019-11-22 19:09:40 +0000
+14:09:40.296 xctest[65135:13654543] -[XCTRunnerIDESession testCaseWillStart:] ExampleTests.ExistingClassCoverageDownTests testFunctionOne
+14:09:40.297 xcodebuild[65126:13654333] _XCT_testCaseDidStartForTestClass:ExampleTests.ExistingClassCoverageDownTests method:testFunctionOne
+Test Case '-[ExampleTests.ExistingClassCoverageDownTests testFunctionOne]' passed (0.002 seconds).
+Test Suite 'ExistingClassCoverageDownTests' passed at 2019-11-22 14:09:40.298.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.002 (0.003) seconds
+14:09:40.298 xctest[65135:13654543] -[XCTRunnerIDESession testCaseDidFinish:]
+14:09:40.299 xcodebuild[65126:13654333] _XCT_testCaseDidFinishForTestClass:ExampleTests.ExistingClassCoverageDownTests method:testFunctionOne withStatus:passed duration:0.002184033393859863
+14:09:40.298 xctest[65135:13654543] -[XCTRunnerIDESession testSuiteDidFinish:]
+14:09:40.299 xcodebuild[65126:13654333] _XCT_testSuite:ExistingClassCoverageDownTests didFinishAt:2019-11-22 19:09:40 +0000 runCount:1 withFailures:0 unexpected:0 testDuration:0.002184033393859863 totalDuration:0.002600908279418945
+14:09:40.299 xcodebuild[65126:13654333] _XCT_testSuite:ExistingClassCoverageUpTests didStartAt:2019-11-22 19:09:40 +0000
+14:09:40.298 xctest[65135:13654543] -[XCTRunnerIDESession testSuiteWillStart:]
+14:09:40.299 xcodebuild[65126:13654333] _XCT_testCaseDidStartForTestClass:ExampleTests.ExistingClassCoverageUpTests method:testFunctionOne
+14:09:40.299 xctest[65135:13654543] -[XCTRunnerIDESession testCaseWillStart:] ExampleTests.ExistingClassCoverageUpTests testFunctionOne
+14:09:40.299 xctest[65135:13654543] -[XCTRunnerIDESession testCaseDidFinish:]
+14:09:40.299 xcodebuild[65126:13654333] _XCT_testCaseDidFinishForTestClass:ExampleTests.ExistingClassCoverageUpTests method:testFunctionOne withStatus:passed duration:0.0002580881118774414
+14:09:40.299 xctest[65135:13654543] -[XCTRunnerIDESession testCaseWillStart:] ExampleTests.ExistingClassCoverageUpTests testFunctionTwo
+14:09:40.300 xcodebuild[65126:13654333] _XCT_testCaseDidStartForTestClass:ExampleTests.ExistingClassCoverageUpTests method:testFunctionTwo
+Test Suite 'ExistingClassCoverageUpTests' started at 2019-11-22 14:09:40.298
+Test Case '-[ExampleTests.ExistingClassCoverageUpTests testFunctionOne]' started.
+Test Case '-[ExampleTests.ExistingClassCoverageUpTests testFunctionOne]' passed (0.000 seconds).
+Test Case '-[ExampleTests.ExistingClassCoverageUpTests testFunctionTwo]' started.
+14:09:40.299 xctest[65135:13654543] -[XCTRunnerIDESession testCaseDidFinish:]
+14:09:40.300 xcodebuild[65126:13654333] _XCT_testCaseDidFinishForTestClass:ExampleTests.ExistingClassCoverageUpTests method:testFunctionTwo withStatus:passed duration:0.0002900362014770508
+14:09:40.300 xctest[65135:13654543] -[XCTRunnerIDESession testSuiteDidFinish:]
+14:09:40.300 xcodebuild[65126:13654333] _XCT_testSuite:ExistingClassCoverageUpTests didFinishAt:2019-11-22 19:09:40 +0000 runCount:2 withFailures:0 unexpected:0 testDuration:0.0005481243133544922 totalDuration:0.001108050346374512
+14:09:40.300 xcodebuild[65126:13654333] _XCT_testSuite:ExistingClassCoveredTests didStartAt:2019-11-22 19:09:40 +0000
+14:09:40.300 xctest[65135:13654543] -[XCTRunnerIDESession testSuiteWillStart:]
+Test Case '-[ExampleTests.ExistingClassCoverageUpTests testFunctionTwo]' passed (0.000 seconds).
+Test Suite 'ExistingClassCoverageUpTests' passed at 2019-11-22 14:09:40.299.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'ExistingClassCoveredTests' started at 2019-11-22 14:09:40.300
+Test Case '-[ExampleTests.ExistingClassCoveredTests testExistingClassCoveredTests]' started.
+Test Case '-[ExampleTests.ExistingClassCoveredTests testExistingClassCoveredTests]' passed (0.000 seconds).
+Test Suite 'ExistingClassCoveredTests' passed at 2019-11-22 14:09:40.301.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Test Suite 'NewClassCoveredTests' started at 2019-11-22 14:09:40.301
+Test Case '-[ExampleTests.NewClassCoveredTests testNewClassCovered]' started.
+14:09:40.302 xcodebuild[65126:13654333] _XCT_testCaseDidStartForTestClass:ExampleTests.ExistingClassCoveredTests method:testExistingClassCoveredTests
+14:09:40.300 xctest[65135:13654543] -[XCTRunnerIDESession testCaseWillStart:] ExampleTests.ExistingClassCoveredTests testExistingClassCoveredTests
+14:09:40.300 xctest[65135:13654543] -[XCTRunnerIDESession testCaseDidFinish:]
+14:09:40.302 xcodebuild[65126:13654333] _XCT_testCaseDidFinishForTestClass:ExampleTests.ExistingClassCoveredTests method:testExistingClassCoveredTests withStatus:passed duration:0.0003219842910766602
+14:09:40.301 xctest[65135:13654543] -[XCTRunnerIDESession testSuiteDidFinish:]
+14:09:40.302 xcodebuild[65126:13654333] _XCT_testSuite:ExistingClassCoveredTests didFinishAt:2019-11-22 19:09:40 +0000 runCount:1 withFailures:0 unexpected:0 testDuration:0.0003219842910766602 totalDuration:0.0007230043411254883
+14:09:40.301 xctest[65135:13654543] -[XCTRunnerIDESession testSuiteWillStart:]
+14:09:40.302 xcodebuild[65126:13654333] _XCT_testSuite:NewClassCoveredTests didStartAt:2019-11-22 19:09:40 +0000
+14:09:40.301 xctest[65135:13654543] -[XCTRunnerIDESession testCaseWillStart:] ExampleTests.NewClassCoveredTests testNewClassCovered
+14:09:40.302 xcodebuild[65126:13654333] _XCT_testCaseDidStartForTestClass:ExampleTests.NewClassCoveredTests method:testNewClassCovered
+Test Case '-[ExampleTests.NewClassCoveredTests testNewClassCovered]' passed (0.000 seconds).
+Test Suite 'NewClassCoveredTests' passed at 2019-11-22 14:09:40.302.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Test Suite 'ExampleTests.xctest' passed at 2019-11-22 14:09:40.302.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.003 (0.007) seconds
+Test Suite 'All tests' passed at 2019-11-22 14:09:40.302.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.003 (0.007) seconds
+14:09:40.301 xctest[65135:13654543] -[XCTRunnerIDESession testCaseDidFinish:]
+14:09:40.303 xcodebuild[65126:13654333] _XCT_testCaseDidFinishForTestClass:ExampleTests.NewClassCoveredTests method:testNewClassCovered withStatus:passed duration:0.0003180503845214844
+14:09:40.302 xctest[65135:13654543] -[XCTRunnerIDESession testSuiteDidFinish:]
+14:09:40.303 xcodebuild[65126:13654333] _XCT_testSuite:NewClassCoveredTests didFinishAt:2019-11-22 19:09:40 +0000 runCount:1 withFailures:0 unexpected:0 testDuration:0.0003180503845214844 totalDuration:0.0007219314575195312
+14:09:40.302 xctest[65135:13654543] -[XCTRunnerIDESession testSuiteDidFinish:]
+14:09:40.303 xcodebuild[65126:13654333] _XCT_testSuite:ExampleTests.xctest didFinishAt:2019-11-22 19:09:40 +0000 runCount:5 withFailures:0 unexpected:0 testDuration:0.0033721923828125 totalDuration:0.006573915481567383
+14:09:40.302 xctest[65135:13654543] -[XCTRunnerIDESession testSuiteDidFinish:]
+14:09:40.303 xcodebuild[65126:13654333] _XCT_testSuite:All tests didFinishAt:2019-11-22 19:09:40 +0000 runCount:5 withFailures:0 unexpected:0 testDuration:0.0033721923828125 totalDuration:0.007375955581665039
+14:09:40.303 xctest[65135:13654543] Finished running suite.
+14:09:40.303 xcodebuild[65126:13654333] -[XCTTestRunnerSession _XCT_didFinishExecutingTestPlan]_block_invoke
+14:09:40.303 xctest[65135:13654543] -[XCTRunnerIDESession testBundleDidFinish:], Flushing connection to IDE...
+14:09:40.303 xctest[65135:13654543] Exited test execution event loop
+14:09:40.303 xctest[65135:13654543] Calling completion.
+14:09:40.303 xctest[65135:13654543] <XCTWaiter: 0x7fb7ffc01310, state: XCTWaiterStateInProgress> entering wait loop for 15.00s with expectations: `IDE confirmed the end of session`
+14:09:40.304 xctest[65135:13654559] <XCTWaiter: 0x7fb7ffc01310, state: XCTWaiterStateSucceeded>: cancelWaiting
+14:09:40.304 xctest[65135:13654543] <XCTWaiter: 0x7fb7ffc01310, state: XCTWaiterStateSucceeded> done waiting
+14:09:40.304 xctest[65135:13654543] Canceling watchdog for <XCTWaiter: 0x7fb7ffc01310, state: XCTWaiterStateInProgress>.
+14:09:40.304 xctest[65135:13654543] <XCTWaiter: 0x7fb7ffc01310, state: XCTWaiterStateSucceeded> cleaning up `IDE confirmed the end of session`
+14:09:40.307 xcodebuild[65126:13654389] <XCTTestRunnerSession: 0x7ff034c282c0> lost its connection.
+14:09:40.307 xcodebuild[65126:13654393] Socket transport for DTX-layer communication disconnected.
+14:09:40.307 xcodebuild[65126:13654333] Lost connection to test process
+14:09:40.307 xcodebuild[65126:13654333] Test process exited with exit code 0
+14:09:40.560 xcodebuild[65126:13654333] <IDETestOperationCoordinator: 0x7ff064ee58e0> finished receiving data from testing launch session
+14:09:40.560 xcodebuild[65126:13654333] <IDETestOperationCoordinator: 0x7ff064ee58e0>: _considerFlushingDelegateBlockQueue - nothing to flush
+14:09:40.560 xcodebuild[65126:13654333] _finishWithError:(null)

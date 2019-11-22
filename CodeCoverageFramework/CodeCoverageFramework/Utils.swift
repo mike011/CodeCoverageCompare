@@ -22,7 +22,14 @@ public class Utils {
         let json = try! Data(contentsOf: url)
 
         let decoder = JSONDecoder()
-        return try! decoder.decode(Project.self, from: json)
+        do {
+            return try decoder.decode(Project.self, from: json)
+        } catch {
+            let elements: [Element] = try!
+                decoder.decode([Element].self, from: json)
+            let target = Target(coveredLines: 0, lineCoverage: 0, files: elements[0].files, name: "", executableLines: 0, buildProductPath: "")
+            return Project(coveredLines: 0, lineCoverage: 0, targets: [target], executableLines: 0)
+        }
     }
 
     public static func getParentFileName(from file: String) -> URL {

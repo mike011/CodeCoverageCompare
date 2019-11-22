@@ -8,7 +8,7 @@
 	<array>
 		<dict>
 			<key>DiagnosticsDirectory</key>
-			<string>ExampleTests-F0F1916A-7A3C-4B74-B156-D0065B6405C0</string>
+			<string>ExampleTests-9560C380-F592-4777-AD38-A8E62FA6B414</string>
 			<key>ProjectPath</key>
 			<string>Example.xcodeproj</string>
 			<key>TargetName</key>
@@ -23,22 +23,22 @@
 			<array>
 				<dict>
 					<key>Duration</key>
-					<real>0.0078420639038085938</real>
+					<real>0.0082080364227294922</real>
 					<key>Subtests</key>
 					<array>
 						<dict>
 							<key>Duration</key>
-							<real>0.0069220066070556641</real>
+							<real>0.0071099996566772461</real>
 							<key>Subtests</key>
 							<array>
 								<dict>
 									<key>Duration</key>
-									<real>0.0031380653381347656</real>
+									<real>0.0029699802398681641</real>
 									<key>Subtests</key>
 									<array>
 										<dict>
 											<key>Duration</key>
-											<real>0.0022408962249755859</real>
+											<real>0.0018830299377441406</real>
 											<key>TestIdentifier</key>
 											<string>ExistingClassCoverageDownTests/testFunctionOne()</string>
 											<key>TestName</key>
@@ -48,11 +48,11 @@
 											<key>TestStatus</key>
 											<string>Success</string>
 											<key>TestSummaryGUID</key>
-											<string>9EC68413-4C02-44AC-9D3D-EDD2D9F2A9C1</string>
+											<string>A758B55B-23CC-4C88-A0C2-89623BC318C5</string>
 										</dict>
 										<dict>
 											<key>Duration</key>
-											<real>0.00029802322387695312</real>
+											<real>0.00030601024627685547</real>
 											<key>TestIdentifier</key>
 											<string>ExistingClassCoverageDownTests/testFunctionTwo()</string>
 											<key>TestName</key>
@@ -62,7 +62,7 @@
 											<key>TestStatus</key>
 											<string>Success</string>
 											<key>TestSummaryGUID</key>
-											<string>8C25C8D5-C426-44EC-8C7F-C7D467B8B060</string>
+											<string>655FC71D-EBD2-402E-95CF-26F31472817E</string>
 										</dict>
 									</array>
 									<key>TestIdentifier</key>
@@ -74,12 +74,12 @@
 								</dict>
 								<dict>
 									<key>Duration</key>
-									<real>0.00063192844390869141</real>
+									<real>0.00090897083282470703</real>
 									<key>Subtests</key>
 									<array>
 										<dict>
 											<key>Duration</key>
-											<real>0.00028395652770996094</real>
+											<real>0.00042808055877685547</real>
 											<key>TestIdentifier</key>
 											<string>ExistingClassCoverageDroppedTests/testExistingClassCoverageDropped()</string>
 											<key>TestName</key>
@@ -89,7 +89,7 @@
 											<key>TestStatus</key>
 											<string>Success</string>
 											<key>TestSummaryGUID</key>
-											<string>BBACAFE0-13FD-473C-B856-1C0F3315D748</string>
+											<string>36FAB9DD-C52D-41A6-B28C-F4280FE5B50E</string>
 										</dict>
 									</array>
 									<key>TestIdentifier</key>
@@ -101,12 +101,12 @@
 								</dict>
 								<dict>
 									<key>Duration</key>
-									<real>0.00075900554656982422</real>
+									<real>0.00080907344818115234</real>
 									<key>Subtests</key>
 									<array>
 										<dict>
 											<key>Duration</key>
-											<real>0.00033903121948242188</real>
+											<real>0.00036501884460449219</real>
 											<key>TestIdentifier</key>
 											<string>ExistingClassCoverageUpTests/testFunctionOne()</string>
 											<key>TestName</key>
@@ -116,7 +116,7 @@
 											<key>TestStatus</key>
 											<string>Success</string>
 											<key>TestSummaryGUID</key>
-											<string>A3DD6A00-7BD5-48EB-B7B6-160E97BF3345</string>
+											<string>4F83EBC4-2105-4C04-B618-6469F35D4B2D</string>
 										</dict>
 									</array>
 									<key>TestIdentifier</key>
@@ -128,12 +128,12 @@
 								</dict>
 								<dict>
 									<key>Duration</key>
-									<real>0.00065004825592041016</real>
+									<real>0.00088202953338623047</real>
 									<key>Subtests</key>
 									<array>
 										<dict>
 											<key>Duration</key>
-											<real>0.00026702880859375</real>
+											<real>0.00033700466156005859</real>
 											<key>TestIdentifier</key>
 											<string>ExistingClassCoveredTests/testExistingClassCoveredTests()</string>
 											<key>TestName</key>
@@ -143,7 +143,7 @@
 											<key>TestStatus</key>
 											<string>Success</string>
 											<key>TestSummaryGUID</key>
-											<string>AE1364B5-457A-4999-9294-36E18765EDEE</string>
+											<string>36EE732E-466D-48C7-8E0D-C0660DE68658</string>
 										</dict>
 									</array>
 									<key>TestIdentifier</key>

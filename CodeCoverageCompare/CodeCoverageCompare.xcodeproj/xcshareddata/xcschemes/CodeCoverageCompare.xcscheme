@@ -29,6 +29,8 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -52,22 +54,24 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "//Users/michael/Documents/git/CodeCoverageCompare/example/Before/Example/fastlane/test_output/coverage.json"
+            argument = "/Users/michael.charland/Downloads/cc/before.json"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "//Users/michael/Documents/git/CodeCoverageCompare/example/After/Example/fastlane/test_output/coverage.json"
+            argument = "/Users/michael.charland/Downloads/cc/after.json"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "https://mike011.github.io/CodeCoverageCompare/before"
+            argument = "https://s3.amazonaws.com/textnow-builds/public/ios-jenkins/develop/latestBuild/Service_Framework/fastlane/test_output/slather"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "https://mike011.github.io/CodeCoverageCompare/after"
+            argument = "https://s3.amazonaws.com/textnow-builds/public/ios-jenkins/michael/upload_image/287/Service_Framework/fastlane/test_output/slather"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

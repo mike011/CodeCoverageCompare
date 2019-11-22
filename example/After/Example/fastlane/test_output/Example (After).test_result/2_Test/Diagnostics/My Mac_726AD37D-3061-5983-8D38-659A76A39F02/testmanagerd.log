@@ -1,6 +1,6 @@
-09:09:44.719 xcodebuild[49767:13432148] Got authorization request for pid 49812
+14:09:40.262 xcodebuild[65126:13654393] Got authorization request for pid 65135
 
-09:09:44.719 xcodebuild[49767:13432148] Requesting authorization for pid 49812
+14:09:40.262 xcodebuild[65126:13654393] Requesting authorization for pid 65135
 
-09:09:44.719 xcodebuild[49767:13432148] Got reply to authorization request for pid 49812 (result:error): 1: (null)
+14:09:40.281 xcodebuild[65126:13654389] Got reply to authorization request for pid 65135 (result:error): 1: (null)
 
