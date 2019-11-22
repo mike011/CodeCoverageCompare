@@ -26,7 +26,7 @@ public class CoverageComparison {
             for beforeFile in target.files {
                 let filename = beforeFile.name
                 let beforeCoverage = beforeFile.lineCoverage
-                var afterCoverage = 0.0
+                var afterCoverage: Double?
                 for afterTarget in after.targets {
                     for afterFile in afterTarget.files {
                         if afterFile.name == filename {
@@ -42,7 +42,7 @@ public class CoverageComparison {
         for target in after.targets {
             for afterFile in target.files {
                 let filename = afterFile.name
-                var beforeCoverage = 0.0
+                var beforeCoverage: Double?
                 let afterCoverage = afterFile.lineCoverage
                 for beforeTarget in before.targets {
                     for beforeFile in beforeTarget.files {
@@ -92,7 +92,7 @@ public class CoverageComparison {
     func printHTML(row: Row, devLink: String, prLink: String) {
         let end = "_comparison.html"
         let url = writeLocation.appendingPathComponent("\(row.getName())\(end)")
-        ComparisonWebPage(sourceFile: row.sourceFile, devLink: devLink, prLink: prLink).writeToFile(url: url)
+        ComparisonWebPage(row: row, devLink: devLink, prLink: prLink).writeToFile(url: url)
         print(row.toString(baseURL: prLink, end: end))
     }
 }
