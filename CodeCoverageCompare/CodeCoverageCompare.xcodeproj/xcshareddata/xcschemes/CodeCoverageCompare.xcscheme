@@ -52,19 +52,19 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "//Users/michael/Documents/git/CodeCoverageCompare/example/before.json"
+            argument = "//Users/michael/Documents/git/CodeCoverageCompare/example/Before/Example/fastlane/test_output/coverage.json"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "//Users/michael/Documents/git/CodeCoverageCompare/example/after.json"
+            argument = "//Users/michael/Documents/git/CodeCoverageCompare/example/After/Example/fastlane/test_output/coverage.json"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "http://www.nba.com"
+            argument = "https://mike011.github.io/CodeCoverageCompare/before"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "http://www.espn.com"
+            argument = "https://mike011.github.io/CodeCoverageCompare/after"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

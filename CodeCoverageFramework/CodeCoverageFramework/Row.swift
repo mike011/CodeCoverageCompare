@@ -22,15 +22,15 @@ struct Row {
         }
         return change
     }
-    let file: String
+    let sourceFile: String
     let beforeCoverage: Double
     let afterCoverage: Double
     var test: Bool {
-        return file.contains("Test")
+        return sourceFile.contains("Test")
     }
 
-    func toString(baseURL: String) -> String {
-        let name = getLink(baseURL: baseURL)
+    func toString(baseURL: String, end: String) -> String {
+        let name = getLink(baseURL: baseURL, withEnd: end)
         return "|\(change)|\(name)|\(getPercentage(beforeCoverage))|\(getPercentage(afterCoverage))|"
     }
 
@@ -38,16 +38,16 @@ struct Row {
           return String(format: "%.0f", value * 100) + "%"
       }
 
-    private func getLink(baseURL: String) -> String {
+    private func getLink(baseURL: String, withEnd end: String) -> String {
         let name = getName()
-        let url = "\(baseURL)/\(name).html"
-        return "<a href=\(url)>\(name)%</a>"
+        let url = "\(baseURL)/\(name)\(end)"
+        return "<a href=\(url)>\(name)</a>"
     }
 
     func getName() -> String {
-        var name = file
-          if let period = file.firstIndex(of: ".") {
-              name = file.substring(to: period)
+        var name = sourceFile
+          if let period = sourceFile.firstIndex(of: ".") {
+              name = sourceFile.substring(to: period)
           }
         return name
     }
@@ -55,10 +55,10 @@ struct Row {
 
 extension Row: Hashable {
     static func == (lhs: Row, rhs: Row) -> Bool {
-        return lhs.file == rhs.file
+        return lhs.sourceFile == rhs.sourceFile
     }
 
     func hash(into hasher: inout Hasher) {
-        hasher.combine(file)
+        hasher.combine(sourceFile)
     }
 }

@@ -35,7 +35,7 @@ public class CoverageComparison {
                         }
                     }
                 }
-                rows.insert(Row(file: filename, beforeCoverage: beforeCoverage, afterCoverage: afterCoverage))
+                rows.insert(Row(sourceFile: filename, beforeCoverage: beforeCoverage, afterCoverage: afterCoverage))
             }
         }
 
@@ -52,11 +52,11 @@ public class CoverageComparison {
                         }
                     }
                 }
-                rows.insert(Row(file: filename, beforeCoverage: beforeCoverage, afterCoverage: afterCoverage))
+                rows.insert(Row(sourceFile: filename, beforeCoverage: beforeCoverage, afterCoverage: afterCoverage))
             }
         }
         var result = Array(rows)
-        result.sort(by: { $0.file < $1.file })
+        result.sort(by: { $0.sourceFile < $1.sourceFile })
         return result
     }
 
@@ -78,16 +78,21 @@ public class CoverageComparison {
             }
         }
 
-        sourceRows.sort(by: { $0.file < $1.file })
+        sourceRows.sort(by: { $0.sourceFile < $1.sourceFile })
         for row in sourceRows {
-            let url = writeLocation.appendingPathComponent("\(row.getName())_comparison.html")
-            ComparisonWebPage(devLink: devLink, prLink: prLink).writeToFile(url: url)
-            print(row.toString(baseURL: prLink))
+            printHTML(row: row, devLink: devLink, prLink: prLink)
         }
 
-        testRows.sort(by: { $0.file < $1.file })
+        testRows.sort(by: { $0.sourceFile < $1.sourceFile })
         for row in testRows {
-            print(row.toString(baseURL: devLink))
+            printHTML(row: row, devLink: devLink, prLink: prLink)
         }
+    }
+
+    func printHTML(row: Row, devLink: String, prLink: String) {
+        let end = "_comparison.html"
+        let url = writeLocation.appendingPathComponent("\(row.getName())\(end)")
+        ComparisonWebPage(devLink: devLink, prLink: prLink).writeToFile(url: url)
+        print(row.toString(baseURL: prLink, end: end))
     }
 }

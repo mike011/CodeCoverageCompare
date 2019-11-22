@@ -17,12 +17,12 @@ class CoverageCompareTests: XCTestCase {
         let before = createProject(coverage: 0.3)
         let after = createProject(coverage: 0.5)
 
-        let cc = CoverageComparison(before: before, after: after)
+        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after)
 
         let rows = cc.getFilesChanged()
         XCTAssertFalse(rows.isEmpty)
         XCTAssertEqual(rows.count, 1)
-        XCTAssertEqual(rows.first!.file, "name")
+        XCTAssertEqual(rows.first!.sourceFile, "name")
         XCTAssertEqual(rows.first!.beforeCoverage, 0.3)
         XCTAssertEqual(rows.first!.afterCoverage, 0.5)
         XCTAssertFalse(rows.first!.test)
@@ -42,19 +42,19 @@ class CoverageCompareTests: XCTestCase {
         let before = createProjectWithMultipleFiles(coverageA: 0.2, coverageB: 0.9)
         let after = createProjectWithMultipleFiles(coverageA: 0.1, coverageB: 0.92)
 
-        let cc = CoverageComparison(before: before, after: after)
+        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after)
 
         let rows = cc.getFilesChanged()
 
         XCTAssertFalse(rows.isEmpty)
         XCTAssertEqual(rows.count, 2)
 
-        XCTAssertEqual(rows[0].file, "name")
+        XCTAssertEqual(rows[0].sourceFile, "name")
         XCTAssertEqual(rows[0].beforeCoverage, 0.2)
         XCTAssertEqual(rows[0].afterCoverage, 0.1)
         XCTAssertFalse(rows[0].test)
 
-        XCTAssertEqual(rows[1].file, "name2")
+        XCTAssertEqual(rows[1].sourceFile, "name2")
         XCTAssertEqual(rows[1].beforeCoverage, 0.9)
         XCTAssertEqual(rows[1].afterCoverage, 0.92)
         XCTAssertFalse(rows[1].test)
@@ -75,19 +75,19 @@ class CoverageCompareTests: XCTestCase {
         let before = createProjectWithTargets(nameA: "name", coverageA: 0.23, nameB: "testName", coverageB: 0.92)
         let after = createProjectWithTargets(nameA: "name", coverageA: 0.22, nameB: "testName", coverageB: 0.91)
 
-        let cc = CoverageComparison(before: before, after: after)
+        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after)
 
         let rows = cc.getFilesChanged()
 
         XCTAssertFalse(rows.isEmpty)
         XCTAssertEqual(rows.count, 2)
 
-        XCTAssertEqual(rows[0].file, "name")
+        XCTAssertEqual(rows[0].sourceFile, "name")
         XCTAssertEqual(rows[0].beforeCoverage, 0.23)
         XCTAssertEqual(rows[0].afterCoverage, 0.22)
         XCTAssertFalse(rows[0].test)
 
-        XCTAssertEqual(rows[1].file, "testName")
+        XCTAssertEqual(rows[1].sourceFile, "testName")
         XCTAssertEqual(rows[1].beforeCoverage, 0.92)
         XCTAssertEqual(rows[1].afterCoverage, 0.91)
         XCTAssertFalse(rows[1].test)
@@ -97,19 +97,19 @@ class CoverageCompareTests: XCTestCase {
         let before = createProjectWithTargets(nameA: "name", coverageA: 0.23, nameB: "testName", coverageB: 0.92)
         let after = createProjectWithTargets(nameA: "testName", coverageA: 0.22, nameB: "name", coverageB: 0.91)
 
-        let cc = CoverageComparison(before: before, after: after)
+        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after)
 
         let rows = cc.getFilesChanged()
 
         XCTAssertFalse(rows.isEmpty)
         XCTAssertEqual(rows.count, 2)
 
-        XCTAssertEqual(rows[0].file, "name")
+        XCTAssertEqual(rows[0].sourceFile, "name")
         XCTAssertEqual(rows[0].beforeCoverage, 0.23)
         XCTAssertEqual(rows[0].afterCoverage, 0.91)
         XCTAssertFalse(rows[0].test)
 
-        XCTAssertEqual(rows[1].file, "testName")
+        XCTAssertEqual(rows[1].sourceFile, "testName")
         XCTAssertEqual(rows[1].beforeCoverage, 0.92)
         XCTAssertEqual(rows[1].afterCoverage, 0.22)
         XCTAssertFalse(rows[1].test)
