@@ -66,7 +66,7 @@ public class CoverageComparison {
 
     public func printTable(devLink: String, prLink: String) {
         print("|Change|File|Develop|PR|")
-        print("|:----:|----|:-----:|::|")
+        print("|:----:|----|:-----:|:--:|")
 
         var sourceRows = [Row]()
         var testRows = [Row]()
