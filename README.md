@@ -3,7 +3,7 @@ A tool written in Swift for macOS to present in a simple format the result of co
 Here is what the output will look like:
 
 |Change|File|Develop|PR|
-|:----:|----|:-----:|::|
+|---|----|-----|--|
 |👎|<a href=https://mike011.github.io/CodeCoverageCompare/after/ExistingClassCoverageDown_comparison.html>ExistingClassCoverageDown</a>|100%|50%|
 |🚫|<a href=https://mike011.github.io/CodeCoverageCompare/after/ExistingClassCoverageDropped_comparison.html>ExistingClassCoverageDropped</a>|100%|0%|
 |👍|<a href=https://mike011.github.io/CodeCoverageCompare/after/ExistingClassCoverageUp_comparison.html>ExistingClassCoverageUp</a>|33%|67%|
