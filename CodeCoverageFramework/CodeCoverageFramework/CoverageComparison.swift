@@ -92,7 +92,7 @@ public class CoverageComparison {
     func printHTML(row: Row, devLink: String, prLink: String) {
         let end = "_comparison.html"
         let url = writeLocation.appendingPathComponent("\(row.getName())\(end)")
-        ComparisonWebPage(devLink: devLink, prLink: prLink).writeToFile(url: url)
+        ComparisonWebPage(sourceFile: row.sourceFile, devLink: devLink, prLink: prLink).writeToFile(url: url)
         print(row.toString(baseURL: prLink, end: end))
     }
 }

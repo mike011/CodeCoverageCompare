@@ -10,10 +10,12 @@ import Foundation
 
 class ComparisonWebPage {
 
+    private let sourceFile: String
     private let devLink: String
     private let prLink: String
 
-    init(devLink: String, prLink: String) {
+    init(sourceFile: String, devLink: String, prLink: String) {
+        self.sourceFile = sourceFile
         self.devLink = devLink
         self.prLink = prLink
     }
@@ -55,11 +57,11 @@ class ComparisonWebPage {
                 </head>
             <body>
                 <div class="split left">
-                  <iframe src="\(devLink)" width="100%" height="100%" frameborder="0" scrolling="yes"></iframe>
+                  <iframe src="\(devLink)/\(sourceFile)" width="100%" height="100%" frameborder="0" scrolling="yes"></iframe>
                 </div>
 
                 <div class="split right">
-                  <iframe src="\(prLink)" width="100%" height="100%" frameborder="0" scrolling="yes"></iframe>
+                  <iframe src="\(prLink)/\(sourceFile)" width="100%" height="100%" frameborder="0" scrolling="yes"></iframe>
                 </div>
             </body>
         </html>
