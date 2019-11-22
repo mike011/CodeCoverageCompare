@@ -23,8 +23,7 @@ platform :ios do
         project: "Example.xcodeproj",
         scheme: "Example (After)",
         configuration: "Debug",
-        xcargs: "GCC_WARN_INHIBIT_ALL_WARNINGS=YES -sdk iphonesimulator ONLY_ACTIVE_ARCH=YES VALID_ARCHS=x86_64",
-        #destination: "platform=iOS Simulator,name=iPhone 8 Plus",
+        xcargs: "GCC_WARN_INHIBIT_ALL_WARNINGS=YES ONLY_ACTIVE_ARCH=YES VALID_ARCHS=x86_64",
         code_coverage: true,
         result_bundle: true,
         output_directory: "./fastlane/test_output"
