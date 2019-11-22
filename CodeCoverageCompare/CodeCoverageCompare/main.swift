@@ -25,10 +25,15 @@ let afterFileName = arguments[2]
 let devURLBasePath = arguments[3]
 let prURLBasePath = arguments[4]
 
-let before = Utils.getCoverageFile(file: beforeFileName)
-let after = Utils.getCoverageFile(file: afterFileName)
-let writeLocation = Utils.getParentFileName(from: afterFileName)
+func go() {
+    guard let before = Utils.getCoverageFile(file: beforeFileName),
+        let after = Utils.getCoverageFile(file: afterFileName) else {
+            return
+    }
+    let writeLocation = Utils.getParentFileName(from: afterFileName)
 
-let cc = CoverageComparison(writeLocation: writeLocation, before: before, after: after)
-cc.printTable(devLink: devURLBasePath, prLink: prURLBasePath)
+    let cc = CoverageComparison(writeLocation: writeLocation, before: before, after: after)
+    cc.printTable(devLink: devURLBasePath, prLink: prURLBasePath)
+}
+go()
 

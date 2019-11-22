@@ -9,9 +9,16 @@
 import Foundation
 
 public class Utils {
-    public static func getCoverageFile(file: String) -> Project {
+    public static func getCoverageFile(file: String) -> Project? {
+
+        let fileManager = FileManager.default
+        if !fileManager.fileExists(atPath: file) {
+            print("File not found: \(file)")
+            return nil
+        }
 
         let url = URL(fileURLWithPath: file)
+
         let json = try! Data(contentsOf: url)
 
         let decoder = JSONDecoder()
