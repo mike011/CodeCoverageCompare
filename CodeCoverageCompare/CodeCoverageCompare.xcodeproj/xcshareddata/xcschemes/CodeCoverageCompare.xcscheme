@@ -60,11 +60,11 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "https://s3.amazonaws.com/textnow-builds/public/ios-jenkins/develop/latestBuild/Service_Framework/fastlane/test_output/slather"
+            argument = "https://mike011.github.io/CodeCoverageCompare/before/"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "https://s3.amazonaws.com/textnow-builds/public/ios-jenkins/michael/upload_image/287/Service_Framework/fastlane/test_output/slather"
+            argument = "https://mike011.github.io/CodeCoverageCompare/after/"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
