@@ -28,7 +28,7 @@ public struct File: Codable {
     public let coveredLines: Int
     public let lineCoverage: Double
     public let path: String
-    let functions: [Function]
+    let functions: [Function]?
     public let name: String
     let executableLines: Int
 }

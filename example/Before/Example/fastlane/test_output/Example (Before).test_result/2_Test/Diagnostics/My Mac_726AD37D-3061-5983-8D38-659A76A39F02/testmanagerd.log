@@ -1,0 +1,6 @@
+21:32:13.007 xcodebuild[9825:63807] Got authorization request for pid 9922
+
+21:32:13.007 xcodebuild[9825:63807] Requesting authorization for pid 9922
+
+21:32:13.008 xcodebuild[9825:63807] Got reply to authorization request for pid 9922 (result:error): 1: (null)
+

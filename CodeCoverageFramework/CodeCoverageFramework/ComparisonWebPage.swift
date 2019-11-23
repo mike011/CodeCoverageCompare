@@ -32,14 +32,14 @@ class ComparisonWebPage {
     func getContents() -> String {
         var before = "Coverage file does not exist"
         if row.beforeCoverage != nil {
-            let beforeLink = "\(devLink)/\(row.sourceFile)"
+            let beforeLink = "\(devLink)/\(row.sourceFile).html"
             before = """
                 <iframe src="\(beforeLink)" width="100%" height="100%" frameborder="0" scrolling="yes"></iframe>
             """
         }
         var after = "Does not exist"
         if row.afterCoverage != nil {
-            let afterLink = "\(prLink)/\(row.sourceFile)"
+            let afterLink = "\(prLink)/\(row.sourceFile).html"
             after = """
                 <iframe src="\(afterLink)" width="100%" height="100%" frameborder="0" scrolling="yes"></iframe>
             """

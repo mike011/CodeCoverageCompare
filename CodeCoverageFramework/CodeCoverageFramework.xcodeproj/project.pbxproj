@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35BF5E9D2388636200E475D6 /* Coverage10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BF5E9C2388636200E475D6 /* Coverage10.swift */; };
 		4C61E99B226B86CC00F95EA9 /* CodeCoverageFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C61E991226B86CB00F95EA9 /* CodeCoverageFramework.framework */; };
 		4CA6CD4D237A043D0010ACC9 /* Coverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6CD4C237A043D0010ACC9 /* Coverage.swift */; };
 		4CA6CD57237B616D0010ACC9 /* CoverageComparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6CD56237B616D0010ACC9 /* CoverageComparison.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		35BF5E9C2388636200E475D6 /* Coverage10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coverage10.swift; sourceTree = "<group>"; };
 		4C61E991226B86CB00F95EA9 /* CodeCoverageFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CodeCoverageFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C61E99A226B86CC00F95EA9 /* CodeCoverageFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeCoverageFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C61E9A1226B86CC00F95EA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				4CA6CD54237B612E0010ACC9 /* Info.plist */,
 				4CD46632238613DF00343985 /* ComparisonWebPage.swift */,
 				4CA6CD4C237A043D0010ACC9 /* Coverage.swift */,
+				35BF5E9C2388636200E475D6 /* Coverage10.swift */,
 				4CA6CD56237B616D0010ACC9 /* CoverageComparison.swift */,
 				4CA6CD58237B619B0010ACC9 /* Row.swift */,
 				4CA6CD5A237B61F40010ACC9 /* Utils.swift */,
@@ -217,6 +220,7 @@
 			files = (
 				4CD46633238613DF00343985 /* ComparisonWebPage.swift in Sources */,
 				4CA6CD57237B616D0010ACC9 /* CoverageComparison.swift in Sources */,
+				35BF5E9D2388636200E475D6 /* Coverage10.swift in Sources */,
 				4CA6CD59237B619B0010ACC9 /* Row.swift in Sources */,
 				4CA6CD4D237A043D0010ACC9 /* Coverage.swift in Sources */,
 				4CA6CD5B237B61F40010ACC9 /* Utils.swift in Sources */,

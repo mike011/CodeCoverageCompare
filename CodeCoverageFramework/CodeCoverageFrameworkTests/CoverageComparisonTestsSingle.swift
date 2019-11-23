@@ -17,7 +17,7 @@ class CoverageComparisonSingleTests: XCTestCase {
     func testNoCoverage() {
         let before = Project(coveredLines: 0, lineCoverage: 0, targets: [Target](), executableLines: 0)
         let after = Project(coveredLines: 0, lineCoverage: 0, targets: [Target](), executableLines: 0)
-        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after)
+        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String]())
         let rows = cc.getFilesChanged()
         XCTAssertTrue(rows.isEmpty)
     }
@@ -28,7 +28,7 @@ class CoverageComparisonSingleTests: XCTestCase {
         let before = Project(coveredLines: 0, lineCoverage: 0, targets: [Target](), executableLines: 0)
         let after = createProject()
 
-        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after)
+        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String]())
 
         let rows = cc.getFilesChanged()
         XCTAssertFalse(rows.isEmpty)
@@ -43,7 +43,7 @@ class CoverageComparisonSingleTests: XCTestCase {
         let before = createProject()
         let after = Project(coveredLines: 0, lineCoverage: 0, targets: [Target](), executableLines: 0)
 
-        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""),before: before, after: after)
+        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""),before: before, after: after, fileList: [String]())
         
         let rows = cc.getFilesChanged()
         XCTAssertFalse(rows.isEmpty)
@@ -68,7 +68,7 @@ class CoverageComparisonSingleTests: XCTestCase {
         let before = Project(coveredLines: 0, lineCoverage: 0, targets: [Target](), executableLines: 0)
         let after = createProjectWithMultipleFiles()
 
-        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""),before: before, after: after)
+        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""),before: before, after: after, fileList: [String]())
 
         let rows = cc.getFilesChanged()
 
@@ -90,7 +90,7 @@ class CoverageComparisonSingleTests: XCTestCase {
         let before = createProjectWithMultipleFiles()
         let after = Project(coveredLines: 0, lineCoverage: 0, targets: [Target](), executableLines: 0)
 
-        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""),before: before, after: after)
+        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""),before: before, after: after, fileList: [String]())
 
         let rows = Array(cc.getFilesChanged())
         
@@ -123,7 +123,7 @@ class CoverageComparisonSingleTests: XCTestCase {
         let before = Project(coveredLines: 0, lineCoverage: 0, targets: [Target](), executableLines: 0)
         let after = createProjectWithTargets()
 
-        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""),before: before, after: after)
+        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""),before: before, after: after, fileList: [String]())
 
         let rows = cc.getFilesChanged()
 
