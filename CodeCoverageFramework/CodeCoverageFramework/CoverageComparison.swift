@@ -66,17 +66,23 @@ public class CoverageComparison {
         return result
     }
 
-    func getRows() -> [Row] {
-        return getFilesChanged()
+    public func printTable(devLink: String, prLink: String) {
+        for line in createTable(rows: getFilesChanged(), devLink: devLink, prLink: prLink) {
+            print(line)
+        }
     }
 
-    public func printTable(devLink: String, prLink: String) {
-        print("|Change|File|Develop|PR|")
-        print("|:----:|----|:-----:|:--:|")
+    func createTable(rows: [Row], devLink: String, prLink: String) -> [String] {
+        var printData = [String]()
+        guard !rows.isEmpty else {
+            return printData
+        }
+        printData.append("|Change|File|Develop|PR|")
+        printData.append("|:----:|----|:-----:|:--:|")
 
         var sourceRows = [Row]()
         var testRows = [Row]()
-        for row in getRows() {
+        for row in rows {
             if row.test {
                 testRows.append(row)
             } else {
@@ -86,21 +92,20 @@ public class CoverageComparison {
 
         sourceRows.sort(by: { $0.sourceFile < $1.sourceFile })
         for row in sourceRows {
-            printHTML(row: row, devLink: devLink, prLink: prLink)
+            printData.append(createHTML(row: row, devLink: devLink, prLink: prLink))
         }
 
         testRows.sort(by: { $0.sourceFile < $1.sourceFile })
         for row in testRows {
-            printHTML(row: row, devLink: devLink, prLink: prLink)
+            printData.append(createHTML(row: row, devLink: devLink, prLink: prLink))
         }
+        return printData
     }
 
-    func printHTML(row: Row, devLink: String, prLink: String) {
-        //if row.beforeCoverage != row.afterCoverage {
-            let end = "_comparison.html"
-            let url = writeLocation.appendingPathComponent("\(row.getName())\(end)")
-            ComparisonWebPage(row: row, devLink: devLink, prLink: prLink).writeToFile(url: url)
-            print(row.toString(baseURL: prLink, end: end))
-        //}
+    private func createHTML(row: Row, devLink: String, prLink: String) -> String {
+        let end = "_comparison.html"
+        let url = writeLocation.appendingPathComponent("\(row.getName())\(end)")
+        ComparisonWebPage(row: row, devLink: devLink, prLink: prLink).writeToFile(url: url)
+        return row.toString(baseURL: prLink, end: end)
     }
 }

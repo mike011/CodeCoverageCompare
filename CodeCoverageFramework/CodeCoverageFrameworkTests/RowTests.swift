@@ -86,4 +86,24 @@ class RowTests: XCTestCase {
         XCTAssertFalse(row == row2)
     }
 
+    func testGetName() {
+        let row = Row(sourceFile: "file", beforeCoverage: 0, afterCoverage: 0)
+        XCTAssertEqual(row.getName(), "file")
+    }
+
+    func testGetNameWithPeriod() {
+        let row = Row(sourceFile: "file.swift", beforeCoverage: 0, afterCoverage: 0)
+        XCTAssertEqual(row.getName(), "file")
+    }
+
+    func testToString() {
+        let row = Row(sourceFile: "file.swift", beforeCoverage: 0, afterCoverage: 0)
+        XCTAssertEqual(row.toString(baseURL: "http://a.b", end: ".html"), "|🚫|<a href=http://a.b/file.html>file</a>|0%|0%|")
+    }
+
+    func testToStringNotCovered() {
+         let row = Row(sourceFile: "file.swift", beforeCoverage: nil, afterCoverage: nil)
+         XCTAssertEqual(row.toString(baseURL: "http://a.b", end: ".html"), "||<a href=http://a.b/file.html>file</a>|-|-|")
+     }
+
 }

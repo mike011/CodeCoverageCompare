@@ -152,4 +152,77 @@ class CoverageCompareTests: XCTestCase {
         XCTAssertEqual(rows[0].afterCoverage, 0.91)
         XCTAssertFalse(rows[0].test)
     }
+
+    func testCreateTableNoRow() {
+        let before = createProjectWithTargets(nameA: "name", coverageA: 0.23, pathA: "folder/name", nameB: "testName", coverageB: 0.92)
+        let after = createProjectWithTargets(nameA: "testName", coverageA: 0.22, nameB: "name", coverageB: 0.91)
+
+        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String]())
+        let result = cc.createTable(rows: [Row](), devLink: "", prLink: "")
+        XCTAssertTrue(result.isEmpty)
+    }
+
+    func testCreateTableRows() {
+        let before = createProjectWithTargets(nameA: "name", coverageA: 0.23, pathA: "folder/name", nameB: "testName", coverageB: 0.92)
+        let after = createProjectWithTargets(nameA: "testName", coverageA: 0.22, nameB: "name", coverageB: 0.91)
+
+        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String]())
+        var rows = [Row]()
+        rows.append(Row(sourceFile: "source", beforeCoverage: 0.1, afterCoverage: 0.2))
+        let result = cc.createTable(rows: rows, devLink: "", prLink: "")
+        XCTAssertFalse(result.isEmpty)
+        XCTAssertEqual(result.count, 3)
+        XCTAssertEqual(result[0],  "|Change|File|Develop|PR|")
+        XCTAssertEqual(result[1],  "|:----:|----|:-----:|:--:|")
+        XCTAssertEqual(result[2],  "|👍|<a href=/source_comparison.html>source</a>|10%|20%|")
+    }
+
+    func testCreateTableRowsForTests() {
+        let before = createProjectWithTargets(nameA: "", coverageA: 0, pathA: "", nameB: "", coverageB: 0.92)
+        let after = createProjectWithTargets(nameA: "", coverageA: 0, nameB: "", coverageB: 0.91)
+
+        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String]())
+        var rows = [Row]()
+        rows.append(Row(sourceFile: "sourceTest", beforeCoverage: 0.1, afterCoverage: 0.2))
+        let result = cc.createTable(rows: rows, devLink: "", prLink: "")
+        XCTAssertFalse(result.isEmpty)
+        XCTAssertEqual(result.count, 3)
+        XCTAssertEqual(result[0],  "|Change|File|Develop|PR|")
+        XCTAssertEqual(result[1],  "|:----:|----|:-----:|:--:|")
+        XCTAssertEqual(result[2],  "|👍|<a href=/sourceTest_comparison.html>sourceTest</a>|10%|20%|")
+    }
+
+    func testCreateTableRowsForMultipleFiles() {
+        let before = createProjectWithTargets(nameA: "", coverageA: 0, pathA: "", nameB: "", coverageB: 0.92)
+        let after = createProjectWithTargets(nameA: "", coverageA: 0, nameB: "", coverageB: 0.91)
+
+        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String]())
+        var rows = [Row]()
+        rows.append(Row(sourceFile: "sourceB", beforeCoverage: 0.1, afterCoverage: 0.2))
+        rows.append(Row(sourceFile: "sourceA", beforeCoverage: 0.3, afterCoverage: 0.25))
+        let result = cc.createTable(rows: rows, devLink: "", prLink: "")
+        XCTAssertFalse(result.isEmpty)
+        XCTAssertEqual(result.count, 4)
+        XCTAssertEqual(result[0],  "|Change|File|Develop|PR|")
+        XCTAssertEqual(result[1],  "|:----:|----|:-----:|:--:|")
+        XCTAssertEqual(result[2],  "|👎|<a href=/sourceA_comparison.html>sourceA</a>|30%|25%|")
+        XCTAssertEqual(result[3],  "|👍|<a href=/sourceB_comparison.html>sourceB</a>|10%|20%|")
+    }
+
+    func testCreateTableRowsForMultipleTestFiles() {
+        let before = createProjectWithTargets(nameA: "", coverageA: 0, pathA: "", nameB: "", coverageB: 0.92)
+        let after = createProjectWithTargets(nameA: "", coverageA: 0, nameB: "", coverageB: 0.91)
+
+        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String]())
+        var rows = [Row]()
+        rows.append(Row(sourceFile: "sourceTestB", beforeCoverage: 0.1, afterCoverage: 0.2))
+        rows.append(Row(sourceFile: "sourceTestA", beforeCoverage: 0.3, afterCoverage: 0.25))
+        let result = cc.createTable(rows: rows, devLink: "", prLink: "")
+        XCTAssertFalse(result.isEmpty)
+        XCTAssertEqual(result.count, 4)
+        XCTAssertEqual(result[0],  "|Change|File|Develop|PR|")
+        XCTAssertEqual(result[1],  "|:----:|----|:-----:|:--:|")
+        XCTAssertEqual(result[2],  "|👎|<a href=/sourceTestA_comparison.html>sourceTestA</a>|30%|25%|")
+        XCTAssertEqual(result[3],  "|👍|<a href=/sourceTestB_comparison.html>sourceTestB</a>|10%|20%|")
+    }
 }
