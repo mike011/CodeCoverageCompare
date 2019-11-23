@@ -1,0 +1,28 @@
+Test Suite 'All tests' started at 2019-11-22 21:32:13.022
+Test Suite 'ExampleTests.xctest' started at 2019-11-22 21:32:13.023
+Test Suite 'ExistingClassCoverageDownTests' started at 2019-11-22 21:32:13.023
+Test Case '-[ExampleTests.ExistingClassCoverageDownTests testFunctionOne]' started.
+Test Case '-[ExampleTests.ExistingClassCoverageDownTests testFunctionOne]' passed (0.002 seconds).
+Test Case '-[ExampleTests.ExistingClassCoverageDownTests testFunctionTwo]' started.
+Test Case '-[ExampleTests.ExistingClassCoverageDownTests testFunctionTwo]' passed (0.000 seconds).
+Test Suite 'ExistingClassCoverageDownTests' passed at 2019-11-22 21:32:13.026.
+	 Executed 2 tests, with 0 failures (0 unexpected) in 0.002 (0.003) seconds
+Test Suite 'ExistingClassCoverageDroppedTests' started at 2019-11-22 21:32:13.027
+Test Case '-[ExampleTests.ExistingClassCoverageDroppedTests testExistingClassCoverageDropped]' started.
+Test Case '-[ExampleTests.ExistingClassCoverageDroppedTests testExistingClassCoverageDropped]' passed (0.000 seconds).
+Test Suite 'ExistingClassCoverageDroppedTests' passed at 2019-11-22 21:32:13.028.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Test Suite 'ExistingClassCoverageUpTests' started at 2019-11-22 21:32:13.028
+Test Case '-[ExampleTests.ExistingClassCoverageUpTests testFunctionOne]' started.
+Test Case '-[ExampleTests.ExistingClassCoverageUpTests testFunctionOne]' passed (0.001 seconds).
+Test Suite 'ExistingClassCoverageUpTests' passed at 2019-11-22 21:32:13.029.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'ExistingClassCoveredTests' started at 2019-11-22 21:32:13.029
+Test Case '-[ExampleTests.ExistingClassCoveredTests testExistingClassCoveredTests]' started.
+Test Case '-[ExampleTests.ExistingClassCoveredTests testExistingClassCoveredTests]' passed (0.000 seconds).
+Test Suite 'ExistingClassCoveredTests' passed at 2019-11-22 21:32:13.030.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.000 (0.001) seconds
+Test Suite 'ExampleTests.xctest' passed at 2019-11-22 21:32:13.031.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.004 (0.008) seconds
+Test Suite 'All tests' passed at 2019-11-22 21:32:13.031.
+	 Executed 5 tests, with 0 failures (0 unexpected) in 0.004 (0.009) seconds

@@ -1,6 +1,6 @@
-14:09:28.234 xcodebuild[65054:13652932] Got authorization request for pid 65063
+21:32:13.007 xcodebuild[9825:63807] Got authorization request for pid 9922
 
-14:09:28.234 xcodebuild[65054:13652932] Requesting authorization for pid 65063
+21:32:13.007 xcodebuild[9825:63807] Requesting authorization for pid 9922
 
-14:09:28.235 xcodebuild[65054:13652932] Got reply to authorization request for pid 65063 (result:error): 1: (null)
+21:32:13.008 xcodebuild[9825:63807] Got reply to authorization request for pid 9922 (result:error): 1: (null)
 

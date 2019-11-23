@@ -58,7 +58,7 @@
 				<array/>
 			</dict>
 			<key>EndedTime</key>
-			<date>2019-11-22T19:09:40Z</date>
+			<date>2019-11-23T02:32:59Z</date>
 			<key>RunDestination</key>
 			<dict>
 				<key>LocalComputer</key>
@@ -166,7 +166,7 @@
 			<key>SchemeTask</key>
 			<string>Build</string>
 			<key>StartedTime</key>
-			<date>2019-11-22T19:09:39Z</date>
+			<date>2019-11-23T02:32:39Z</date>
 			<key>Title</key>
 			<string>Build "Example (After)"</string>
 		</dict>
@@ -228,7 +228,7 @@
 				<array/>
 			</dict>
 			<key>EndedTime</key>
-			<date>2019-11-22T19:09:40Z</date>
+			<date>2019-11-23T02:32:59Z</date>
 			<key>RunDestination</key>
 			<dict>
 				<key>LocalComputer</key>
@@ -336,7 +336,7 @@
 			<key>SchemeTask</key>
 			<string>BuildAndAction</string>
 			<key>StartedTime</key>
-			<date>2019-11-22T19:09:39Z</date>
+			<date>2019-11-23T02:32:51Z</date>
 			<key>Title</key>
 			<string>Testing project Example with scheme Example (After)</string>
 		</dict>
