@@ -13,11 +13,13 @@ public class CoverageComparison {
     let writeLocation: URL
     let before: Project
     let after: Project
+    let fileList: [String]
 
-    public init(writeLocation: URL, before: Project, after: Project) {
+    public init(writeLocation: URL, before: Project, after: Project, fileList: [String]) {
         self.writeLocation = writeLocation
         self.before = before
         self.after = after
+        self.fileList = fileList
     }
 
     func getFilesChanged() -> [Row] {
@@ -25,34 +27,38 @@ public class CoverageComparison {
         for target in before.targets {
             for beforeFile in target.files {
                 let filename = beforeFile.name
-                let beforeCoverage = beforeFile.lineCoverage
-                var afterCoverage: Double?
-                for afterTarget in after.targets {
-                    for afterFile in afterTarget.files {
-                        if afterFile.name == filename {
-                            afterCoverage = afterFile.lineCoverage
-                            break
+                if fileList.contains(filename) || fileList.isEmpty {
+                    let beforeCoverage = beforeFile.lineCoverage
+                    var afterCoverage: Double?
+                    for afterTarget in after.targets {
+                        for afterFile in afterTarget.files {
+                            if afterFile.name == filename {
+                                afterCoverage = afterFile.lineCoverage
+                                break
+                            }
                         }
                     }
+                    rows.insert(Row(sourceFile: filename, beforeCoverage: beforeCoverage, afterCoverage: afterCoverage))
                 }
-                rows.insert(Row(sourceFile: filename, beforeCoverage: beforeCoverage, afterCoverage: afterCoverage))
             }
         }
 
         for target in after.targets {
             for afterFile in target.files {
                 let filename = afterFile.name
-                var beforeCoverage: Double?
-                let afterCoverage = afterFile.lineCoverage
-                for beforeTarget in before.targets {
-                    for beforeFile in beforeTarget.files {
-                        if beforeFile.name == filename {
-                            beforeCoverage = beforeFile.lineCoverage
-                            break
+                if fileList.contains(filename) || fileList.isEmpty {
+                    var beforeCoverage: Double?
+                    let afterCoverage = afterFile.lineCoverage
+                    for beforeTarget in before.targets {
+                        for beforeFile in beforeTarget.files {
+                            if beforeFile.name == filename {
+                                beforeCoverage = beforeFile.lineCoverage
+                                break
+                            }
                         }
                     }
+                    rows.insert(Row(sourceFile: filename, beforeCoverage: beforeCoverage, afterCoverage: afterCoverage))
                 }
-                rows.insert(Row(sourceFile: filename, beforeCoverage: beforeCoverage, afterCoverage: afterCoverage))
             }
         }
         var result = Array(rows)
@@ -90,9 +96,11 @@ public class CoverageComparison {
     }
 
     func printHTML(row: Row, devLink: String, prLink: String) {
-        let end = "_comparison.html"
-        let url = writeLocation.appendingPathComponent("\(row.getName())\(end)")
-        ComparisonWebPage(row: row, devLink: devLink, prLink: prLink).writeToFile(url: url)
-        print(row.toString(baseURL: prLink, end: end))
+        //if row.beforeCoverage != row.afterCoverage {
+            let end = "_comparison.html"
+            let url = writeLocation.appendingPathComponent("\(row.getName())\(end)")
+            ComparisonWebPage(row: row, devLink: devLink, prLink: prLink).writeToFile(url: url)
+            print(row.toString(baseURL: prLink, end: end))
+        //}
     }
 }

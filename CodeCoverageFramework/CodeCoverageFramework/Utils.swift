@@ -36,4 +36,18 @@ public class Utils {
         let url = URL(fileURLWithPath: file)
         return url.deletingLastPathComponent()
     }
+
+    public static func load(file: String) -> [String] {
+
+        let fileManager = FileManager.default
+        if !fileManager.fileExists(atPath: file) {
+            print("File not found: \(file)")
+            return [String]()
+        }
+
+        let data = fileManager.contents(atPath: file)
+        let datastring = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+        let string = datastring! as String
+        return string.components(separatedBy: "\n")
+    }
 }
