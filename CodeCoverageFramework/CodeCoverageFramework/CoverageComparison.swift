@@ -27,7 +27,7 @@ public class CoverageComparison {
         for target in before.targets {
             for beforeFile in target.files {
                 let filename = beforeFile.name
-                if fileList.contains(filename) || fileList.isEmpty {
+                if fileList.isEmpty || !fileList.filter({beforeFile.path.contains($0)}).isEmpty {
                     let beforeCoverage = beforeFile.lineCoverage
                     var afterCoverage: Double?
                     for afterTarget in after.targets {
@@ -46,7 +46,7 @@ public class CoverageComparison {
         for target in after.targets {
             for afterFile in target.files {
                 let filename = afterFile.name
-                if fileList.contains(filename) || fileList.isEmpty {
+                if fileList.isEmpty || !fileList.filter({afterFile.path.contains($0)}).isEmpty {
                     var beforeCoverage: Double?
                     let afterCoverage = afterFile.lineCoverage
                     for beforeTarget in before.targets {

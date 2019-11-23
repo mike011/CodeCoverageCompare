@@ -115,8 +115,8 @@ class CoverageCompareTests: XCTestCase {
         XCTAssertFalse(rows[1].test)
     }
 
-    func createProjectWithTargets(nameA: String, coverageA: Double, nameB: String, coverageB: Double) -> Project {
-        let file = File(coveredLines: 0, lineCoverage: coverageA, path: "", functions: [Function](), name: nameA, executableLines: 0)
+    func createProjectWithTargets(nameA: String, coverageA: Double, pathA: String = "", nameB: String, coverageB: Double) -> Project {
+        let file = File(coveredLines: 0, lineCoverage: coverageA, path: pathA, functions: [Function](), name: nameA, executableLines: 0)
         var files = [File]()
         files.append(file)
         let target = Target(coveredLines: 0, lineCoverage: 0, files: files, name: "", executableLines: 0, buildProductPath: "")
@@ -135,11 +135,11 @@ class CoverageCompareTests: XCTestCase {
     // Mark: - File list not covered
 
     func testGetCoverageFileNotCovered() {
-        let before = createProjectWithTargets(nameA: "name", coverageA: 0.23, nameB: "testName", coverageB: 0.92)
+        let before = createProjectWithTargets(nameA: "name", coverageA: 0.23, pathA: "folder/name", nameB: "testName", coverageB: 0.92)
         let after = createProjectWithTargets(nameA: "testName", coverageA: 0.22, nameB: "name", coverageB: 0.91)
 
         var files = [String]()
-        files.append("name")
+        files.append("folder/name")
         let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: files)
 
         let rows = cc.getFilesChanged()
