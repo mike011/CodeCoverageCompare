@@ -4,7 +4,4 @@
    <FileRef
       location = "group:CodeCoverageCompare/CodeCoverageCompare.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:CodeCoverageFramework/CodeCoverageFramework.xcodeproj">
-   </FileRef>
 </Workspace>

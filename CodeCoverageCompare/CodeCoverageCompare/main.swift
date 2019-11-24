@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CodeCoverageFramework
 
 let arguments = CommandLine.arguments
 

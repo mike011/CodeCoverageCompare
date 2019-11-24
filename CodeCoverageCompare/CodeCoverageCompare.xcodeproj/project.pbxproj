@@ -7,8 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C31575D238A0C700062EC74 /* CoverageCompareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C31575A238A0C700062EC74 /* CoverageCompareTests.swift */; };
+		4C31575E238A0C700062EC74 /* RowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C31575B238A0C700062EC74 /* RowTests.swift */; };
+		4C31575F238A0C700062EC74 /* CoverageComparisonTestsSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C31575C238A0C700062EC74 /* CoverageComparisonTestsSingle.swift */; };
+		4C315766238A0D6E0062EC74 /* ComparisonWebPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C315760238A0D6D0062EC74 /* ComparisonWebPage.swift */; };
+		4C315767238A0D6E0062EC74 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C315761238A0D6D0062EC74 /* Utils.swift */; };
+		4C315768238A0D6E0062EC74 /* Coverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C315762238A0D6D0062EC74 /* Coverage.swift */; };
+		4C315769238A0D6E0062EC74 /* Coverage10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C315763238A0D6E0062EC74 /* Coverage10.swift */; };
+		4C31576A238A0D6E0062EC74 /* CoverageComparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C315764238A0D6E0062EC74 /* CoverageComparison.swift */; };
+		4C31576B238A0D6E0062EC74 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C315765238A0D6E0062EC74 /* Row.swift */; };
+		4C31579B238A146A0062EC74 /* ComparisonWebPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C315760238A0D6D0062EC74 /* ComparisonWebPage.swift */; };
+		4C31579C238A146E0062EC74 /* Coverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C315762238A0D6D0062EC74 /* Coverage.swift */; };
+		4C31579D238A14710062EC74 /* Coverage10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C315763238A0D6E0062EC74 /* Coverage10.swift */; };
+		4C31579E238A14730062EC74 /* CoverageComparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C315764238A0D6E0062EC74 /* CoverageComparison.swift */; };
+		4C31579F238A14760062EC74 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C315765238A0D6E0062EC74 /* Row.swift */; };
+		4C3157A0238A14790062EC74 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C315761238A0D6D0062EC74 /* Utils.swift */; };
 		4C61E981226B86B300F95EA9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C61E980226B86B300F95EA9 /* main.swift */; };
-		4C61E9BE226B873700F95EA9 /* CodeCoverageFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C61E9BD226B873700F95EA9 /* CodeCoverageFramework.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +69,27 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4C315717238A05900062EC74 /* CodeCoverageCompare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CodeCoverageCompare.entitlements; sourceTree = "<group>"; };
+		4C31573E238A0AE00062EC74 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = info.plist; sourceTree = "<group>"; };
+		4C315740238A0B960062EC74 /* Coverage10.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coverage10.swift; sourceTree = "<group>"; };
+		4C315741238A0B960062EC74 /* ComparisonWebPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComparisonWebPage.swift; sourceTree = "<group>"; };
+		4C315742238A0B960062EC74 /* Coverage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coverage.swift; sourceTree = "<group>"; };
+		4C315743238A0B960062EC74 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		4C315744238A0B960062EC74 /* Row.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
+		4C315745238A0B960062EC74 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C315746238A0B960062EC74 /* CoverageComparison.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverageComparison.swift; sourceTree = "<group>"; };
+		4C315751238A0BE10062EC74 /* CodeCoverageCompareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeCoverageCompareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C315755238A0BE10062EC74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C315759238A0C6F0062EC74 /* CodeCoverageCompareTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CodeCoverageCompareTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		4C31575A238A0C700062EC74 /* CoverageCompareTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverageCompareTests.swift; sourceTree = "<group>"; };
+		4C31575B238A0C700062EC74 /* RowTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowTests.swift; sourceTree = "<group>"; };
+		4C31575C238A0C700062EC74 /* CoverageComparisonTestsSingle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverageComparisonTestsSingle.swift; sourceTree = "<group>"; };
+		4C315760238A0D6D0062EC74 /* ComparisonWebPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComparisonWebPage.swift; sourceTree = "<group>"; };
+		4C315761238A0D6D0062EC74 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		4C315762238A0D6D0062EC74 /* Coverage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coverage.swift; sourceTree = "<group>"; };
+		4C315763238A0D6E0062EC74 /* Coverage10.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coverage10.swift; sourceTree = "<group>"; };
+		4C315764238A0D6E0062EC74 /* CoverageComparison.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverageComparison.swift; sourceTree = "<group>"; };
+		4C315765238A0D6E0062EC74 /* Row.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
 		4C61E97D226B86B300F95EA9 /* CodeCoverageCompare */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CodeCoverageCompare; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C61E980226B86B300F95EA9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		4C61E9BD226B873700F95EA9 /* CodeCoverageFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CodeCoverageFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,22 +98,56 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4C31574E238A0BE10062EC74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4C61E97A226B86B300F95EA9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C61E9BE226B873700F95EA9 /* CodeCoverageFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C31573F238A0B960062EC74 /* CodeCoverageFramework */ = {
+			isa = PBXGroup;
+			children = (
+				4C315740238A0B960062EC74 /* Coverage10.swift */,
+				4C315741238A0B960062EC74 /* ComparisonWebPage.swift */,
+				4C315742238A0B960062EC74 /* Coverage.swift */,
+				4C315743238A0B960062EC74 /* Utils.swift */,
+				4C315744238A0B960062EC74 /* Row.swift */,
+				4C315745238A0B960062EC74 /* Info.plist */,
+				4C315746238A0B960062EC74 /* CoverageComparison.swift */,
+			);
+			name = CodeCoverageFramework;
+			path = ../CodeCoverageFramework/CodeCoverageFramework;
+			sourceTree = "<group>";
+		};
+		4C315752238A0BE10062EC74 /* CodeCoverageCompareTests */ = {
+			isa = PBXGroup;
+			children = (
+				4C31575A238A0C700062EC74 /* CoverageCompareTests.swift */,
+				4C31575C238A0C700062EC74 /* CoverageComparisonTestsSingle.swift */,
+				4C31575B238A0C700062EC74 /* RowTests.swift */,
+				4C315755238A0BE10062EC74 /* Info.plist */,
+				4C315759238A0C6F0062EC74 /* CodeCoverageCompareTests-Bridging-Header.h */,
+			);
+			path = CodeCoverageCompareTests;
+			sourceTree = "<group>";
+		};
 		4C61E974226B86B300F95EA9 = {
 			isa = PBXGroup;
 			children = (
 				4CA6CD67237F1BB90010ACC9 /* Example */,
 				4C61E97F226B86B300F95EA9 /* CodeCoverageCompare */,
+				4C315752238A0BE10062EC74 /* CodeCoverageCompareTests */,
 				4C61E97E226B86B300F95EA9 /* Products */,
 				4C61E9BC226B873700F95EA9 /* Frameworks */,
 			);
@@ -88,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				4C61E97D226B86B300F95EA9 /* CodeCoverageCompare */,
+				4C315751238A0BE10062EC74 /* CodeCoverageCompareTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,6 +166,14 @@
 			isa = PBXGroup;
 			children = (
 				4C61E980226B86B300F95EA9 /* main.swift */,
+				4C315760238A0D6D0062EC74 /* ComparisonWebPage.swift */,
+				4C315762238A0D6D0062EC74 /* Coverage.swift */,
+				4C315763238A0D6E0062EC74 /* Coverage10.swift */,
+				4C315764238A0D6E0062EC74 /* CoverageComparison.swift */,
+				4C315765238A0D6E0062EC74 /* Row.swift */,
+				4C315761238A0D6D0062EC74 /* Utils.swift */,
+				4C31573E238A0AE00062EC74 /* info.plist */,
+				4C315717238A05900062EC74 /* CodeCoverageCompare.entitlements */,
 			);
 			path = CodeCoverageCompare;
 			sourceTree = "<group>";
@@ -111,6 +189,7 @@
 		4CA6CD67237F1BB90010ACC9 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				4C31573F238A0B960062EC74 /* CodeCoverageFramework */,
 				4CA6CD68237F1BCD0010ACC9 /* Before */,
 				4CA6CD69237F1BE20010ACC9 /* After */,
 			);
@@ -154,6 +233,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4C315750238A0BE10062EC74 /* CodeCoverageCompareTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C315756238A0BE10062EC74 /* Build configuration list for PBXNativeTarget "CodeCoverageCompareTests" */;
+			buildPhases = (
+				4C31574D238A0BE10062EC74 /* Sources */,
+				4C31574E238A0BE10062EC74 /* Frameworks */,
+				4C31574F238A0BE10062EC74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CodeCoverageCompareTests;
+			productName = CodeCoverageCompareTests;
+			productReference = 4C315751238A0BE10062EC74 /* CodeCoverageCompareTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		4C61E97C226B86B300F95EA9 /* CodeCoverageCompare */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C61E984226B86B300F95EA9 /* Build configuration list for PBXNativeTarget "CodeCoverageCompare" */;
@@ -177,10 +273,14 @@
 		4C61E975226B86B300F95EA9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
+				LastSwiftUpdateCheck = 1110;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = charland;
 				TargetAttributes = {
+					4C315750238A0BE10062EC74 = {
+						CreatedOnToolsVersion = 11.1;
+						LastSwiftMigration = 1110;
+					};
 					4C61E97C226B86B300F95EA9 = {
 						CreatedOnToolsVersion = 10.2;
 					};
@@ -209,6 +309,7 @@
 			projectRoot = "";
 			targets = (
 				4C61E97C226B86B300F95EA9 /* CodeCoverageCompare */,
+				4C315750238A0BE10062EC74 /* CodeCoverageCompareTests */,
 			);
 		};
 /* End PBXProject section */
@@ -244,11 +345,43 @@
 		};
 /* End PBXReferenceProxy section */
 
+/* Begin PBXResourcesBuildPhase section */
+		4C31574F238A0BE10062EC74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		4C31574D238A0BE10062EC74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C31579E238A14730062EC74 /* CoverageComparison.swift in Sources */,
+				4C31579B238A146A0062EC74 /* ComparisonWebPage.swift in Sources */,
+				4C3157A0238A14790062EC74 /* Utils.swift in Sources */,
+				4C31579C238A146E0062EC74 /* Coverage.swift in Sources */,
+				4C31579D238A14710062EC74 /* Coverage10.swift in Sources */,
+				4C31579F238A14760062EC74 /* Row.swift in Sources */,
+				4C31575F238A0C700062EC74 /* CoverageComparisonTestsSingle.swift in Sources */,
+				4C31575E238A0C700062EC74 /* RowTests.swift in Sources */,
+				4C31575D238A0C700062EC74 /* CoverageCompareTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4C61E979226B86B300F95EA9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C315766238A0D6E0062EC74 /* ComparisonWebPage.swift in Sources */,
+				4C315768238A0D6E0062EC74 /* Coverage.swift in Sources */,
+				4C31576B238A0D6E0062EC74 /* Row.swift in Sources */,
+				4C315769238A0D6E0062EC74 /* Coverage10.swift in Sources */,
+				4C315767238A0D6E0062EC74 /* Utils.swift in Sources */,
+				4C31576A238A0D6E0062EC74 /* CoverageComparison.swift in Sources */,
 				4C61E981226B86B300F95EA9 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,6 +389,49 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		4C315757238A0BE10062EC74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = CY96495443;
+				INFOPLIST_FILE = CodeCoverageCompareTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.charland.CodeCoverageCompareTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CodeCoverageCompareTests/CodeCoverageCompareTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		4C315758238A0BE10062EC74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = CY96495443;
+				INFOPLIST_FILE = CodeCoverageCompareTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.charland.CodeCoverageCompareTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CodeCoverageCompareTests/CodeCoverageCompareTests-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		4C61E982226B86B300F95EA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -374,8 +550,13 @@
 		4C61E985226B86B300F95EA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CodeCoverageCompare/CodeCoverageCompare.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 46H57CBD4Q;
+				DEVELOPMENT_TEAM = CY96495443;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/CodeCoverageCompare/info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.charland.swift.codecoveragecompare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -384,8 +565,13 @@
 		4C61E986226B86B300F95EA9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CodeCoverageCompare/CodeCoverageCompare.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 46H57CBD4Q;
+				DEVELOPMENT_TEAM = CY96495443;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/CodeCoverageCompare/info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.charland.swift.codecoveragecompare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -394,6 +580,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4C315756238A0BE10062EC74 /* Build configuration list for PBXNativeTarget "CodeCoverageCompareTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C315757238A0BE10062EC74 /* Debug */,
+				4C315758238A0BE10062EC74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4C61E978226B86B300F95EA9 /* Build configuration list for PBXProject "CodeCoverageCompare" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

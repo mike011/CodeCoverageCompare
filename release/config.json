@@ -1,0 +1,19 @@
+{
+    "source" : ["./CodeCoverageCompare"],
+    "bundle_id" : "ca.charland.swift.codecoveragecompare",
+    "apple_id": {
+        "username" : "mike_ch_1@hotmail.com",
+        "password":  "@env:AC_PASSWORD",
+        "provider":  "CY96495443"
+    },
+    "sign" :{
+        "application_identity" : "Developer ID Application: Michael Charland (CY96495443)"
+    },
+    "dmg" :{
+        "output_path":  "CodeCoverageCompare.dmg",
+        "volume_name":  "CodeCoverageCompare"
+    },
+    "zip" :{
+        "output_path" : "CodeCoverageCompare.zip"
+    }
+}
