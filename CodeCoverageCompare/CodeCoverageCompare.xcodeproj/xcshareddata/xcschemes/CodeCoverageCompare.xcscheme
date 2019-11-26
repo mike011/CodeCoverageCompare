@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1110"
+   LastUpgradeVersion = "1030"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4C61E97C226B86B300F95EA9"
+               BlueprintIdentifier = "35DE8A22238CA79600F9D48C"
                BuildableName = "CodeCoverageCompare"
                BlueprintName = "CodeCoverageCompare"
-               ReferencedContainer = "container:CodeCoverageCompare.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4C315750238A0BE10062EC74"
-               BuildableName = "CodeCoverageCompareTests.xctest"
-               BlueprintName = "CodeCoverageCompareTests"
                ReferencedContainer = "container:CodeCoverageCompare.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -40,20 +26,31 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
+      codeCoverageEnabled = "YES"
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4C315750238A0BE10062EC74"
+               BlueprintIdentifier = "35DE8A30238CA7CB00F9D48C"
                BuildableName = "CodeCoverageCompareTests.xctest"
                BlueprintName = "CodeCoverageCompareTests"
                ReferencedContainer = "container:CodeCoverageCompare.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "35DE8A22238CA79600F9D48C"
+            BuildableName = "CodeCoverageCompare"
+            BlueprintName = "CodeCoverageCompare"
+            ReferencedContainer = "container:CodeCoverageCompare.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -69,7 +66,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4C61E97C226B86B300F95EA9"
+            BlueprintIdentifier = "35DE8A22238CA79600F9D48C"
             BuildableName = "CodeCoverageCompare"
             BlueprintName = "CodeCoverageCompare"
             ReferencedContainer = "container:CodeCoverageCompare.xcodeproj">
@@ -77,11 +74,11 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "//Users/michael/Documents/git/CodeCoverageCompare/example/Before/Example/fastlane/test_output/coverage.json"
+            argument = "/Users/michael.charland/git/textnow-ios-service-framework/fastlane/test_output/develop_coverage.json"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "//Users/michael/Documents/git/CodeCoverageCompare/example/After/Example/fastlane/test_output/coverage.json"
+            argument = "/Users/michael.charland/git/textnow-ios-service-framework/fastlane/test_output/coverage.json"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
@@ -93,10 +90,12 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "//Users/michael/Documents/git/CodeCoverageCompare/example/filesList.txt"
-            isEnabled = "YES">
+            argument = "/Users/michael.charland/git/textnow-ios-service-framework/fastlane/test_output/fileChanged.txt"
+            isEnabled = "NO">
          </CommandLineArgument>
       </CommandLineArguments>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -108,7 +107,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4C61E97C226B86B300F95EA9"
+            BlueprintIdentifier = "35DE8A22238CA79600F9D48C"
             BuildableName = "CodeCoverageCompare"
             BlueprintName = "CodeCoverageCompare"
             ReferencedContainer = "container:CodeCoverageCompare.xcodeproj">

@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../../CodeCoverageFramework/CodeCoverageFramework.xcodeproj">
+      location = "group:/Users/michael.charland/git/CodeCoverageCompare/example/After/Example/Example.xcodeproj">
    </FileRef>
    <FileRef
-      location = "self:CodeCoverageCompare.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>

@@ -10,7 +10,7 @@ import Foundation
 
 let arguments = CommandLine.arguments
 
-if arguments.count != 6 {
+if arguments.count != 5 && arguments.count != 6 {
     print("Missing arguments, expected the following: ")
     print("\t1 - develop json file")
     print("\t2 - pr json file")
@@ -24,7 +24,7 @@ let beforeFileName = arguments[1]
 let afterFileName = arguments[2]
 let devURLBasePath = arguments[3]
 let prURLBasePath = arguments[4]
-let fileList = arguments[5]
+let fileList = arguments.count == 6 ? arguments[5] : ""
 
 func go() {
     guard let before = Utils.getCoverageFile(file: beforeFileName),
