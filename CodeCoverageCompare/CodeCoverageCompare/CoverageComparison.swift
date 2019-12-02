@@ -15,6 +15,13 @@ public class CoverageComparison {
     let after: Project
     let fileList: [String]
 
+    /// Create a new Coverage Comparison instance.
+    ///
+    /// - Parameters:
+    ///   - writeLocation: The file location on the operating system.
+    ///   - before: The source code coverage for the project before hand.
+    ///   - after: The source code coverage for the project afterwards.
+    ///   - fileList: The only files that you care about
     public init(writeLocation: URL, before: Project, after: Project, fileList: [String]) {
         self.writeLocation = writeLocation
         self.before = before
@@ -106,6 +113,6 @@ public class CoverageComparison {
         let end = "_comparison.html"
         let url = writeLocation.appendingPathComponent("\(row.getName())\(end)")
         ComparisonWebPage(row: row, devLink: devLink, prLink: prLink).writeToFile(url: url)
-        return row.toString(baseURL: prLink, end: end)
+        return row.toString(parentURL: Utils.getParentURL(web: prLink).absoluteString, end: end)
     }
 }

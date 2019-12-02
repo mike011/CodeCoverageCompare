@@ -32,8 +32,15 @@ public class Utils {
         }
     }
 
-    public static func getParentFileName(from file: String) -> URL {
+    public static func getParentURL(file: String) -> URL {
         let url = URL(fileURLWithPath: file)
+        return url.deletingLastPathComponent()
+    }
+
+    public static func getParentURL(web: String) -> URL {
+        guard let url = URL(string: web) else {
+            return URL(fileURLWithPath: web)
+        }
         return url.deletingLastPathComponent()
     }
 

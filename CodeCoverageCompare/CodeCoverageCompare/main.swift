@@ -31,7 +31,7 @@ func go() {
         let after = Utils.getCoverageFile(file: afterFileName) else {
             return
     }
-    let writeLocation = Utils.getParentFileName(from: afterFileName)
+    let writeLocation = Utils.getParentURL(file: afterFileName)
 
     let listOfiles = Utils.load(file: fileList)
 

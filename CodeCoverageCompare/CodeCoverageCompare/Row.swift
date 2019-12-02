@@ -50,8 +50,8 @@ struct Row {
         return sourceFile.contains("Test")
     }
 
-    func toString(baseURL: String, end: String) -> String {
-        let name = getLink(baseURL: baseURL, withEnd: end)
+    func toString(parentURL: String, end: String) -> String {
+        let name = getLink(parentURL: parentURL, withEnd: end)
         return "|\(change)|\(name)|\(getPercentage(beforeCoverage))|\(getPercentage(afterCoverage))|"
     }
 
@@ -62,9 +62,9 @@ struct Row {
         return String(format: "%.0f", value * 100) + "%"
     }
 
-    private func getLink(baseURL: String, withEnd end: String) -> String {
+    private func getLink(parentURL: String, withEnd end: String) -> String {
         let name = getName()
-        let url = "\(baseURL)/\(name)\(end)"
+        let url = "\(parentURL)\(name)\(end)"
         return "<a href=\(url)>\(name)</a>"
     }
 

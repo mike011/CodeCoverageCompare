@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35B8AB56239499CF00A90A56 /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B8AB55239499CF00A90A56 /* UtilsTests.swift */; };
 		35DE8A27238CA79600F9D48C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE8A26238CA79600F9D48C /* main.swift */; };
 		35DE8A3F238CA83000F9D48C /* Coverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE8A39238CA83000F9D48C /* Coverage.swift */; };
 		35DE8A40238CA83000F9D48C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE8A3A238CA83000F9D48C /* Utils.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		35B8AB55239499CF00A90A56 /* UtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
 		35DE8A23238CA79600F9D48C /* CodeCoverageCompare */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CodeCoverageCompare; sourceTree = BUILT_PRODUCTS_DIR; };
 		35DE8A26238CA79600F9D48C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		35DE8A31238CA7CB00F9D48C /* CodeCoverageCompareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeCoverageCompareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +115,7 @@
 				35DE8A46238CA85500F9D48C /* CoverageComparisonTestsSingle.swift */,
 				35DE8A47238CA85500F9D48C /* RowTests.swift */,
 				35DE8A35238CA7CB00F9D48C /* Info.plist */,
+				35B8AB55239499CF00A90A56 /* UtilsTests.swift */,
 			);
 			path = CodeCoverageCompareTests;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				35DE8A4D238CA86B00F9D48C /* Coverage.swift in Sources */,
 				35DE8A4E238CA86F00F9D48C /* Coverage10.swift in Sources */,
 				35DE8A50238CA87400F9D48C /* Row.swift in Sources */,
+				35B8AB56239499CF00A90A56 /* UtilsTests.swift in Sources */,
 				35DE8A52238CA87D00F9D48C /* main.swift in Sources */,
 				35DE8A4B238CA85500F9D48C /* RowTests.swift in Sources */,
 				35DE8A4A238CA85500F9D48C /* CoverageComparisonTestsSingle.swift in Sources */,

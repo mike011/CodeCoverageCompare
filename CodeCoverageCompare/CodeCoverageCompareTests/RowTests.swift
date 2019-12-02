@@ -97,12 +97,12 @@ class RowTests: XCTestCase {
 
     func testToString() {
         let row = Row(sourceFile: "file.swift", beforeCoverage: 0, afterCoverage: 0)
-        XCTAssertEqual(row.toString(baseURL: "http://a.b", end: ".html"), "|🚫|<a href=http://a.b/file.html>file</a>|0%|0%|")
+        XCTAssertEqual(row.toString(parentURL: "http://a.b/", end: ".html"), "|🚫|<a href=http://a.b/file.html>file</a>|0%|0%|")
     }
 
     func testToStringNotCovered() {
          let row = Row(sourceFile: "file.swift", beforeCoverage: nil, afterCoverage: nil)
-         XCTAssertEqual(row.toString(baseURL: "http://a.b", end: ".html"), "||<a href=http://a.b/file.html>file</a>|-|-|")
+         XCTAssertEqual(row.toString(parentURL: "http://a.b/", end: ".html"), "||<a href=http://a.b/file.html>file</a>|-|-|")
      }
 
 }
