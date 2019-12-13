@@ -12,16 +12,19 @@ struct Row {
     var change: String {
         var change = ""
 
-        guard let beforeCoverage = beforeCoverage else {
-            if let afterCoverage = afterCoverage {
+        guard var beforeCoverage = beforeCoverage else {
+            if var afterCoverage = afterCoverage {
+                afterCoverage = afterCoverage.roundIt().truncate()
                 return getCoverage(amount: afterCoverage)
             }
             return ""
         }
+        beforeCoverage = beforeCoverage.roundIt().truncate()
 
-        guard let afterCoverage = afterCoverage else {
+        guard var afterCoverage = afterCoverage else {
             return ""
         }
+        afterCoverage = afterCoverage.roundIt().truncate()
 
         if afterCoverage == 1 {
             return "💯"
@@ -84,5 +87,18 @@ extension Row: Hashable {
 
     func hash(into hasher: inout Hasher) {
         hasher.combine(sourceFile)
+    }
+}
+
+private extension Double
+{
+    func truncate()-> Double
+    {
+        return Double(floor(pow(10.0, Double(2)) * self)/pow(10.0, Double(2)))
+    }
+
+    func roundIt()-> Double
+    {
+        return Darwin.round(100 * self) / 100
     }
 }

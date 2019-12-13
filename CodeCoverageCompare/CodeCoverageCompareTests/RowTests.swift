@@ -26,21 +26,31 @@ class RowTests: XCTestCase {
         XCTAssertEqual(row.change, "")
     }
 
+    func testVirtually100Before() {
+        let row = Row(sourceFile: "file", beforeCoverage: 290/291, afterCoverage: nil)
+        XCTAssertEqual(row.change, "")
+    }
+
     // MARK: - Only After covered
-      func testCoverageAfter100() {
-          let row = Row(sourceFile: "file", beforeCoverage: nil, afterCoverage: 1)
-          XCTAssertEqual(row.change, "💯")
-      }
+    func testCoverageAfter100() {
+        let row = Row(sourceFile: "file", beforeCoverage: nil, afterCoverage: 1)
+        XCTAssertEqual(row.change, "💯")
+    }
 
-      func testCoverageAfterNone() {
-          let row = Row(sourceFile: "file", beforeCoverage: nil, afterCoverage: 0)
-          XCTAssertEqual(row.change, "🚫")
-      }
+    func testCoverageAfterNone() {
+        let row = Row(sourceFile: "file", beforeCoverage: nil, afterCoverage: 0)
+        XCTAssertEqual(row.change, "🚫")
+    }
 
-      func testRowPRCoverageAfter() {
-          let row = Row(sourceFile: "file", beforeCoverage: nil, afterCoverage: 30)
-          XCTAssertEqual(row.change, "👍")
-      }
+    func testRowPRCoverageAfter() {
+        let row = Row(sourceFile: "file", beforeCoverage: nil, afterCoverage: 30)
+        XCTAssertEqual(row.change, "👍")
+    }
+
+    func testVirtually100After() {
+        let row = Row(sourceFile: "file", beforeCoverage: nil, afterCoverage: 290/291)
+        XCTAssertEqual(row.change, "💯")
+    }
 
     // MARK: - Both files covered
     func testRowPRAllCovered() {
@@ -62,6 +72,34 @@ class RowTests: XCTestCase {
         let row = Row(sourceFile: "file", beforeCoverage: 25, afterCoverage: 30)
         XCTAssertEqual(row.change, "👍")
     }
+
+    func testVirtually100SlightyHigherAfter() {
+        let row = Row(sourceFile: "file", beforeCoverage: 289/290, afterCoverage: 290/291)
+        XCTAssertEqual(row.change, "💯")
+    }
+
+    func testVirtually100SlightyHigherBefore() {
+        let row = Row(sourceFile: "file", beforeCoverage: 290/291, afterCoverage: 289/290)
+        XCTAssertEqual(row.change, "💯")
+    }
+
+    func testLessThenOnePercentChange() {
+        let row = Row(sourceFile: "file", beforeCoverage: 900/1000, afterCoverage: 904/1000)
+        XCTAssertEqual(row.change, "")
+    }
+
+    func testMoreThenOnePercentChangeBetter() {
+        let row = Row(sourceFile: "file", beforeCoverage: 98/100, afterCoverage: 99/100)
+        XCTAssertEqual(row.change, "👍")
+    }
+
+    func testMoreThenOnePercentChangeWorse() {
+        let row = Row(sourceFile: "file", beforeCoverage: 99/100, afterCoverage: 98/100)
+        XCTAssertEqual(row.change, "👎")
+    }
+
+
+    // MARK: - Rest
 
     func testIsTest() {
         let row = Row(sourceFile: "Test", beforeCoverage: 0, afterCoverage: 0)
@@ -101,8 +139,8 @@ class RowTests: XCTestCase {
     }
 
     func testToStringNotCovered() {
-         let row = Row(sourceFile: "file.swift", beforeCoverage: nil, afterCoverage: nil)
-         XCTAssertEqual(row.toString(parentURL: "http://a.b/", end: ".html"), "||<a href=http://a.b/file.html>file</a>|-|-|")
-     }
+        let row = Row(sourceFile: "file.swift", beforeCoverage: nil, afterCoverage: nil)
+        XCTAssertEqual(row.toString(parentURL: "http://a.b/", end: ".html"), "||<a href=http://a.b/file.html>file</a>|-|-|")
+    }
 
 }
