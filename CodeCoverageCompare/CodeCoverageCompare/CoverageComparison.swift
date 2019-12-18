@@ -14,6 +14,7 @@ public class CoverageComparison {
     let before: Project
     let after: Project
     let fileList: [String]
+    let ignoreList: [String]
 
     /// Create a new Coverage Comparison instance.
     ///
@@ -22,11 +23,13 @@ public class CoverageComparison {
     ///   - before: The source code coverage for the project before hand.
     ///   - after: The source code coverage for the project afterwards.
     ///   - fileList: The only files that you care about
-    public init(writeLocation: URL, before: Project, after: Project, fileList: [String]) {
+    ///   - ignoreList: Files types in glob form that you don't want to see coverage for.
+    public init(writeLocation: URL, before: Project, after: Project, fileList: [String], ignoreList: [String]) {
         self.writeLocation = writeLocation
         self.before = before
         self.after = after
         self.fileList = fileList
+        self.ignoreList = ignoreList
     }
 
     func getFilesChanged() -> [Row] {
@@ -34,7 +37,7 @@ public class CoverageComparison {
         for target in before.targets {
             for beforeFile in target.files {
                 let filename = beforeFile.name
-                if fileList.isEmpty || !fileList.filter({beforeFile.path.contains($0)}).isEmpty {
+                if isValid(file: beforeFile) {
                     let beforeCoverage = beforeFile.lineCoverage
                     var afterCoverage: Double?
                     for afterTarget in after.targets {
@@ -53,7 +56,7 @@ public class CoverageComparison {
         for target in after.targets {
             for afterFile in target.files {
                 let filename = afterFile.name
-                if fileList.isEmpty || !fileList.filter({afterFile.path.contains($0)}).isEmpty {
+                if isValid(file: afterFile) {
                     var beforeCoverage: Double?
                     let afterCoverage = afterFile.lineCoverage
                     for beforeTarget in before.targets {
@@ -70,6 +73,18 @@ public class CoverageComparison {
         }
         var result = Array(rows)
         result.sort(by: { $0.sourceFile < $1.sourceFile })
+        return result
+    }
+
+    func isValid(file: File) -> Bool {
+        let result = fileList.isEmpty || !fileList.filter({file.path.contains($0)}).isEmpty
+        if result && !ignoreList.isEmpty {
+            let ignored = ignoreList.filter({
+                let regex = try? NSRegularExpression(pattern: $0)
+                return regex?.matches(file.path) ?? false
+            })
+            return ignored.isEmpty
+        }
         return result
     }
 
@@ -114,5 +129,12 @@ public class CoverageComparison {
         let url = writeLocation.appendingPathComponent("\(row.getName())\(end)")
         ComparisonWebPage(row: row, devLink: devLink, prLink: prLink).writeToFile(url: url)
         return row.toString(parentURL: Utils.getParentURL(web: prLink).absoluteString, end: end)
+    }
+}
+
+private extension NSRegularExpression {
+    func matches(_ string: String) -> Bool {
+        let range = NSRange(location: 0, length: string.utf16.count)
+        return firstMatch(in: string, options: [], range: range) != nil
     }
 }

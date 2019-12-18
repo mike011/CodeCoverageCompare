@@ -16,7 +16,7 @@ class CoverageCompareTests: XCTestCase {
         let before = createProject(coverage: 0.3)
         let after = createProject(coverage: 0.5)
 
-        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String]())
+        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String](), ignoreList: [String]())
 
         let rows = cc.getFilesChanged()
         XCTAssertFalse(rows.isEmpty)
@@ -38,10 +38,10 @@ class CoverageCompareTests: XCTestCase {
     // MARK: - Multiple files
 
     func testCoverageAddedForMultipleFiles() {
-        let before = createProjectWithMultipleFiles(coverageA: 0.2, coverageB: 0.9)
-        let after = createProjectWithMultipleFiles(coverageA: 0.1, coverageB: 0.92)
+        let before = createProjectWithMultipleFiles(sourceCoverage: 0.2, testCoverage: 0.9)
+        let after = createProjectWithMultipleFiles(sourceCoverage: 0.1, testCoverage: 0.92)
 
-        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String]())
+        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String](), ignoreList: [String]())
 
         let rows = cc.getFilesChanged()
 
@@ -59,10 +59,10 @@ class CoverageCompareTests: XCTestCase {
         XCTAssertFalse(rows[1].test)
     }
 
-    func createProjectWithMultipleFiles(coverageA: Double, coverageB: Double) -> Project {
+    func createProjectWithMultipleFiles(sourceCoverage: Double, testCoverage: Double) -> Project {
         var files = [File]()
-        files.append(File(coveredLines: 0, lineCoverage: coverageA, path: "", functions: [Function](), name: "name", executableLines: 0))
-        files.append(File(coveredLines: 0, lineCoverage: coverageB, path: "", functions: [Function](), name: "name2", executableLines: 0))
+        files.append(File(coveredLines: 0, lineCoverage: sourceCoverage, path: "", functions: [Function](), name: "name", executableLines: 0))
+        files.append(File(coveredLines: 0, lineCoverage: testCoverage, path: "", functions: [Function](), name: "name2", executableLines: 0))
         var targets = [Target]()
         targets.append(Target(coveredLines: 0, lineCoverage: 0, files: files, name: "", executableLines: 0, buildProductPath: ""))
         return Project(coveredLines: 0, lineCoverage: 0, targets: targets, executableLines: 0)
@@ -71,10 +71,10 @@ class CoverageCompareTests: XCTestCase {
     // MARK: - Different Targets with Coverage
 
     func testCoverageAddedToSeperateTarget() {
-        let before = createProjectWithTargets(nameA: "name", coverageA: 0.23, nameB: "testName", coverageB: 0.92)
-        let after = createProjectWithTargets(nameA: "name", coverageA: 0.22, nameB: "testName", coverageB: 0.91)
+        let before = createProjectWithTargets(sourceName: "name", sourceCoverage: 0.23, testName: "testName", testCoverage: 0.92)
+        let after = createProjectWithTargets(sourceName: "name", sourceCoverage: 0.22, testName: "testName", testCoverage: 0.91)
 
-        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String]())
+        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String](), ignoreList: [String]())
 
         let rows = cc.getFilesChanged()
 
@@ -93,10 +93,10 @@ class CoverageCompareTests: XCTestCase {
     }
 
     func testCoverageAddedToSeperateTargetFlip() {
-        let before = createProjectWithTargets(nameA: "name", coverageA: 0.23, nameB: "testName", coverageB: 0.92)
-        let after = createProjectWithTargets(nameA: "testName", coverageA: 0.22, nameB: "name", coverageB: 0.91)
+        let before = createProjectWithTargets(sourceName: "name", sourceCoverage: 0.23, testName: "testName", testCoverage: 0.92)
+        let after = createProjectWithTargets(sourceName: "testName", sourceCoverage: 0.22, testName: "name", testCoverage: 0.91)
 
-        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String]())
+        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String](), ignoreList: [String]())
 
         let rows = cc.getFilesChanged()
 
@@ -114,13 +114,13 @@ class CoverageCompareTests: XCTestCase {
         XCTAssertFalse(rows[1].test)
     }
 
-    func createProjectWithTargets(nameA: String, coverageA: Double, pathA: String = "", nameB: String, coverageB: Double) -> Project {
-        let file = File(coveredLines: 0, lineCoverage: coverageA, path: pathA, functions: [Function](), name: nameA, executableLines: 0)
+    func createProjectWithTargets(sourceName: String, sourceCoverage: Double, sourcePath: String = "", testName: String, testCoverage: Double) -> Project {
+        let file = File(coveredLines: 0, lineCoverage: sourceCoverage, path: sourcePath, functions: [Function](), name: sourceName, executableLines: 0)
         var files = [File]()
         files.append(file)
         let target = Target(coveredLines: 0, lineCoverage: 0, files: files, name: "", executableLines: 0, buildProductPath: "")
 
-        let testFile = File(coveredLines: 0, lineCoverage: coverageB, path: "", functions: [Function](), name: nameB, executableLines: 0)
+        let testFile = File(coveredLines: 0, lineCoverage: testCoverage, path: "", functions: [Function](), name: testName, executableLines: 0)
         var testFiles = [File]()
         testFiles.append(testFile)
         let testTarget = Target(coveredLines: 0, lineCoverage: 0, files: testFiles, name: "", executableLines: 0, buildProductPath: "")
@@ -134,12 +134,12 @@ class CoverageCompareTests: XCTestCase {
     // Mark: - File list not covered
 
     func testGetCoverageFileNotCovered() {
-        let before = createProjectWithTargets(nameA: "name", coverageA: 0.23, pathA: "folder/name", nameB: "testName", coverageB: 0.92)
-        let after = createProjectWithTargets(nameA: "testName", coverageA: 0.22, nameB: "name", coverageB: 0.91)
+        let before = createProjectWithTargets(sourceName: "name", sourceCoverage: 0.23, sourcePath: "folder/name", testName: "testName", testCoverage: 0.92)
+        let after = createProjectWithTargets(sourceName: "testName", sourceCoverage: 0.22, testName: "name", testCoverage: 0.91)
 
         var files = [String]()
         files.append("folder/name")
-        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: files)
+        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: files, ignoreList: [String]())
 
         let rows = cc.getFilesChanged()
 
@@ -153,19 +153,19 @@ class CoverageCompareTests: XCTestCase {
     }
 
     func testCreateTableNoRow() {
-        let before = createProjectWithTargets(nameA: "name", coverageA: 0.23, pathA: "folder/name", nameB: "testName", coverageB: 0.92)
-        let after = createProjectWithTargets(nameA: "testName", coverageA: 0.22, nameB: "name", coverageB: 0.91)
+        let before = createProjectWithTargets(sourceName: "name", sourceCoverage: 0.23, sourcePath: "folder/name", testName: "testName", testCoverage: 0.92)
+        let after = createProjectWithTargets(sourceName: "testName", sourceCoverage: 0.22, testName: "name", testCoverage: 0.91)
 
-        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String]())
+        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String](), ignoreList: [String]())
         let result = cc.createTable(rows: [Row](), devLink: "", prLink: "")
         XCTAssertTrue(result.isEmpty)
     }
 
     func testCreateTableRows() {
-        let before = createProjectWithTargets(nameA: "name", coverageA: 0.23, pathA: "folder/name", nameB: "testName", coverageB: 0.92)
-        let after = createProjectWithTargets(nameA: "testName", coverageA: 0.22, nameB: "name", coverageB: 0.91)
+        let before = createProjectWithTargets(sourceName: "name", sourceCoverage: 0.23, sourcePath: "folder/name", testName: "testName", testCoverage: 0.92)
+        let after = createProjectWithTargets(sourceName: "testName", sourceCoverage: 0.22, testName: "name", testCoverage: 0.91)
 
-        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String]())
+        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String](), ignoreList: [String]())
         var rows = [Row]()
         rows.append(Row(sourceFile: "source", beforeCoverage: 0.1, afterCoverage: 0.2))
 
@@ -181,10 +181,10 @@ class CoverageCompareTests: XCTestCase {
     }
 
     func testCreateTableRowsForTests() {
-        let before = createProjectWithTargets(nameA: "", coverageA: 0, pathA: "", nameB: "", coverageB: 0.92)
-        let after = createProjectWithTargets(nameA: "", coverageA: 0, nameB: "", coverageB: 0.91)
+        let before = createProjectWithTargets(sourceName: "", sourceCoverage: 0, sourcePath: "", testName: "", testCoverage: 0.92)
+        let after = createProjectWithTargets(sourceName: "", sourceCoverage: 0, testName: "", testCoverage: 0.91)
 
-        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String]())
+        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String](), ignoreList: [String]())
         var rows = [Row]()
         rows.append(Row(sourceFile: "sourceTest", beforeCoverage: 0.1, afterCoverage: 0.2))
 
@@ -199,11 +199,30 @@ class CoverageCompareTests: XCTestCase {
         XCTAssertEqual(result[2],  "|👍|<a href=http://a.b/sourceTest_comparison.html>sourceTest</a>|10%|20%|")
     }
 
-    func testCreateTableRowsForMultipleFiles() {
-        let before = createProjectWithTargets(nameA: "", coverageA: 0, pathA: "", nameB: "", coverageB: 0.92)
-        let after = createProjectWithTargets(nameA: "", coverageA: 0, nameB: "", coverageB: 0.91)
+    func testCreateTableRowsForTests100Percent() {
+        let before = createProjectWithTargets(sourceName: "", sourceCoverage: 0, sourcePath: "", testName: "", testCoverage: 0.92)
+        let after = createProjectWithTargets(sourceName: "", sourceCoverage: 0, testName: "", testCoverage: 0.91)
 
-        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String]())
+        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String](), ignoreList: [String]())
+        var rows = [Row]()
+        rows.append(Row(sourceFile: "sourceTest", beforeCoverage: 23/23, afterCoverage: 51/51))
+
+        // When
+        let result = cc.createTable(rows: rows, devLink: "", prLink: "http://a.b/s/")
+
+        // THen
+        XCTAssertFalse(result.isEmpty)
+        XCTAssertEqual(result.count, 3)
+        XCTAssertEqual(result[0],  "|Change|File|Develop|PR|")
+        XCTAssertEqual(result[1],  "|:----:|----|:-----:|:--:|")
+        XCTAssertEqual(result[2],  "|💯|<a href=http://a.b/sourceTest_comparison.html>sourceTest</a>|100%|100%|")
+    }
+
+    func testCreateTableRowsForMultipleFiles() {
+        let before = createProjectWithTargets(sourceName: "", sourceCoverage: 0, sourcePath: "", testName: "", testCoverage: 0.92)
+        let after = createProjectWithTargets(sourceName: "", sourceCoverage: 0, testName: "", testCoverage: 0.91)
+
+        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String](), ignoreList: [String]())
         var rows = [Row]()
         rows.append(Row(sourceFile: "sourceB", beforeCoverage: 0.1, afterCoverage: 0.2))
         rows.append(Row(sourceFile: "sourceA", beforeCoverage: 0.3, afterCoverage: 0.25))
@@ -221,10 +240,10 @@ class CoverageCompareTests: XCTestCase {
     }
 
     func testCreateTableRowsForMultipleTestFiles() {
-        let before = createProjectWithTargets(nameA: "", coverageA: 0, pathA: "", nameB: "", coverageB: 0.92)
-        let after = createProjectWithTargets(nameA: "", coverageA: 0, nameB: "", coverageB: 0.91)
+        let before = createProjectWithTargets(sourceName: "", sourceCoverage: 0, sourcePath: "", testName: "", testCoverage: 0.92)
+        let after = createProjectWithTargets(sourceName: "", sourceCoverage: 0, testName: "", testCoverage: 0.91)
 
-        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String]())
+        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String](), ignoreList: [String]())
         var rows = [Row]()
         rows.append(Row(sourceFile: "sourceTestB", beforeCoverage: 0.1, afterCoverage: 0.2))
         rows.append(Row(sourceFile: "sourceTestA", beforeCoverage: 0.3, afterCoverage: 0.25))
@@ -239,5 +258,82 @@ class CoverageCompareTests: XCTestCase {
         XCTAssertEqual(result[1],  "|:----:|----|:-----:|:--:|")
         XCTAssertEqual(result[2],  "|👎|<a href=a.b/sourceTestA_comparison.html>sourceTestA</a>|30%|25%|")
         XCTAssertEqual(result[3],  "|👍|<a href=a.b/sourceTestB_comparison.html>sourceTestB</a>|10%|20%|")
+    }
+
+    // MARK - isValid
+
+    func testIsValidNoFiltering() {
+        let cc = createCoverageComparison()
+        let file = File(path: "path/File", name: "File")
+        XCTAssertTrue(cc.isValid(file: file))
+    }
+
+    func testIsValidFileIncludedOnList() {
+        var filesList = [String]()
+        filesList.append("File")
+        let cc = createCoverageComparison(fileList: filesList)
+        let file = File(path: "path/File", name: "File")
+        XCTAssertTrue(cc.isValid(file: file))
+    }
+
+    func testIsValidFileNotIncludedOnList() {
+        var filesList = [String]()
+        filesList.append("File2")
+        let cc = createCoverageComparison(fileList: filesList)
+        let file = File(path: "path/File", name: "File")
+        XCTAssertFalse(cc.isValid(file: file))
+    }
+
+    func testIsValidFileIgnored() {
+        var ignoresList = [String]()
+        ignoresList.append(".*File")
+        let cc = createCoverageComparison(ignoreList: ignoresList)
+        let file = File(path: "path/File", name: "File")
+        XCTAssertFalse(cc.isValid(file: file))
+    }
+
+    func testIsValidFileNotIgnored() {
+        var ignoresList = [String]()
+        ignoresList.append("*File")
+        let cc = createCoverageComparison(ignoreList: ignoresList)
+        let file = File(path: "path/Mars", name: "Mars")
+        XCTAssertTrue(cc.isValid(file: file))
+    }
+
+    func testGetCoverageFilesAreIgnoredPodFileExactMatch() {
+        var ignoresList = [String]()
+        ignoresList.append("Pod/name")
+        let cc = createCoverageComparison(ignoreList: ignoresList)
+        let file = File(path: "Pod/name", name: "Mars")
+        XCTAssertFalse(cc.isValid(file: file))
+    }
+
+    func testGetCoverageFilesAreIgnoredPodFileRegex() {
+        var ignoresList = [String]()
+        ignoresList.append(".*Pod.*")
+        let cc = createCoverageComparison(ignoreList: ignoresList)
+        let file = File(path: "Pod/name", name: "Mars")
+        XCTAssertFalse(cc.isValid(file: file))
+    }
+
+    func testGetCoverageFilesAreIgnoredUIFile() {
+        var ignoresList = [String]()
+        ignoresList.append("UI.*.swift")
+        let cc = createCoverageComparison(ignoreList: ignoresList)
+        let file = File(path: "Pod/UIname.swift", name: "Mars")
+        XCTAssertFalse(cc.isValid(file: file))
+    }
+
+    func createCoverageComparison(fileList: [String] = [String](), ignoreList: [String] = [String]()) -> CoverageComparison {
+        let before = createProjectWithTargets(sourceName: "", sourceCoverage: 0, sourcePath: "", testName: "", testCoverage: 0)
+        let after = before
+        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: fileList, ignoreList: ignoreList)
+        return cc
+    }
+}
+
+private extension File {
+    init(path: String, name: String) {
+        self.init(coveredLines: 0, lineCoverage: 0, path: path, functions: [Function](), name: name, executableLines: 0)
     }
 }

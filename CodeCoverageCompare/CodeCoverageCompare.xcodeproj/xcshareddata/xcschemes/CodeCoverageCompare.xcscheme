@@ -26,8 +26,17 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      codeCoverageEnabled = "YES"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "35DE8A22238CA79600F9D48C"
+            BuildableName = "CodeCoverageCompare"
+            BlueprintName = "CodeCoverageCompare"
+            ReferencedContainer = "container:CodeCoverageCompare.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -40,17 +49,6 @@
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "35DE8A22238CA79600F9D48C"
-            BuildableName = "CodeCoverageCompare"
-            BlueprintName = "CodeCoverageCompare"
-            ReferencedContainer = "container:CodeCoverageCompare.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -74,11 +72,11 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "/Users/michael.charland/git/textnow-ios-service-framework/fastlane/test_output/develop_coverage.json"
+            argument = "/Users/michael/Documents/git/CodeCoverageCompare/example/Before/Example/fastlane/test_output/coverage.json"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "/Users/michael.charland/git/textnow-ios-service-framework/fastlane/test_output/coverage.json"
+            argument = "/Users/michael/Documents/git/CodeCoverageCompare/example/After/Example/fastlane/test_output/coverage.json"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
@@ -90,12 +88,14 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "/Users/michael.charland/git/textnow-ios-service-framework/fastlane/test_output/fileChanged.txt"
-            isEnabled = "NO">
+            argument = "/Users/michael/Documents/git/CodeCoverageCompare/example/filesList.txt"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "/Users/michael/Documents/git/CodeCoverageCompare/example/ignoreList.txt"
+            isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

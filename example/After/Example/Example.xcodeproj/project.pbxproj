@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C3157B223A86F6F0062EC74 /* IgnoredFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3157B123A86F6F0062EC74 /* IgnoredFile.swift */; };
 		4CA6CD222378F35E0010ACC9 /* Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA6CD182378F35E0010ACC9 /* Example.framework */; };
 		4CA6CD292378F35E0010ACC9 /* Example.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CA6CD1B2378F35E0010ACC9 /* Example.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4CA6CD342378F4670010ACC9 /* ExistingClassNotCovered.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6CD322378F4670010ACC9 /* ExistingClassNotCovered.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C3157B123A86F6F0062EC74 /* IgnoredFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgnoredFile.swift; sourceTree = "<group>"; };
 		4CA6CD182378F35E0010ACC9 /* Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA6CD1B2378F35E0010ACC9 /* Example.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Example.h; sourceTree = "<group>"; };
 		4CA6CD1C2378F35E0010ACC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				4CA6CD1C2378F35E0010ACC9 /* Info.plist */,
 				4CA6CD3C2378F5400010ACC9 /* NewClassNoCoverage.swift */,
 				4CA6CD3E2378F5610010ACC9 /* NewClassCovered.swift */,
+				4C3157B123A86F6F0062EC74 /* IgnoredFile.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				4CA6CD7F237F1CFD0010ACC9 /* ExistingClassCoverageDown.swift in Sources */,
 				4CA6CD81237F1D770010ACC9 /* ExistingClassCoverageUp.swift in Sources */,
 				4CA6CD352378F4670010ACC9 /* ExistingClassCovered.swift in Sources */,
+				4C3157B223A86F6F0062EC74 /* IgnoredFile.swift in Sources */,
 				4CA6CD392378F4EC0010ACC9 /* ExistingClassCoverageDropped.swift in Sources */,
 				4CA6CD3F2378F5610010ACC9 /* NewClassCovered.swift in Sources */,
 				4CA6CD342378F4670010ACC9 /* ExistingClassNotCovered.swift in Sources */,
