@@ -320,8 +320,40 @@ class CoverageCompareTests: XCTestCase {
         var ignoresList = [String]()
         ignoresList.append("UI.*.swift")
         let cc = createCoverageComparison(ignoreList: ignoresList)
-        let file = File(path: "Pod/UIname.swift", name: "Mars")
+        let file = File(path: "Pod/UIname.swift", name: "")
         XCTAssertFalse(cc.isValid(file: file))
+    }
+
+    func testGetCoverageFilesAreIgnored() {
+        var globList = [String]()
+        globList.append("*Pods*")
+        globList.append("*Mock*")
+        globList.append("*Tests*")
+        globList.append("*.h")
+        globList.append("*View.swift")
+        globList.append("*ViewController*.swift")
+        globList.append("*NavigationController.swift")
+        globList.append("UI*.swift")
+        globList.append("UI*Extensions.swift")
+        globList.append("CA*.swift")
+        globList.append("CA*Extensions.swift")
+        globList.append("*External*")
+        globList.append("*.m")
+        globList.append("*.mm")
+        globList.append("*.pch")
+        globList.append("*.c")
+        let ignoresList = Utils.convertToRegex(fromGlobLines: globList)
+        let cc = createCoverageComparison(ignoreList: ignoresList)
+        XCTAssertFalse(cc.isValid(file: File(path: "Pod/UIname.swift", name: "")))
+        XCTAssertFalse(cc.isValid(file: File(path: "UIname.swift", name: "")))
+        XCTAssertFalse(cc.isValid(file: File(path: "objc.c", name: "")))
+        XCTAssertFalse(cc.isValid(file: File(path: "objc.m", name: "")))
+        XCTAssertFalse(cc.isValid(file: File(path: "MainNavigationController.swift", name: "")))
+        XCTAssertFalse(cc.isValid(file: File(path: "MainView.swift", name: "")))
+
+        XCTAssertTrue(cc.isValid(file: File(path: "ViewModel.swift", name: "")))
+        XCTAssertTrue(cc.isValid(file: File(path: "Factiliator.swift", name: "")))
+        XCTAssertTrue(cc.isValid(file: File(path: "Provider.swift", name: "")))
     }
 
     func createCoverageComparison(fileList: [String] = [String](), ignoreList: [String] = [String]()) -> CoverageComparison {

@@ -67,6 +67,7 @@ public class Utils {
         for var line in lines {
 
             // from: https://en.wikipedia.org/wiki/Glob_%28programming%29
+            line = line.replacingOccurrences(of: ".", with: "\\.")
             line = line.replacingOccurrences(of: "?", with: ".")
             line = line.replacingOccurrences(of: "*", with: ".*")
             result.append(line)

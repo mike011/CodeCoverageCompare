@@ -22,12 +22,13 @@ class UtilsTests: XCTestCase {
         var globLines = [String]()
         globLines.append("a")
         globLines.append("*Pod*")
-        globLines.append("UI*+*.swift")
+        globLines.append("UI*")
+        globLines.append("a.swift")
 
         let result = Utils.convertToRegex(fromGlobLines: globLines)
-        XCTAssertEqual(result.count, 3)
         XCTAssertEqual(result[0], "a")
         XCTAssertEqual(result[1], ".*Pod.*")
-        XCTAssertEqual(result[2], "UI.*+.*.swift")
+        XCTAssertEqual(result[2], "UI.*")
+        XCTAssertEqual(result[3], "a\\.swift")
     }
 }
