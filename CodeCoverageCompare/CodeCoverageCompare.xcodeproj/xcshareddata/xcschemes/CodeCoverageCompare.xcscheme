@@ -80,11 +80,11 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "https://mike011.github.io/CodeCoverageCompare/before"
+            argument = "https://mike011.github.io/CodeCoverageCompare/before/slather"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "https://mike011.github.io/CodeCoverageCompare/after"
+            argument = "https://mike011.github.io/CodeCoverageCompare/after/slather"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
