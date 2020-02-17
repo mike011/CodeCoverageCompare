@@ -38,10 +38,12 @@ public class CoverageComparison {
         for target in before.targets {
             for beforeFile in target.files {
                 let filename = beforeFile.name
-                if isValid(file: beforeFile) {
-                    let beforeCoverage = beforeFile.lineCoverage
+                if isNotIgnored(file: beforeFile) {
                     beforeCoveredLines += beforeFile.coveredLines
                     beforeExecutableLines += beforeFile.executableLines
+                }
+                if isValid(file: beforeFile) {
+                    let beforeCoverage = beforeFile.lineCoverage
                     var afterCoverage: Double?
                     for afterTarget in after.targets {
                         for afterFile in afterTarget.files {
@@ -61,11 +63,13 @@ public class CoverageComparison {
         for target in after.targets {
             for afterFile in target.files {
                 let filename = afterFile.name
+                if isNotIgnored(file: afterFile) {
+                    afterCoveredLines += afterFile.coveredLines
+                    afterExecutableLines += afterFile.executableLines
+                }
                 if isValid(file: afterFile) {
                     var beforeCoverage: Double?
                     let afterCoverage = afterFile.lineCoverage
-                    afterCoveredLines += afterFile.coveredLines
-                    afterExecutableLines += afterFile.executableLines
                     for beforeTarget in before.targets {
                         for beforeFile in beforeTarget.files {
                             if beforeFile.name == filename {
@@ -101,14 +105,25 @@ public class CoverageComparison {
         return result
     }
 
-    func isValid(file: File) -> Bool {
-        let result = fileList.isEmpty || !fileList.filter { file.path.contains($0) }.isEmpty
-        if result, !ignoreList.isEmpty {
+    func isFiltered(file: File) -> Bool {
+        return fileList.isEmpty || !fileList.filter { file.path.contains($0) }.isEmpty
+    }
+
+    func isNotIgnored(file: File) -> Bool {
+        if !ignoreList.isEmpty {
             let ignored = ignoreList.filter {
                 let regex = try? NSRegularExpression(pattern: $0)
                 return regex?.matches(file.path) ?? false
             }
             return ignored.isEmpty
+        }
+        return true
+    }
+
+    func isValid(file: File) -> Bool {
+        let result = isFiltered(file: file)
+        if result, !ignoreList.isEmpty {
+            return isNotIgnored(file: file)
         }
         return result
     }
