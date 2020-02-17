@@ -9,7 +9,6 @@
 import Foundation
 
 public class CoverageComparison {
-
     let writeLocation: URL
     let before: Project
     let after: Project
@@ -84,29 +83,31 @@ public class CoverageComparison {
 
         var beforeCoverage = 0.0
         if beforeExecutableLines > 0 {
-            beforeCoverage = Double(beforeCoveredLines)/Double(beforeExecutableLines)
+            beforeCoverage = Double(beforeCoveredLines) / Double(beforeExecutableLines)
         }
         var afterCoverage = 0.0
         if afterExecutableLines > 0 {
-            afterCoverage = Double(afterCoveredLines)/Double(afterExecutableLines)
+            afterCoverage = Double(afterCoveredLines) / Double(afterExecutableLines)
         }
 
-        if beforeCoverage != 0.0 && afterCoverage != 0.0 {
-            result.append(Row(sourceFile: "index",
-                              beforeCoverage: beforeCoverage,
-                              afterCoverage: afterCoverage))
+        if beforeCoverage != 0.0, afterCoverage != 0.0 {
+            result.append(Row(
+                sourceFile: "index",
+                beforeCoverage: beforeCoverage,
+                afterCoverage: afterCoverage
+            ))
         }
 
         return result
     }
 
     func isValid(file: File) -> Bool {
-        let result = fileList.isEmpty || !fileList.filter({file.path.contains($0)}).isEmpty
-        if result && !ignoreList.isEmpty {
-            let ignored = ignoreList.filter({
+        let result = fileList.isEmpty || !fileList.filter { file.path.contains($0) }.isEmpty
+        if result, !ignoreList.isEmpty {
+            let ignored = ignoreList.filter {
                 let regex = try? NSRegularExpression(pattern: $0)
                 return regex?.matches(file.path) ?? false
-            })
+            }
             return ignored.isEmpty
         }
         return result

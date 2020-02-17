@@ -9,10 +9,7 @@
 import Foundation
 
 class IgnoredFile {
-    func awesome() {
-    }
+    func awesome() {}
 
-    func great() {
-
-    }
+    func great() {}
 }

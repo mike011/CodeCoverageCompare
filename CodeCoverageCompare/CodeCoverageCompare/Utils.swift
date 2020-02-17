@@ -10,7 +10,6 @@ import Foundation
 
 public class Utils {
     public static func getCoverageFile(file: String) -> Project? {
-
         let fileManager = FileManager.default
         if !fileManager.fileExists(atPath: file) {
             print("Coverage file not found: \(file)")
@@ -45,7 +44,6 @@ public class Utils {
     }
 
     public static func load(file: String) -> [String] {
-
         guard !file.isEmpty else {
             return [String]()
         }
@@ -65,13 +63,12 @@ public class Utils {
     public static func convertToRegex(fromGlobLines lines: [String]) -> [String] {
         var result = [String]()
         for var line in lines {
-
             // from: https://en.wikipedia.org/wiki/Glob_%28programming%29
             line = line.replacingOccurrences(of: ".", with: "\\.")
             line = line.replacingOccurrences(of: "?", with: ".")
             line = line.replacingOccurrences(of: "*", with: ".*")
             result.append(line)
         }
-        return result;
+        return result
     }
 }

@@ -9,8 +9,7 @@
 import Foundation
 
 func go(arguments: [String]) {
-
-    if arguments.count != 5 && arguments.count != 6 && arguments.count != 7 {
+    if arguments.count != 5, arguments.count != 6, arguments.count != 7 {
         print("Missing arguments, expected the following: ")
         print("\t1 - develop json file")
         print("\t2 - pr json file")
@@ -30,7 +29,7 @@ func go(arguments: [String]) {
 
     guard let before = Utils.getCoverageFile(file: beforeFileName),
         let after = Utils.getCoverageFile(file: afterFileName) else {
-            return
+        return
     }
     let writeLocation = Utils.getParentURL(file: afterFileName)
 
@@ -46,5 +45,5 @@ func go(arguments: [String]) {
     )
     cc.printTable(devLink: devURLBasePath, prLink: prURLBasePath)
 }
-go(arguments: CommandLine.arguments)
 
+go(arguments: CommandLine.arguments)
