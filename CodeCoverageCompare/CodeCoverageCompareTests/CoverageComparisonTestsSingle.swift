@@ -38,6 +38,23 @@ class CoverageComparisonSingleTests: XCTestCase {
         XCTAssertFalse(rows.first!.test)
     }
 
+    func testgetFileChangedOverallCoverage() {
+           let before = createProject()
+           let after = createProject()
+
+           let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String](), ignoreList: [String]())
+
+           let rows = cc.getFilesChanged()
+           XCTAssertFalse(rows.isEmpty)
+           XCTAssertEqual(rows.count, 2)
+
+        XCTAssertEqual(rows[1].sourceFile, "index")
+        XCTAssertEqual(rows[1].beforeCoverage, 0.1)
+        XCTAssertEqual(rows[1].afterCoverage, 0.1)
+        XCTAssertFalse(rows[1].test)
+
+       }
+
     func testCoverageRemoved() {
         let before = createProject()
         let after = Project(coveredLines: 0, lineCoverage: 0, targets: [Target](), executableLines: 0)
@@ -55,7 +72,7 @@ class CoverageComparisonSingleTests: XCTestCase {
 
     func createProject() -> Project {
         var files = [File]()
-        files.append(File(coveredLines: 0, lineCoverage: 1.0, path: "path", functions: [Function](), name: "name", executableLines: 0))
+        files.append(File(coveredLines: 1, lineCoverage: 1.0, path: "path", functions: [Function](), name: "name", executableLines: 10))
         var targets = [Target]()
         targets.append(Target(coveredLines: 0, lineCoverage: 0, files: files, name: "", executableLines: 0, buildProductPath: ""))
         return Project(coveredLines: 0, lineCoverage: 0, targets: targets, executableLines: 0)

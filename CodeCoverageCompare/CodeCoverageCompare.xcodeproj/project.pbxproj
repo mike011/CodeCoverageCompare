@@ -41,9 +41,7 @@
 
 /* Begin PBXFileReference section */
 		35B8AB55239499CF00A90A56 /* UtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
-		35DE8A23238CA79600F9D48C /* CodeCoverageCompare */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CodeCoverageCompare; sourceTree = BUILT_PRODUCTS_DIR; };
 		35DE8A26238CA79600F9D48C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		35DE8A31238CA7CB00F9D48C /* CodeCoverageCompareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeCoverageCompareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35DE8A35238CA7CB00F9D48C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35DE8A39238CA83000F9D48C /* Coverage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coverage.swift; sourceTree = "<group>"; };
 		35DE8A3A238CA83000F9D48C /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -55,6 +53,8 @@
 		35DE8A46238CA85500F9D48C /* CoverageComparisonTestsSingle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverageComparisonTestsSingle.swift; sourceTree = "<group>"; };
 		35DE8A47238CA85500F9D48C /* RowTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RowTests.swift; sourceTree = "<group>"; };
 		35DE8A48238CA85500F9D48C /* CodeCoverageCompareTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CodeCoverageCompareTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		4CEC4AE123FA2EC200E4A253 /* CodeCoverageCompare */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = CodeCoverageCompare; path = /Users/michael/Documents/git/CodeCoverageCompare/CodeCoverageCompare/build/Debug/CodeCoverageCompare; sourceTree = "<absolute>"; };
+		4CEC4AE223FA2EC200E4A253 /* CodeCoverageCompareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = CodeCoverageCompareTests.xctest; path = /Users/michael/Documents/git/CodeCoverageCompare/CodeCoverageCompare/build/Debug/CodeCoverageCompareTests.xctest; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,17 +80,7 @@
 			children = (
 				35DE8A25238CA79600F9D48C /* CodeCoverageCompare */,
 				35DE8A32238CA7CB00F9D48C /* CodeCoverageCompareTests */,
-				35DE8A24238CA79600F9D48C /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		35DE8A24238CA79600F9D48C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				35DE8A23238CA79600F9D48C /* CodeCoverageCompare */,
-				35DE8A31238CA7CB00F9D48C /* CodeCoverageCompareTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		35DE8A25238CA79600F9D48C /* CodeCoverageCompare */ = {
@@ -137,7 +127,7 @@
 			);
 			name = CodeCoverageCompare;
 			productName = CodeCoverageCompare;
-			productReference = 35DE8A23238CA79600F9D48C /* CodeCoverageCompare */;
+			productReference = 4CEC4AE123FA2EC200E4A253 /* CodeCoverageCompare */;
 			productType = "com.apple.product-type.tool";
 		};
 		35DE8A30238CA7CB00F9D48C /* CodeCoverageCompareTests */ = {
@@ -154,7 +144,7 @@
 			);
 			name = CodeCoverageCompareTests;
 			productName = CodeCoverageCompareTests;
-			productReference = 35DE8A31238CA7CB00F9D48C /* CodeCoverageCompareTests.xctest */;
+			productReference = 4CEC4AE223FA2EC200E4A253 /* CodeCoverageCompareTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -183,7 +173,7 @@
 				en,
 			);
 			mainGroup = 35DE8A1A238CA79600F9D48C;
-			productRefGroup = 35DE8A24238CA79600F9D48C /* Products */;
+			productRefGroup = 35DE8A1A238CA79600F9D48C;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (

@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "container:"
+      name = "Examples">
+      <Group
+         location = "container:"
+         name = "Before">
+         <FileRef
+            location = "group:example/Before/Example/Example.xcodeproj">
+         </FileRef>
+      </Group>
+      <Group
+         location = "container:"
+         name = "After">
+         <FileRef
+            location = "group:example/After/Example/Example.xcodeproj">
+         </FileRef>
+      </Group>
+   </Group>
    <FileRef
       location = "group:CodeCoverageCompare/CodeCoverageCompare.xcodeproj">
    </FileRef>

@@ -58,6 +58,7 @@ class CoverageCompareTests: XCTestCase {
         XCTAssertEqual(rows[1].afterCoverage, 0.92)
         XCTAssertFalse(rows[1].test)
     }
+    
 
     func createProjectWithMultipleFiles(sourceCoverage: Double, testCoverage: Double) -> Project {
         var files = [File]()

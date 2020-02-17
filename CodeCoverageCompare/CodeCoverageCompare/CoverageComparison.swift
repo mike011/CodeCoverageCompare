@@ -34,11 +34,15 @@ public class CoverageComparison {
 
     func getFilesChanged() -> [Row] {
         var rows = Set<Row>()
+        var beforeCoveredLines = 0
+        var beforeExecutableLines = 0
         for target in before.targets {
             for beforeFile in target.files {
                 let filename = beforeFile.name
                 if isValid(file: beforeFile) {
                     let beforeCoverage = beforeFile.lineCoverage
+                    beforeCoveredLines += beforeFile.coveredLines
+                    beforeExecutableLines += beforeFile.executableLines
                     var afterCoverage: Double?
                     for afterTarget in after.targets {
                         for afterFile in afterTarget.files {
@@ -53,12 +57,16 @@ public class CoverageComparison {
             }
         }
 
+        var afterCoveredLines = 0
+        var afterExecutableLines = 0
         for target in after.targets {
             for afterFile in target.files {
                 let filename = afterFile.name
                 if isValid(file: afterFile) {
                     var beforeCoverage: Double?
                     let afterCoverage = afterFile.lineCoverage
+                    afterCoveredLines += afterFile.coveredLines
+                    afterExecutableLines += afterFile.executableLines
                     for beforeTarget in before.targets {
                         for beforeFile in beforeTarget.files {
                             if beforeFile.name == filename {
@@ -73,6 +81,22 @@ public class CoverageComparison {
         }
         var result = Array(rows)
         result.sort(by: { $0.sourceFile < $1.sourceFile })
+
+        var beforeCoverage = 0.0
+        if beforeExecutableLines > 0 {
+            beforeCoverage = Double(beforeCoveredLines)/Double(beforeExecutableLines)
+        }
+        var afterCoverage = 0.0
+        if afterExecutableLines > 0 {
+            afterCoverage = Double(afterCoveredLines)/Double(afterExecutableLines)
+        }
+
+        if beforeCoverage != 0.0 && afterCoverage != 0.0 {
+            result.append(Row(sourceFile: "index",
+                              beforeCoverage: beforeCoverage,
+                              afterCoverage: afterCoverage))
+        }
+
         return result
     }
 
