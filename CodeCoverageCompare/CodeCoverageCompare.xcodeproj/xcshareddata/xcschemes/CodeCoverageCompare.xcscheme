@@ -72,11 +72,11 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "/Users/michael/Documents/git/CodeCoverageCompare/example/Before/Example/fastlane/test_output/coverage.json"
+            argument = "/Users/michael.charland/git/CodeCoverageCompare/example/Before/Example/fastlane/test_output/coverage.json"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "/Users/michael/Documents/git/CodeCoverageCompare/example/After/Example/fastlane/test_output/coverage.json"
+            argument = "/Users/michael.charland/git/CodeCoverageCompare/example/After/Example/fastlane/test_output/coverage.json"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument

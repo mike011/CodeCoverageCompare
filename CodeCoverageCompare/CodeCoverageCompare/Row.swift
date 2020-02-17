@@ -63,7 +63,7 @@ struct Row {
         guard let value = value else {
             return "-"
         }
-        return String(format: "%.0f", value * 100) + "%"
+        return String(format: "%.2f", value * 100) + "%"
     }
 
     private func getLink(parentURL: String, withEnd end: String) -> String {
