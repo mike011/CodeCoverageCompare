@@ -63,13 +63,21 @@ struct Row {
         guard let value = value else {
             return "-"
         }
-        return String(format: "%.2f", value * 100) + "%"
+        var accuracy = 0
+        if getName() == "index" {
+            accuracy = 2
+        }
+        return String(format: "%.\(accuracy)f", value * 100) + "%"
     }
 
     private func getLink(parentURL: String, withEnd end: String) -> String {
         let name = getName()
+        var title = name
+        if name == "index" {
+            title = "Overall"
+        }
         let url = "\(parentURL)\(name)\(end)"
-        return "<a href=\(url)>\(name)</a>"
+        return "<a href=\(url)>\(title)</a>"
     }
 
     func getName() -> String {
