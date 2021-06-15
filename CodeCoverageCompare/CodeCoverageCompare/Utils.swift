@@ -60,6 +60,35 @@ public class Utils {
         return string.components(separatedBy: "\n")
     }
 
+    public static func loadData<T: Decodable>(type: T.Type, file: String?) -> T? {
+        guard let file = file else {
+            return nil
+        }
+
+        let fileManager = FileManager.default
+        if !fileManager.fileExists(atPath: file) {
+            print("File not found: \(file)")
+            return nil
+        }
+
+        if let data = fileManager.contents(atPath: file) {
+            do {
+                return try JSONDecoder().decode(T.self, from: data)
+            } catch let DecodingError.keyNotFound(key, context) {
+                fatalError("Failed to decode \(file) from bundle due to missing key '\(key.stringValue)' not found – \(context.debugDescription)")
+            } catch let DecodingError.typeMismatch(_, context) {
+                fatalError("Failed to decode \(file) from bundle due to type mismatch – \(context.debugDescription)")
+            } catch let DecodingError.valueNotFound(type, context) {
+                fatalError("Failed to decode \(file) from bundle due to missing \(type) value – \(context.debugDescription)")
+            } catch DecodingError.dataCorrupted(_) {
+                fatalError("Failed to decode \(file) from bundle because it appears to be invalid JSON")
+            } catch {
+                fatalError("Failed to decode \(file) from bundle: \(error.localizedDescription)")
+            }
+        }
+        return nil
+    }
+
     public static func convertToRegex(fromGlobLines lines: [String]) -> [String] {
         var result = [String]()
         for var line in lines {

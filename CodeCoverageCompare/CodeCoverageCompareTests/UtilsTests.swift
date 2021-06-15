@@ -30,4 +30,10 @@ class UtilsTests: XCTestCase {
         XCTAssertEqual(result[2], "UI.*")
         XCTAssertEqual(result[3], "a\\.swift")
     }
+
+    func testLoadData() {
+        XCTAssertNil(Utils.loadData(type: Arguments.self, file: nil))
+        XCTAssertNil(Utils.loadData(type: Arguments.self, file: "File does not exist"))
+        XCTAssertNotNil(Utils.loadData(type: Arguments.self, file: EXAMPLE_JSON))
+    }
 }

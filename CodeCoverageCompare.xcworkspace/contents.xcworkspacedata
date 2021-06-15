@@ -4,6 +4,9 @@
    <Group
       location = "container:"
       name = "Examples">
+      <FileRef
+         location = "group:example/args.json">
+      </FileRef>
       <Group
          location = "container:"
          name = "Before">
