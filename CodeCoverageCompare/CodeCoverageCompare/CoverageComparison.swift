@@ -128,18 +128,18 @@ public class CoverageComparison {
         return result
     }
 
-    public func printTable(devLink: String, prLink: String) {
-        for line in createTable(rows: getFilesChanged(), devLink: devLink, prLink: prLink) {
+    public func printTable(beforeLink: String, afterLink: String) {
+        for line in createTable(rows: getFilesChanged(), beforeLink: beforeLink, afterLink: afterLink) {
             print(line)
         }
     }
 
-    func createTable(rows: [Row], devLink: String, prLink: String) -> [String] {
+    func createTable(rows: [Row], beforeLink: String, afterLink: String) -> [String] {
         var printData = [String]()
         guard !rows.isEmpty else {
             return printData
         }
-        printData.append("|Change|File|Develop|PR|")
+        printData.append("|Change|File|Before|After|")
         printData.append("|:----:|----|:-----:|:--:|")
 
         var sourceRows = [Row]()
@@ -154,21 +154,21 @@ public class CoverageComparison {
 
         sourceRows.sort(by: { $0.sourceFile < $1.sourceFile })
         for row in sourceRows {
-            printData.append(createHTML(row: row, devLink: devLink, prLink: prLink))
+            printData.append(createHTML(row: row, beforeLink: beforeLink, afterLink: afterLink))
         }
 
         testRows.sort(by: { $0.sourceFile < $1.sourceFile })
         for row in testRows {
-            printData.append(createHTML(row: row, devLink: devLink, prLink: prLink))
+            printData.append(createHTML(row: row, beforeLink: beforeLink, afterLink: afterLink))
         }
         return printData
     }
 
-    private func createHTML(row: Row, devLink: String, prLink: String) -> String {
+    private func createHTML(row: Row, beforeLink: String, afterLink: String) -> String {
         let end = "_comparison.html"
         let url = writeLocation.appendingPathComponent("\(row.getName())\(end)")
-        ComparisonWebPage(row: row, devLink: devLink, prLink: prLink).writeToFile(url: url)
-        return row.toString(parentURL: Utils.getParentURL(web: prLink).absoluteString, end: end)
+        ComparisonWebPage(row: row, beforeLink: beforeLink, afterLink: afterLink).writeToFile(url: url)
+        return row.toString(parentURL: Utils.getParentURL(web: afterLink).absoluteString, end: end)
     }
 }
 

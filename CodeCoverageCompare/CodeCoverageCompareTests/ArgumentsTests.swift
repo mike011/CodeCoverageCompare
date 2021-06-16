@@ -9,10 +9,10 @@
 import XCTest
 
 private let MOCK_ARGUMENTS = Arguments(
-    childCoverageJSON: "/User/vagrant/fastlane/PostBuildAnalyzer/child/coverage.json",
-    childURLPath: "https://mike011.github.io/child",
-    parentCoverageJSON: "EXAMPLE_LOG_FOLDER",
-    parentURLPath: "parentURLPath",
+    afterCoverageJSON: "/User/vagrant/fastlane/PostBuildAnalyzer/after/coverage.json",
+    afterURLPath: "https://mike011.github.io/after",
+    beforeCoverageJSON: "EXAMPLE_LOG_FOLDER",
+    beforeURLPath: "beforeURLPath",
     includeFilesFileName: "includes.txt",
     ignoreFilesFileName: "ignores.txt"
 )
@@ -21,10 +21,10 @@ class ArgumentsTests: XCTestCase {
     func testAllArguments() throws {
         let jsonString = """
         {
-        "childCoverageJSON": "/User/vagrant/fastlane/PostBuildAnalyzer/child/coverage.json",
-        "childURLPath": "https://mike011.github.io/child",
-        "parentCoverageJSON": "/User/vagrant/fastlane/PostBuildAnalyzer/parent/coverage.json",
-        "parentURLPath": "https://mike011.github.io/parent",
+        "afterCoverageJSON": "/User/vagrant/fastlane/PostBuildAnalyzer/after/coverage.json",
+        "afterURLPath": "https://mike011.github.io/after",
+        "beforeCoverageJSON": "/User/vagrant/fastlane/PostBuildAnalyzer/before/coverage.json",
+        "beforeURLPath": "https://mike011.github.io/before",
         "includeFilesFileName": "/User/vagrant/fastlane/include.txt",
         "ignoreFilesFileName": "/User/vagrant/fastlane/exclude.txt",
         }
@@ -32,10 +32,10 @@ class ArgumentsTests: XCTestCase {
 
         let data = jsonString.data(using: .utf8)!
         let args = try XCTUnwrap(JSONDecoder().decode(Arguments.self, from: data))
-        XCTAssertEqual(args.childCoverageJSON, "/User/vagrant/fastlane/PostBuildAnalyzer/child/coverage.json")
-        XCTAssertEqual(args.childURLPath, "https://mike011.github.io/child")
-        XCTAssertEqual(args.parentCoverageJSON, "/User/vagrant/fastlane/PostBuildAnalyzer/parent/coverage.json")
-        XCTAssertEqual(args.parentURLPath, "https://mike011.github.io/parent")
+        XCTAssertEqual(args.afterCoverageJSON, "/User/vagrant/fastlane/PostBuildAnalyzer/after/coverage.json")
+        XCTAssertEqual(args.afterURLPath, "https://mike011.github.io/after")
+        XCTAssertEqual(args.beforeCoverageJSON, "/User/vagrant/fastlane/PostBuildAnalyzer/before/coverage.json")
+        XCTAssertEqual(args.beforeURLPath, "https://mike011.github.io/before")
         XCTAssertEqual(args.includeFilesFileName, "/User/vagrant/fastlane/include.txt")
         XCTAssertEqual(args.ignoreFilesFileName, "/User/vagrant/fastlane/exclude.txt")
     }
@@ -43,19 +43,19 @@ class ArgumentsTests: XCTestCase {
     func testNoIncludeOrIgnore() throws {
         let jsonString = """
         {
-        "childCoverageJSON": "/User/vagrant/fastlane/PostBuildAnalyzer/child/coverage.json",
-        "childURLPath": "https://mike011.github.io/child",
-        "parentCoverageJSON": "/User/vagrant/fastlane/PostBuildAnalyzer/parent/coverage.json",
-        "parentURLPath": "https://mike011.github.io/parent",
+        "afterCoverageJSON": "/User/vagrant/fastlane/PostBuildAnalyzer/after/coverage.json",
+        "afterURLPath": "https://mike011.github.io/after",
+        "beforeCoverageJSON": "/User/vagrant/fastlane/PostBuildAnalyzer/before/coverage.json",
+        "beforeURLPath": "https://mike011.github.io/before",
         }
         """
 
         let data = jsonString.data(using: .utf8)!
         let args = try XCTUnwrap(JSONDecoder().decode(Arguments.self, from: data))
-        XCTAssertEqual(args.childCoverageJSON, "/User/vagrant/fastlane/PostBuildAnalyzer/child/coverage.json")
-        XCTAssertEqual(args.childURLPath, "https://mike011.github.io/child")
-        XCTAssertEqual(args.parentCoverageJSON, "/User/vagrant/fastlane/PostBuildAnalyzer/parent/coverage.json")
-        XCTAssertEqual(args.parentURLPath, "https://mike011.github.io/parent")
+        XCTAssertEqual(args.afterCoverageJSON, "/User/vagrant/fastlane/PostBuildAnalyzer/after/coverage.json")
+        XCTAssertEqual(args.afterURLPath, "https://mike011.github.io/after")
+        XCTAssertEqual(args.beforeCoverageJSON, "/User/vagrant/fastlane/PostBuildAnalyzer/before/coverage.json")
+        XCTAssertEqual(args.beforeURLPath, "https://mike011.github.io/before")
         XCTAssertNil(args.includeFilesFileName)
         XCTAssertNil(args.ignoreFilesFileName)
     }

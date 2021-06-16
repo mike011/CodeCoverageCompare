@@ -10,13 +10,13 @@ import Foundation
 
 class ComparisonWebPage {
     private let row: Row
-    private let devLink: String
-    private let prLink: String
+    private let beforeLink: String
+    private let afterLink: String
 
-    init(row: Row, devLink: String, prLink: String) {
+    init(row: Row, beforeLink: String, afterLink: String) {
         self.row = row
-        self.devLink = devLink
-        self.prLink = prLink
+        self.beforeLink = beforeLink
+        self.afterLink = afterLink
     }
 
     func writeToFile(url: URL) {
@@ -30,14 +30,14 @@ class ComparisonWebPage {
     func getContents() -> String {
         var before = "Coverage file does not exist"
         if row.beforeCoverage != nil {
-            let beforeLink = "\(devLink)/\(row.sourceFile).html"
+            let beforeLink = "\(beforeLink)/\(row.sourceFile).html"
             before = """
                 <iframe src="\(beforeLink)" width="100%" height="100%" frameborder="0" scrolling="yes"></iframe>
             """
         }
         var after = "Does not exist"
         if row.afterCoverage != nil {
-            let afterLink = "\(prLink)/\(row.sourceFile).html"
+            let afterLink = "\(afterLink)/\(row.sourceFile).html"
             after = """
                 <iframe src="\(afterLink)" width="100%" height="100%" frameborder="0" scrolling="yes"></iframe>
             """

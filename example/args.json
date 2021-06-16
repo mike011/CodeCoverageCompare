@@ -1,8 +1,8 @@
 {
-    "childCoverageJSON": "/Users/michael/Documents/git/CodeCoverageCompare/example/Before/Example/fastlane/test_output/coverage.json",
-    "childURLPath": "https://mike011.github.io/CodeCoverageCompare/before/slather",
-    "parentCoverageJSON": "/Users/michael/Documents/git/CodeCoverageCompare/example/After/Example/fastlane/test_output/coverage.json",
-    "parentURLPath": "https://mike011.github.io/CodeCoverageCompare/after/slather",
+    "afterCoverageJSON": "/Users/michael/Documents/git/CodeCoverageCompare/example/Before/Example/fastlane/test_output/coverage.json",
+    "afterURLPath": "https://mike011.github.io/CodeCoverageCompare/before/slather",
+    "beforeCoverageJSON": "/Users/michael/Documents/git/CodeCoverageCompare/example/After/Example/fastlane/test_output/coverage.json",
+    "beforeURLPath": "https://mike011.github.io/CodeCoverageCompare/after/slather",
     "includeFilesFileName": "/Users/michael/Documents/git/CodeCoverageCompare/example/filesList.txt",
     "ignoreFilesFileName": "/Users/michael/Documents/git/CodeCoverageCompare/example/ignoreList.txt"
 }

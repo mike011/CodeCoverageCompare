@@ -156,7 +156,7 @@ class CoverageCompareTests: XCTestCase {
         let after = createProjectWithTargets(sourceName: "testName", sourceCoverage: 0.22, testName: "name", testCoverage: 0.91)
 
         let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String](), ignoreList: [String]())
-        let result = cc.createTable(rows: [Row](), devLink: "", prLink: "")
+        let result = cc.createTable(rows: [Row](), beforeLink: "", afterLink: "")
         XCTAssertTrue(result.isEmpty)
     }
 
@@ -169,12 +169,12 @@ class CoverageCompareTests: XCTestCase {
         rows.append(Row(sourceFile: "source", beforeCoverage: 0.1, afterCoverage: 0.2))
 
         // When
-        let result = cc.createTable(rows: rows, devLink: "", prLink: "a.b/s")
+        let result = cc.createTable(rows: rows, beforeLink: "", afterLink: "a.b/s")
 
         // Then
         XCTAssertFalse(result.isEmpty)
         XCTAssertEqual(result.count, 3)
-        XCTAssertEqual(result[0], "|Change|File|Develop|PR|")
+        XCTAssertEqual(result[0], "|Change|File|Before|After|")
         XCTAssertEqual(result[1], "|:----:|----|:-----:|:--:|")
         XCTAssertEqual(result[2], "|👍|<a href=a.b/source_comparison.html>source</a>|10%|20%|")
     }
@@ -188,12 +188,12 @@ class CoverageCompareTests: XCTestCase {
         rows.append(Row(sourceFile: "sourceTest", beforeCoverage: 0.1, afterCoverage: 0.2))
 
         // When
-        let result = cc.createTable(rows: rows, devLink: "", prLink: "http://a.b/s/")
+        let result = cc.createTable(rows: rows, beforeLink: "", afterLink: "http://a.b/s/")
 
         // THen
         XCTAssertFalse(result.isEmpty)
         XCTAssertEqual(result.count, 3)
-        XCTAssertEqual(result[0], "|Change|File|Develop|PR|")
+        XCTAssertEqual(result[0], "|Change|File|Before|After|")
         XCTAssertEqual(result[1], "|:----:|----|:-----:|:--:|")
         XCTAssertEqual(result[2], "|👍|<a href=http://a.b/sourceTest_comparison.html>sourceTest</a>|10%|20%|")
     }
@@ -207,12 +207,12 @@ class CoverageCompareTests: XCTestCase {
         rows.append(Row(sourceFile: "sourceTest", beforeCoverage: 23 / 23, afterCoverage: 51 / 51))
 
         // When
-        let result = cc.createTable(rows: rows, devLink: "", prLink: "http://a.b/s/")
+        let result = cc.createTable(rows: rows, beforeLink: "", afterLink: "http://a.b/s/")
 
         // THen
         XCTAssertFalse(result.isEmpty)
         XCTAssertEqual(result.count, 3)
-        XCTAssertEqual(result[0], "|Change|File|Develop|PR|")
+        XCTAssertEqual(result[0], "|Change|File|Before|After|")
         XCTAssertEqual(result[1], "|:----:|----|:-----:|:--:|")
         XCTAssertEqual(result[2], "|💯|<a href=http://a.b/sourceTest_comparison.html>sourceTest</a>|100%|100%|")
     }
@@ -227,12 +227,12 @@ class CoverageCompareTests: XCTestCase {
         rows.append(Row(sourceFile: "sourceA", beforeCoverage: 0.3, afterCoverage: 0.25))
 
         // When
-        let result = cc.createTable(rows: rows, devLink: "", prLink: "http://www.github.com/mike011/ccc/slather")
+        let result = cc.createTable(rows: rows, beforeLink: "", afterLink: "http://www.github.com/mike011/ccc/slather")
 
         // Then
         XCTAssertFalse(result.isEmpty)
         XCTAssertEqual(result.count, 4)
-        XCTAssertEqual(result[0], "|Change|File|Develop|PR|")
+        XCTAssertEqual(result[0], "|Change|File|Before|After|")
         XCTAssertEqual(result[1], "|:----:|----|:-----:|:--:|")
         XCTAssertEqual(result[2], "|👎|<a href=http://www.github.com/mike011/ccc/sourceA_comparison.html>sourceA</a>|30%|25%|")
         XCTAssertEqual(result[3], "|👍|<a href=http://www.github.com/mike011/ccc/sourceB_comparison.html>sourceB</a>|10%|20%|")
@@ -248,12 +248,12 @@ class CoverageCompareTests: XCTestCase {
         rows.append(Row(sourceFile: "sourceTestA", beforeCoverage: 0.3, afterCoverage: 0.25))
 
         // When
-        let result = cc.createTable(rows: rows, devLink: "", prLink: "a.b/s")
+        let result = cc.createTable(rows: rows, beforeLink: "", afterLink: "a.b/s")
 
         // Then
         XCTAssertFalse(result.isEmpty)
         XCTAssertEqual(result.count, 4)
-        XCTAssertEqual(result[0], "|Change|File|Develop|PR|")
+        XCTAssertEqual(result[0], "|Change|File|Before|After|")
         XCTAssertEqual(result[1], "|:----:|----|:-----:|:--:|")
         XCTAssertEqual(result[2], "|👎|<a href=a.b/sourceTestA_comparison.html>sourceTestA</a>|30%|25%|")
         XCTAssertEqual(result[3], "|👍|<a href=a.b/sourceTestB_comparison.html>sourceTestB</a>|10%|20%|")

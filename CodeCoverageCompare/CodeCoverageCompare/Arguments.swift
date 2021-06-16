@@ -11,11 +11,11 @@ import Foundation
 // MARK: - Arguments
 
 struct Arguments: Decodable {
-    let childCoverageJSON: String
-    let childURLPath: String
+    let afterCoverageJSON: String
+    let afterURLPath: String
 
-    let parentCoverageJSON: String
-    let parentURLPath: String
+    let beforeCoverageJSON: String
+    let beforeURLPath: String
 
     let includeFilesFileName: String?
     let ignoreFilesFileName: String?

@@ -21,7 +21,7 @@ class RowTests: XCTestCase {
         XCTAssertEqual(row.change, "")
     }
 
-    func testRowPRCoverageBefore() {
+    func testRowAfterCoverageBefore() {
         let row = Row(sourceFile: "file", beforeCoverage: 30, afterCoverage: nil)
         XCTAssertEqual(row.change, "")
     }
@@ -43,7 +43,7 @@ class RowTests: XCTestCase {
         XCTAssertEqual(row.change, "🚫")
     }
 
-    func testRowPRCoverageAfter() {
+    func testRowAfterCoverageAfter() {
         let row = Row(sourceFile: "file", beforeCoverage: nil, afterCoverage: 30)
         XCTAssertEqual(row.change, "👍")
     }
@@ -55,22 +55,22 @@ class RowTests: XCTestCase {
 
     // MARK: - Both files covered
 
-    func testRowPRAllCovered() {
+    func testRowAfterAllCovered() {
         let row = Row(sourceFile: "file", beforeCoverage: 0, afterCoverage: 1)
         XCTAssertEqual(row.change, "💯")
     }
 
-    func testRowPRNotCovered() {
+    func testRowAfterNotCovered() {
         let row = Row(sourceFile: "file", beforeCoverage: 0, afterCoverage: 0)
         XCTAssertEqual(row.change, "🚫")
     }
 
-    func testRowPRCoverageDown() {
+    func testRowAfterCoverageDown() {
         let row = Row(sourceFile: "file", beforeCoverage: 30, afterCoverage: 25)
         XCTAssertEqual(row.change, "👎")
     }
 
-    func testRowPRCoverageUp() {
+    func testRowAfterCoverageUp() {
         let row = Row(sourceFile: "file", beforeCoverage: 25, afterCoverage: 30)
         XCTAssertEqual(row.change, "👍")
     }

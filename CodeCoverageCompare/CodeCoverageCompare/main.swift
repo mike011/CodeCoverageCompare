@@ -9,10 +9,10 @@
 import Foundation
 
 func go(arguments: Arguments) {
-    let beforeFileName = arguments.parentCoverageJSON
-    let afterFileName = arguments.childCoverageJSON
-    let devURLBasePath = arguments.parentURLPath
-    let prURLBasePath = arguments.childURLPath
+    let beforeFileName = arguments.beforeCoverageJSON
+    let afterFileName = arguments.afterCoverageJSON
+    let beforeURLBasePath = arguments.beforeURLPath
+    let afterURLBasePath = arguments.afterURLPath
     let fileList = arguments.includeFilesFileName ?? ""
     let ignoreList = arguments.ignoreFilesFileName ?? ""
 
@@ -32,7 +32,7 @@ func go(arguments: Arguments) {
         fileList: listOfFiles,
         ignoreList: listOfIgnores
     )
-    cc.printTable(devLink: devURLBasePath, prLink: prURLBasePath)
+    cc.printTable(beforeLink: beforeURLBasePath, afterLink: afterURLBasePath)
 }
 
 if CommandLine.arguments.count != 2 {
