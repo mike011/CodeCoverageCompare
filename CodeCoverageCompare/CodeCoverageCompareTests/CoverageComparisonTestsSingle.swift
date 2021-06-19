@@ -30,7 +30,7 @@ class CoverageComparisonSingleTests: XCTestCase {
 
         let rows = cc.getFilesChanged()
         XCTAssertFalse(rows.isEmpty)
-        XCTAssertEqual(rows.count, 1)
+        XCTAssertEqual(rows.count, 2)
         XCTAssertEqual(rows.first!.sourceFile, "name")
         XCTAssertNil(rows.first!.beforeCoverage)
         XCTAssertEqual(rows.first!.afterCoverage, 1.0)

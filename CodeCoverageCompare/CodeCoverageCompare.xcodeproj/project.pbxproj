@@ -29,6 +29,7 @@
 		4C9219D42679546F00E0A513 /* Arguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9219D22679516400E0A513 /* Arguments.swift */; };
 		4C9219D6267954F900E0A513 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9219D5267954F900E0A513 /* Resources.swift */; };
 		4C9219D82679558700E0A513 /* ArgumentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9219D72679558700E0A513 /* ArgumentsTests.swift */; };
+		4C9219DA267A947D00E0A513 /* ComparisonWebPageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9219D9267A947D00E0A513 /* ComparisonWebPageTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -62,6 +63,7 @@
 		4C9219D22679516400E0A513 /* Arguments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arguments.swift; sourceTree = "<group>"; };
 		4C9219D5267954F900E0A513 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		4C9219D72679558700E0A513 /* ArgumentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgumentsTests.swift; sourceTree = "<group>"; };
+		4C9219D9267A947D00E0A513 /* ComparisonWebPageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparisonWebPageTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				35DE8A48238CA85500F9D48C /* CodeCoverageCompareTests-Bridging-Header.h */,
+				4C9219D9267A947D00E0A513 /* ComparisonWebPageTests.swift */,
 				35DE8A45238CA85500F9D48C /* CoverageCompareTests.swift */,
 				35DE8A46238CA85500F9D48C /* CoverageComparisonTestsSingle.swift */,
 				35DE8A47238CA85500F9D48C /* RowTests.swift */,
@@ -166,7 +169,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1030;
-				LastUpgradeCheck = 1030;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "Michael Charland";
 				TargetAttributes = {
 					35DE8A22238CA79600F9D48C = {
@@ -183,6 +186,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 35DE8A1A238CA79600F9D48C;
 			productRefGroup = 35DE8A1A238CA79600F9D48C;
@@ -237,6 +241,7 @@
 				35DE8A52238CA87D00F9D48C /* main.swift in Sources */,
 				35DE8A4B238CA85500F9D48C /* RowTests.swift in Sources */,
 				35DE8A4A238CA85500F9D48C /* CoverageComparisonTestsSingle.swift in Sources */,
+				4C9219DA267A947D00E0A513 /* ComparisonWebPageTests.swift in Sources */,
 				35DE8A49238CA85500F9D48C /* CoverageCompareTests.swift in Sources */,
 				4C9219D6267954F900E0A513 /* Resources.swift in Sources */,
 			);
@@ -271,6 +276,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -332,6 +338,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -363,6 +370,7 @@
 		35DE8A2B238CA79600F9D48C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CY96495443;
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
@@ -374,6 +382,7 @@
 		35DE8A2C238CA79600F9D48C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CY96495443;
 				MACOSX_DEPLOYMENT_TARGET = 10.14;

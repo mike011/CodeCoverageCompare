@@ -12,10 +12,10 @@ import Foundation
 
 struct Arguments: Decodable {
     let afterCoverageJSON: String
-    let afterURLPath: String
+    let afterURLPath: String?
 
-    let beforeCoverageJSON: String
-    let beforeURLPath: String
+    let beforeCoverageJSON: String?
+    let beforeURLPath: String?
 
     let includeFilesFileName: String?
     let ignoreFilesFileName: String?

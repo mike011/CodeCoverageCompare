@@ -179,6 +179,25 @@ class CoverageCompareTests: XCTestCase {
         XCTAssertEqual(result[2], "|👍|<a href=a.b/source_comparison.html>source</a>|10%|20%|")
     }
 
+    func testCreateTableRowsNoURL() {
+        let before = createProjectWithTargets(sourceName: "name", sourceCoverage: 0.23, sourcePath: "folder/name", testName: "testName", testCoverage: 0.92)
+        let after = createProjectWithTargets(sourceName: "testName", sourceCoverage: 0.22, testName: "name", testCoverage: 0.91)
+
+        let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String](), ignoreList: [String]())
+        var rows = [Row]()
+        rows.append(Row(sourceFile: "source", beforeCoverage: 0.1, afterCoverage: 0.2))
+
+        // When
+        let result = cc.createTable(rows: rows, beforeLink: nil, afterLink: nil)
+
+        // Then
+        XCTAssertFalse(result.isEmpty)
+        XCTAssertEqual(result.count, 3)
+        XCTAssertEqual(result[0], "|Change|File|Before|After|")
+        XCTAssertEqual(result[1], "|:----:|----|:-----:|:--:|")
+        XCTAssertEqual(result[2], "|👍|source|10%|20%|")
+    }
+
     func testCreateTableRowsForTests() {
         let before = createProjectWithTargets(sourceName: "", sourceCoverage: 0, sourcePath: "", testName: "", testCoverage: 0.92)
         let after = createProjectWithTargets(sourceName: "", sourceCoverage: 0, testName: "", testCoverage: 0.91)

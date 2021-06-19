@@ -54,8 +54,14 @@ struct Row {
         return sourceFile.contains("Test")
     }
 
-    func toString(parentURL: String, end: String) -> String {
-        let name = getLink(parentURL: parentURL, withEnd: end)
+    func toString(parentURL: String?, end: String) -> String {
+        var name = getName()
+        if name == "index" {
+            name = "Overall"
+        }
+        if let parentURL = parentURL {
+            name = getLink(parentURL: parentURL, withEnd: end)
+        }
         return "|\(change)|\(name)|\(getPercentage(beforeCoverage))|\(getPercentage(afterCoverage))|"
     }
 

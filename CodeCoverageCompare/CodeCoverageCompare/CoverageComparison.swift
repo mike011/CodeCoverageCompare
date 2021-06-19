@@ -23,9 +23,18 @@ public class CoverageComparison {
     ///   - after: The source code coverage for the project afterwards.
     ///   - fileList: The only files that you care about
     ///   - ignoreList: Files types in glob form that you don't want to see coverage for.
-    public init(writeLocation: URL, before: Project, after: Project, fileList: [String], ignoreList: [String]) {
+    public init(writeLocation: URL, before: Project?, after: Project, fileList: [String], ignoreList: [String]) {
         self.writeLocation = writeLocation
-        self.before = before
+        if let before = before {
+            self.before = before
+        } else {
+            self.before = Project(
+                coveredLines: 0,
+                lineCoverage: 0,
+                targets: [Target](),
+                executableLines: 0
+            )
+        }
         self.after = after
         self.fileList = fileList
         self.ignoreList = ignoreList
@@ -94,7 +103,7 @@ public class CoverageComparison {
             afterCoverage = Double(afterCoveredLines) / Double(afterExecutableLines)
         }
 
-        if beforeCoverage != 0.0, afterCoverage != 0.0 {
+        if afterCoverage != 0.0 {
             result.append(Row(
                 sourceFile: "index",
                 beforeCoverage: beforeCoverage,
@@ -128,13 +137,13 @@ public class CoverageComparison {
         return result
     }
 
-    public func printTable(beforeLink: String, afterLink: String) {
+    public func printTable(beforeLink: String?, afterLink: String?) {
         for line in createTable(rows: getFilesChanged(), beforeLink: beforeLink, afterLink: afterLink) {
             print(line)
         }
     }
 
-    func createTable(rows: [Row], beforeLink: String, afterLink: String) -> [String] {
+    func createTable(rows: [Row], beforeLink: String?, afterLink: String?) -> [String] {
         var printData = [String]()
         guard !rows.isEmpty else {
             return printData
@@ -164,11 +173,15 @@ public class CoverageComparison {
         return printData
     }
 
-    private func createHTML(row: Row, beforeLink: String, afterLink: String) -> String {
+    private func createHTML(row: Row, beforeLink: String?, afterLink: String?) -> String {
         let end = "_comparison.html"
-        let url = writeLocation.appendingPathComponent("\(row.getName())\(end)")
-        ComparisonWebPage(row: row, beforeLink: beforeLink, afterLink: afterLink).writeToFile(url: url)
-        return row.toString(parentURL: Utils.getParentURL(web: afterLink).absoluteString, end: end)
+        var parentURL: String?
+        if let afterLink = afterLink {
+            let url = writeLocation.appendingPathComponent("\(row.getName())\(end)")
+            ComparisonWebPage(row: row, beforeLink: beforeLink, afterLink: afterLink).writeToFile(url: url)
+            parentURL = Utils.getParentURL(web: afterLink).absoluteString
+        }
+        return row.toString(parentURL: parentURL, end: end)
     }
 }
 

@@ -11,18 +11,20 @@ import Foundation
 func go(arguments: Arguments) {
     let beforeFileName = arguments.beforeCoverageJSON
     let afterFileName = arguments.afterCoverageJSON
-    let beforeURLBasePath = arguments.beforeURLPath
-    let afterURLBasePath = arguments.afterURLPath
-    let fileList = arguments.includeFilesFileName ?? ""
-    let ignoreList = arguments.ignoreFilesFileName ?? ""
 
-    guard let before = Utils.getCoverageFile(file: beforeFileName),
-        let after = Utils.getCoverageFile(file: afterFileName) else {
+    var before: Project?
+    if let beforeFileName = beforeFileName {
+        before = Utils.getCoverageFile(file: beforeFileName)
+    }
+    guard let after = Utils.getCoverageFile(file: afterFileName) else {
         return
     }
     let writeLocation = Utils.getParentURL(file: afterFileName)
 
+    let fileList = arguments.includeFilesFileName ?? ""
     let listOfFiles = Utils.load(file: fileList)
+
+    let ignoreList = arguments.ignoreFilesFileName ?? ""
     let listOfIgnores = Utils.convertToRegex(fromGlobLines: Utils.load(file: ignoreList))
 
     let cc = CoverageComparison(
@@ -32,6 +34,9 @@ func go(arguments: Arguments) {
         fileList: listOfFiles,
         ignoreList: listOfIgnores
     )
+
+    let beforeURLBasePath = arguments.beforeURLPath
+    let afterURLBasePath = arguments.afterURLPath
     cc.printTable(beforeLink: beforeURLBasePath, afterLink: afterURLBasePath)
 }
 

@@ -10,10 +10,10 @@ import Foundation
 
 class ComparisonWebPage {
     private let row: Row
-    private let beforeLink: String
-    private let afterLink: String
+    private let beforeLink: String?
+    private let afterLink: String?
 
-    init(row: Row, beforeLink: String, afterLink: String) {
+    init(row: Row, beforeLink: String?, afterLink: String?) {
         self.row = row
         self.beforeLink = beforeLink
         self.afterLink = afterLink
@@ -29,17 +29,17 @@ class ComparisonWebPage {
 
     func getContents() -> String {
         var before = "Coverage file does not exist"
-        if row.beforeCoverage != nil {
-            let beforeLink = "\(beforeLink)/\(row.sourceFile).html"
+        if row.beforeCoverage != nil, let beforeLink = beforeLink {
+            let completeBeforeLink = "\(beforeLink)/\(row.sourceFile).html"
             before = """
-                <iframe src="\(beforeLink)" width="100%" height="100%" frameborder="0" scrolling="yes"></iframe>
+                <iframe src="\(completeBeforeLink)" width="100%" height="100%" frameborder="0" scrolling="yes"></iframe>
             """
         }
         var after = "Does not exist"
-        if row.afterCoverage != nil {
-            let afterLink = "\(afterLink)/\(row.sourceFile).html"
+        if row.afterCoverage != nil, let afterLink = afterLink {
+            let completeAfterLink = "\(afterLink)/\(row.sourceFile).html"
             after = """
-                <iframe src="\(afterLink)" width="100%" height="100%" frameborder="0" scrolling="yes"></iframe>
+                <iframe src="\(completeAfterLink)" width="100%" height="100%" frameborder="0" scrolling="yes"></iframe>
             """
         }
         let html = """
