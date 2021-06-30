@@ -140,7 +140,7 @@ public class CoverageComparison {
     public func printTable(beforeLink: String?, afterLink: String?) {
         let table = createTable(rows: getFilesChanged(), beforeLink: beforeLink, afterLink: afterLink)
         if table.isEmpty {
-            print("No Coverage Information Found.")
+            print("No Coverage Information.")
         } else {
             for line in table {
                 print(line)
@@ -150,7 +150,7 @@ public class CoverageComparison {
 
     func createTable(rows: [Row], beforeLink: String?, afterLink: String?) -> [String] {
         var printData = [String]()
-        guard !rows.isEmpty else {
+        guard rows.count > 1 else {
             return printData
         }
         printData.append("|Change|File|Before|After|")

@@ -72,7 +72,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "/Users/michael/Documents/git/CodeCoverageCompare/example/args.json"
+            argument = "${PROJECT_DIR}/../example/args.json"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

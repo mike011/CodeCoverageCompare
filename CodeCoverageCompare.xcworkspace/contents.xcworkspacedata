@@ -5,6 +5,12 @@
       location = "container:"
       name = "Examples">
       <FileRef
+         location = "group:example/filesList.txt">
+      </FileRef>
+      <FileRef
+         location = "group:example/ignoreList.txt">
+      </FileRef>
+      <FileRef
          location = "group:example/args.json">
       </FileRef>
       <Group
