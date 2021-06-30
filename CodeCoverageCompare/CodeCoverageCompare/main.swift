@@ -41,9 +41,11 @@ func go(arguments: Arguments) {
 }
 
 if CommandLine.arguments.count != 2 {
-    print("Missing argument, you need to specify the json file that matches the Arguments.swift file")
-    fatalError()
+    fatalError("Missing argument, you need to specify the json file that matches the Arguments.swift file")
 }
 
-let arguments = Utils.loadData(type: Arguments.self, file: CommandLine.arguments[1])!
-go(arguments: arguments)
+if let arguments = Utils.loadData(type: Arguments.self, file: CommandLine.arguments[1]) {
+    go(arguments: arguments)
+} else {
+    fatalError("Could not read file \(CommandLine.arguments[1])")
+}
