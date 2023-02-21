@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1250"
+   LastUpgradeVersion = "1420"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -72,7 +72,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "${PROJECT_DIR}/../example/args.json"
+            argument = "${PROJECT_DIR}/../spm_example/args.json"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

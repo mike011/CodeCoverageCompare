@@ -1,7 +1,7 @@
 {
-    "afterCoverageJSON": "/Users/michael/Documents/git/CodeCoverageCompare/example/After/Example/fastlane/test_output/coverage.json",
+    "afterCoverageJSON": "/Users/michael.charland320/git/2iphone/modules/RKCore/.build/x86_64-apple-macosx/debug/codecov/RKCore.json",
     "afterURLPath": "https://mike011.github.io/CodeCoverageCompare/after/slather",
-    "beforeCoverageJSON": "/Users/michael/Documents/git/CodeCoverageCompare/example/Before/Example/fastlane/test_output/coverage.json",
+    "beforeCoverageJSON": "/Users/michael.charland320/git/2iphone/modules/RKCore/.build/x86_64-apple-macosx/debug/codecov/RKCore.json",
     "beforeURLPath": "https://mike011.github.io/CodeCoverageCompare/before/slather",
     "includeFilesFileName": "/Users/michael/Documents/git/CodeCoverageCompare/example/filesList.txt",
     "ignoreFilesFileName": "/Users/michael/Documents/git/CodeCoverageCompare/example/ignoreList.txt"

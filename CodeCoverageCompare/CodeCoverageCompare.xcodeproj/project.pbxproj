@@ -12,7 +12,6 @@
 		35DE8A3F238CA83000F9D48C /* Coverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE8A39238CA83000F9D48C /* Coverage.swift */; };
 		35DE8A40238CA83000F9D48C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE8A3A238CA83000F9D48C /* Utils.swift */; };
 		35DE8A41238CA83000F9D48C /* CoverageComparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE8A3B238CA83000F9D48C /* CoverageComparison.swift */; };
-		35DE8A42238CA83000F9D48C /* Coverage10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE8A3C238CA83000F9D48C /* Coverage10.swift */; };
 		35DE8A43238CA83000F9D48C /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE8A3D238CA83000F9D48C /* Row.swift */; };
 		35DE8A44238CA83000F9D48C /* ComparisonWebPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE8A3E238CA83000F9D48C /* ComparisonWebPage.swift */; };
 		35DE8A49238CA85500F9D48C /* CoverageCompareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE8A45238CA85500F9D48C /* CoverageCompareTests.swift */; };
@@ -20,7 +19,6 @@
 		35DE8A4B238CA85500F9D48C /* RowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE8A47238CA85500F9D48C /* RowTests.swift */; };
 		35DE8A4C238CA86800F9D48C /* ComparisonWebPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE8A3E238CA83000F9D48C /* ComparisonWebPage.swift */; };
 		35DE8A4D238CA86B00F9D48C /* Coverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE8A39238CA83000F9D48C /* Coverage.swift */; };
-		35DE8A4E238CA86F00F9D48C /* Coverage10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE8A3C238CA83000F9D48C /* Coverage10.swift */; };
 		35DE8A4F238CA87100F9D48C /* CoverageComparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE8A3B238CA83000F9D48C /* CoverageComparison.swift */; };
 		35DE8A50238CA87400F9D48C /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE8A3D238CA83000F9D48C /* Row.swift */; };
 		35DE8A51238CA87800F9D48C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DE8A3A238CA83000F9D48C /* Utils.swift */; };
@@ -30,6 +28,10 @@
 		4C9219D6267954F900E0A513 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9219D5267954F900E0A513 /* Resources.swift */; };
 		4C9219D82679558700E0A513 /* ArgumentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9219D72679558700E0A513 /* ArgumentsTests.swift */; };
 		4C9219DA267A947D00E0A513 /* ComparisonWebPageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9219D9267A947D00E0A513 /* ComparisonWebPageTests.swift */; };
+		C337102329A674C600B64249 /* spm_coverage.json in Resources */ = {isa = PBXBuildFile; fileRef = C337102129A674C600B64249 /* spm_coverage.json */; };
+		C337102429A674C600B64249 /* coverage.json in Resources */ = {isa = PBXBuildFile; fileRef = C337102229A674C600B64249 /* coverage.json */; };
+		C3C2144E29A3133300271A96 /* CoverageFromSPM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C2144D29A3133300271A96 /* CoverageFromSPM.swift */; };
+		C3C2144F29A44BFB00271A96 /* CoverageFromSPM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C2144D29A3133300271A96 /* CoverageFromSPM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,7 +53,6 @@
 		35DE8A39238CA83000F9D48C /* Coverage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coverage.swift; sourceTree = "<group>"; };
 		35DE8A3A238CA83000F9D48C /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		35DE8A3B238CA83000F9D48C /* CoverageComparison.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverageComparison.swift; sourceTree = "<group>"; };
-		35DE8A3C238CA83000F9D48C /* Coverage10.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coverage10.swift; sourceTree = "<group>"; };
 		35DE8A3D238CA83000F9D48C /* Row.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
 		35DE8A3E238CA83000F9D48C /* ComparisonWebPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComparisonWebPage.swift; sourceTree = "<group>"; };
 		35DE8A45238CA85500F9D48C /* CoverageCompareTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverageCompareTests.swift; sourceTree = "<group>"; };
@@ -64,6 +65,9 @@
 		4C9219D5267954F900E0A513 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		4C9219D72679558700E0A513 /* ArgumentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgumentsTests.swift; sourceTree = "<group>"; };
 		4C9219D9267A947D00E0A513 /* ComparisonWebPageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparisonWebPageTests.swift; sourceTree = "<group>"; };
+		C337102129A674C600B64249 /* spm_coverage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spm_coverage.json; sourceTree = "<group>"; };
+		C337102229A674C600B64249 /* coverage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coverage.json; sourceTree = "<group>"; };
+		C3C2144D29A3133300271A96 /* CoverageFromSPM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverageFromSPM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +105,10 @@
 				35DE8A26238CA79600F9D48C /* main.swift */,
 				35DE8A3E238CA83000F9D48C /* ComparisonWebPage.swift */,
 				35DE8A39238CA83000F9D48C /* Coverage.swift */,
-				35DE8A3C238CA83000F9D48C /* Coverage10.swift */,
 				35DE8A3B238CA83000F9D48C /* CoverageComparison.swift */,
 				35DE8A3D238CA83000F9D48C /* Row.swift */,
 				35DE8A3A238CA83000F9D48C /* Utils.swift */,
+				C3C2144D29A3133300271A96 /* CoverageFromSPM.swift */,
 			);
 			path = CodeCoverageCompare;
 			sourceTree = "<group>";
@@ -112,6 +116,7 @@
 		35DE8A32238CA7CB00F9D48C /* CodeCoverageCompareTests */ = {
 			isa = PBXGroup;
 			children = (
+				C3C2145029A44DC800271A96 /* Resources */,
 				35DE8A48238CA85500F9D48C /* CodeCoverageCompareTests-Bridging-Header.h */,
 				4C9219D9267A947D00E0A513 /* ComparisonWebPageTests.swift */,
 				35DE8A45238CA85500F9D48C /* CoverageCompareTests.swift */,
@@ -123,6 +128,15 @@
 				4C9219D72679558700E0A513 /* ArgumentsTests.swift */,
 			);
 			path = CodeCoverageCompareTests;
+			sourceTree = "<group>";
+		};
+		C3C2145029A44DC800271A96 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C337102229A674C600B64249 /* coverage.json */,
+				C337102129A674C600B64249 /* spm_coverage.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,7 +183,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1030;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1420;
 				ORGANIZATIONNAME = "Michael Charland";
 				TargetAttributes = {
 					35DE8A22238CA79600F9D48C = {
@@ -204,6 +218,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C337102329A674C600B64249 /* spm_coverage.json in Resources */,
+				C337102429A674C600B64249 /* coverage.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,9 +231,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C9219D32679516400E0A513 /* Arguments.swift in Sources */,
+				C3C2144E29A3133300271A96 /* CoverageFromSPM.swift in Sources */,
 				35DE8A27238CA79600F9D48C /* main.swift in Sources */,
 				35DE8A3F238CA83000F9D48C /* Coverage.swift in Sources */,
-				35DE8A42238CA83000F9D48C /* Coverage10.swift in Sources */,
 				35DE8A41238CA83000F9D48C /* CoverageComparison.swift in Sources */,
 				35DE8A43238CA83000F9D48C /* Row.swift in Sources */,
 				35DE8A40238CA83000F9D48C /* Utils.swift in Sources */,
@@ -235,10 +251,10 @@
 				35DE8A4C238CA86800F9D48C /* ComparisonWebPage.swift in Sources */,
 				35DE8A51238CA87800F9D48C /* Utils.swift in Sources */,
 				35DE8A4D238CA86B00F9D48C /* Coverage.swift in Sources */,
-				35DE8A4E238CA86F00F9D48C /* Coverage10.swift in Sources */,
 				35DE8A50238CA87400F9D48C /* Row.swift in Sources */,
 				35B8AB56239499CF00A90A56 /* UtilsTests.swift in Sources */,
 				35DE8A52238CA87D00F9D48C /* main.swift in Sources */,
+				C3C2144F29A44BFB00271A96 /* CoverageFromSPM.swift in Sources */,
 				35DE8A4B238CA85500F9D48C /* RowTests.swift in Sources */,
 				35DE8A4A238CA85500F9D48C /* CoverageComparisonTestsSingle.swift in Sources */,
 				4C9219DA267A947D00E0A513 /* ComparisonWebPageTests.swift in Sources */,
@@ -285,6 +301,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -347,6 +364,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -372,8 +390,9 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = CY96495443;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -384,8 +403,9 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = CY96495443;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -396,14 +416,15 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = CY96495443;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = M583F5CT96;
 				INFOPLIST_FILE = CodeCoverageCompareTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.charland.CodeCoverageCompareTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -415,14 +436,15 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = CY96495443;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = M583F5CT96;
 				INFOPLIST_FILE = CodeCoverageCompareTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.charland.CodeCoverageCompareTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

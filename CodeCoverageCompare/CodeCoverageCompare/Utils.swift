@@ -9,7 +9,7 @@
 import Foundation
 
 public class Utils {
-    public static func getCoverageFile(file: String) -> Project? {
+    public static func getProject(file: String) -> Project? {
         let fileManager = FileManager.default
         if !fileManager.fileExists(atPath: file) {
             print("Coverage file not found: \(file)")
@@ -24,11 +24,35 @@ public class Utils {
         do {
             return try decoder.decode(Project.self, from: json)
         } catch {
-            let elements: [Element] = try!
-                decoder.decode([Element].self, from: json)
-            let target = Target(coveredLines: 0, lineCoverage: 0, files: elements[0].files, name: "", executableLines: 0, buildProductPath: "")
+            let elements: CoverageFromSPM = try!
+                decoder.decode(CoverageFromSPM.self, from: json)
+            let target = Target(coveredLines: 0,
+                                lineCoverage: 0,
+                                files: convert(elements.data[0].files),
+                                name: "",
+                                executableLines: 0,
+                                buildProductPath: "")
             return Project(coveredLines: 0, lineCoverage: 0, targets: [target], executableLines: 0)
         }
+    }
+    
+    private static func convert(_ spmFiles: [SPMFile]) -> [File] {
+        var result = [File]()
+        for spmFile in spmFiles {
+            let file = File(coveredLines: spmFile.summary.lines.covered,
+                            lineCoverage: spmFile.summary.lines.percent/100,
+                            path: spmFile.filename,
+                            functions: nil,
+                            name: getFilename(spmFile.filename),
+                            executableLines: spmFile.summary.lines.count)
+            result.append(file)
+        }
+        
+        return result
+    }
+    
+    private static func getFilename(_ from: String) -> String {
+        return String(from.split(separator: "/").last ?? "")
     }
 
     public static func getParentURL(file: String) -> URL {
