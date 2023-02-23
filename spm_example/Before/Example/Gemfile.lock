@@ -3,12 +3,11 @@ GEM
   specs:
     CFPropertyList (3.0.5)
       rexml
-    activesupport (6.1.7)
+    activesupport (7.0.4.2)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-      zeitwerk (~> 2.3)
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
     artifactory (3.0.15)
@@ -36,7 +35,7 @@ GEM
     colored2 (3.1.2)
     commander (4.6.0)
       highline (~> 2.0.0)
-    concurrent-ruby (1.1.10)
+    concurrent-ruby (1.2.0)
     declarative (0.0.20)
     digest-crc (0.6.4)
       rake (>= 12.0.0, < 14.0.0)
@@ -164,7 +163,7 @@ GEM
     memoist (0.16.2)
     mini_magick (4.11.0)
     mini_mime (1.1.2)
-    minitest (5.16.3)
+    minitest (5.17.0)
     multi_json (1.15.0)
     multipart-post (2.0.0)
     nanaimo (0.3.0)
@@ -211,7 +210,7 @@ GEM
     tty-screen (0.8.1)
     tty-spinner (0.9.3)
       tty-cursor (~> 0.7)
-    tzinfo (2.0.5)
+    tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     uber (0.1.0)
     unf (0.1.4)
@@ -231,7 +230,6 @@ GEM
       rouge (~> 2.0.7)
     xcpretty-travis-formatter (1.0.1)
       xcpretty (~> 0.2, >= 0.0.7)
-    zeitwerk (2.6.6)
 
 PLATFORMS
   arm64-darwin-22
