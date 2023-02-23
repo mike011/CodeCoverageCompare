@@ -10,7 +10,7 @@ import XCTest
 
 class CoverageCompareTests: XCTestCase {
     // MARK: - Single File Covered
-
+    
     func testCoverageAdded() {
         let before = createProject(coverage: 0.3)
         let after = createProject(coverage: 0.5)
@@ -363,6 +363,27 @@ class CoverageCompareTests: XCTestCase {
         let after = before
         let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: fileList, ignoreList: ignoreList)
         return cc
+    }
+    
+    // MARK: - getCoverageFile
+    func testGetCoverageFile() throws {
+        let bundle = Bundle(for: type(of: self))
+        let path = try XCTUnwrap(bundle.path(forResource: "coverage", ofType: "json"))
+        let project = try XCTUnwrap(Utils.getProject(file: path))
+        
+        XCTAssertEqual(project.executableLines, 23)
+        XCTAssertEqual(project.coveredLines, 20)
+        XCTAssertEqual(project.lineCoverage, 0.8695652173913043)
+    }
+    
+    func testGetCoverageFile_SPM() throws {
+        let bundle = Bundle(for: type(of: self))
+        let path = try XCTUnwrap(bundle.path(forResource: "spm_coverage", ofType: "json"))
+        let project = try XCTUnwrap(Utils.getProject(file: path))
+        
+        XCTAssertEqual(project.targets.count, 1)
+        XCTAssertEqual(project.targets[0].files.count, 9)
+        XCTAssertEqual(project.targets[0].files[0].name, "ExistingClassCoverageDown.swift")
     }
 }
 

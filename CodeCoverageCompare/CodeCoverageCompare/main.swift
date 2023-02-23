@@ -14,9 +14,9 @@ func go(arguments: Arguments) {
 
     var before: Project?
     if let beforeFileName = beforeFileName {
-        before = Utils.getCoverageFile(file: beforeFileName)
+        before = Utils.getProject(file: beforeFileName)
     }
-    guard let after = Utils.getCoverageFile(file: afterFileName) else {
+    guard let after = Utils.getProject(file: afterFileName) else {
         return
     }
     let writeLocation = Utils.getParentURL(file: afterFileName)

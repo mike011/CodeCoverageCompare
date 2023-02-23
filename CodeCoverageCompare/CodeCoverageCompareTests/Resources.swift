@@ -8,4 +8,4 @@
 
 import Foundation
 
-public let EXAMPLE_JSON = "/Users/michael/Documents/git/CodeCoverageCompare/example/args.json"
+public let EXAMPLE_JSON = "/Users/michael.charland320/git/CodeCoverageCompare/example/args.json"
