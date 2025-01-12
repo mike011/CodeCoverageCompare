@@ -7,10 +7,10 @@
 //
 
 @testable import Example
-import XCTest
+import Testing
 
-class ExistingClassCoverageDroppedTests: XCTestCase {
-    func testExistingClassCoverageDropped() {
+@Suite struct ExistingClassCoverageDroppedTests {
+    @Test func existingClassCoverageDropped() {
         ExistingClassCoverageDropped().existingClassCoverageDropped()
     }
 }

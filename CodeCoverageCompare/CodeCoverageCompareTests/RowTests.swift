@@ -6,156 +6,156 @@
 //  Copyright © 2019 charland. All rights reserved.
 //
 
-import XCTest
+import Testing
 
-class RowTests: XCTestCase {
+@Suite struct RowTests {
     // MARK: - Only Before covered
 
-    func testCoverageBefore100() {
+    @Test func coverageBefore100() {
         let row = Row(sourceFile: "file", beforeCoverage: 1, afterCoverage: nil)
-        XCTAssertEqual(row.change, "")
+        #expect(row.change == "")
     }
 
-    func testCoverageBeforeNone() {
+    @Test func coverageBeforeNone() {
         let row = Row(sourceFile: "file", beforeCoverage: 0, afterCoverage: nil)
-        XCTAssertEqual(row.change, "")
+        #expect(row.change == "")
     }
 
-    func testRowAfterCoverageBefore() {
+    @Test func rowAfterCoverageBefore() {
         let row = Row(sourceFile: "file", beforeCoverage: 30, afterCoverage: nil)
-        XCTAssertEqual(row.change, "")
+        #expect(row.change == "")
     }
 
-    func testVirtually100Before() {
+    @Test func virtually100Before() {
         let row = Row(sourceFile: "file", beforeCoverage: 290 / 291, afterCoverage: nil)
-        XCTAssertEqual(row.change, "")
+        #expect(row.change == "")
     }
 
     // MARK: - Only After covered
 
-    func testCoverageAfter100() {
+    @Test func coverageAfter100() {
         let row = Row(sourceFile: "file", beforeCoverage: nil, afterCoverage: 1)
-        XCTAssertEqual(row.change, "💯")
+        #expect(row.change == "💯")
     }
 
-    func testCoverageAfterNone() {
+    @Test func coverageAfterNone() {
         let row = Row(sourceFile: "file", beforeCoverage: nil, afterCoverage: 0)
-        XCTAssertEqual(row.change, "🚫")
+        #expect(row.change == "🚫")
     }
 
-    func testRowAfterCoverageAfter() {
+    @Test func rowAfterCoverageAfter() {
         let row = Row(sourceFile: "file", beforeCoverage: nil, afterCoverage: 30)
-        XCTAssertEqual(row.change, "👍")
+        #expect(row.change == "👍")
     }
 
-    func testVirtually100After() {
+    @Test func virtually100After() {
         let row = Row(sourceFile: "file", beforeCoverage: nil, afterCoverage: 290 / 291)
-        XCTAssertEqual(row.change, "💯")
+        #expect(row.change == "💯")
     }
 
     // MARK: - Both files covered
 
-    func testRowAfterAllCovered() {
+    @Test func rowAfterAllCovered() {
         let row = Row(sourceFile: "file", beforeCoverage: 0, afterCoverage: 1)
-        XCTAssertEqual(row.change, "💯")
+        #expect(row.change == "💯")
     }
 
-    func testRowAfterNotCovered() {
+    @Test func rowAfterNotCovered() {
         let row = Row(sourceFile: "file", beforeCoverage: 0, afterCoverage: 0)
-        XCTAssertEqual(row.change, "🚫")
+        #expect(row.change == "🚫")
     }
 
-    func testRowAfterCoverageDown() {
+    @Test func rowAfterCoverageDown() {
         let row = Row(sourceFile: "file", beforeCoverage: 30, afterCoverage: 25)
-        XCTAssertEqual(row.change, "👎")
+        #expect(row.change == "👎")
     }
 
-    func testRowAfterCoverageUp() {
+    @Test func rowAfterCoverageUp() {
         let row = Row(sourceFile: "file", beforeCoverage: 25, afterCoverage: 30)
-        XCTAssertEqual(row.change, "👍")
+        #expect(row.change == "👍")
     }
 
-    func testVirtually100SlightyHigherAfter() {
+    @Test func virtually100SlightyHigherAfter() {
         let row = Row(sourceFile: "file", beforeCoverage: 289 / 290, afterCoverage: 290 / 291)
-        XCTAssertEqual(row.change, "💯")
+        #expect(row.change == "💯")
     }
 
-    func testVirtually100SlightyHigherBefore() {
+    @Test func virtually100SlightyHigherBefore() {
         let row = Row(sourceFile: "file", beforeCoverage: 290 / 291, afterCoverage: 289 / 290)
-        XCTAssertEqual(row.change, "💯")
+        #expect(row.change == "💯")
     }
 
-    func testLessThenOnePercentChange() {
+    @Test func lessThenOnePercentChange() {
         let row = Row(sourceFile: "file", beforeCoverage: 900 / 1000, afterCoverage: 904 / 1000)
-        XCTAssertEqual(row.change, "")
+        #expect(row.change == "")
     }
 
-    func testMoreThenOnePercentChangeBetter() {
+    @Test func moreThenOnePercentChangeBetter() {
         let row = Row(sourceFile: "file", beforeCoverage: 98 / 100, afterCoverage: 99 / 100)
-        XCTAssertEqual(row.change, "👍")
+        #expect(row.change == "👍")
     }
 
-    func testMoreThenOnePercentChangeWorse() {
+    @Test func moreThenOnePercentChangeWorse() {
         let row = Row(sourceFile: "file", beforeCoverage: 99 / 100, afterCoverage: 98 / 100)
-        XCTAssertEqual(row.change, "👎")
+        #expect(row.change == "👎")
     }
 
     // MARK: - Rest
 
-    func testIsTest() {
+    @Test func isTest() {
         let row = Row(sourceFile: "Test", beforeCoverage: 0, afterCoverage: 0)
-        XCTAssertTrue(row.test)
+        #expect(row.test)
     }
 
-    func testIsNotTest() {
+    @Test func isNotTest() {
         let row = Row(sourceFile: "file", beforeCoverage: 0, afterCoverage: 0)
-        XCTAssertFalse(row.test)
+        #expect(!row.test)
     }
 
-    func testEquals() {
+    @Test func equals() {
         let row = Row(sourceFile: "file", beforeCoverage: 0, afterCoverage: 0)
         let row2 = Row(sourceFile: "file", beforeCoverage: 0, afterCoverage: 0)
-        XCTAssertTrue(row == row2)
+        #expect(row == row2)
     }
 
-    func testNotEquals() {
+    @Test func notEquals() {
         let row = Row(sourceFile: "file", beforeCoverage: 0, afterCoverage: 0)
         let row2 = Row(sourceFile: "file2", beforeCoverage: 0, afterCoverage: 0)
-        XCTAssertFalse(row == row2)
+        #expect(row != row2)
     }
 
-    func testGetName() {
+    @Test func getName() {
         let row = Row(sourceFile: "file", beforeCoverage: 0, afterCoverage: 0)
-        XCTAssertEqual(row.getName(), "file")
+        #expect(row.getName() == "file")
     }
 
-    func testGetNameWithPeriod() {
+    @Test func getNameWithPeriod() {
         let row = Row(sourceFile: "file.swift", beforeCoverage: 0, afterCoverage: 0)
-        XCTAssertEqual(row.getName(), "file")
+        #expect(row.getName() == "file")
     }
 
-    func testToString() {
+    @Test func toString() {
         let row = Row(sourceFile: "file.swift", beforeCoverage: 0, afterCoverage: 0)
-        XCTAssertEqual(row.toString(parentURL: "http://a.b/", end: ".html"), "|🚫|<a href=http://a.b/file.html>file</a>|0%|0%|")
+        #expect(row.toString(parentURL: "http://a.b/", end: ".html") == "|🚫|<a href=http://a.b/file.html>file</a>|0%|0%|")
     }
 
-    func testToStringIndex() {
+    @Test func toStringIndex() {
         let row = Row(sourceFile: "index.html", beforeCoverage: 0.1234, afterCoverage: 0.4321)
-        XCTAssertEqual(row.toString(parentURL: "http://a.b/", end: ".html"), "|👍|<a href=http://a.b/index.html>Overall</a>|12.34%|43.21%|")
+        #expect(row.toString(parentURL: "http://a.b/", end: ".html") == "|👍|<a href=http://a.b/index.html>Overall</a>|12.34%|43.21%|")
     }
 
-    func testToStringNotCovered() {
+    @Test func toStringNotCovered() {
         let row = Row(sourceFile: "file.swift", beforeCoverage: nil, afterCoverage: nil)
-        XCTAssertEqual(row.toString(parentURL: "http://a.b/", end: ".html"), "||<a href=http://a.b/file.html>file</a>|-|-|")
+        #expect(row.toString(parentURL: "http://a.b/", end: ".html") == "||<a href=http://a.b/file.html>file</a>|-|-|")
     }
 
-    func testToStringOverall() {
+    @Test func toStringOverall() {
         let row = Row(sourceFile: "index", beforeCoverage: 0, afterCoverage: 0)
-        XCTAssertEqual(row.toString(parentURL: "http://a.b/", end: ".html"), "|🚫|<a href=http://a.b/index.html>Overall</a>|0.00%|0.00%|")
+        #expect(row.toString(parentURL: "http://a.b/", end: ".html") == "|🚫|<a href=http://a.b/index.html>Overall</a>|0.00%|0.00%|")
     }
 
-    func testToStringNoParentURL() {
+    @Test func toStringNoParentURL() {
         let row = Row(sourceFile: "index", beforeCoverage: 0, afterCoverage: 0)
-        XCTAssertEqual(row.toString(parentURL: nil, end: ".html"), "|🚫|Overall|0.00%|0.00%|")
+        #expect(row.toString(parentURL: nil, end: ".html") == "|🚫|Overall|0.00%|0.00%|")
     }
 }

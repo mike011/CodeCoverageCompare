@@ -6,18 +6,19 @@
 //  Copyright © 2019 Michael Charland. All rights reserved.
 //
 
-import XCTest
+import Foundation
+import Testing
 
-class UtilsTests: XCTestCase {
-    func testGetParentFileNameWithSlashReturnsFolder() {
-        XCTAssertEqual(Utils.getParentURL(file: "a/b.json").absoluteString, URL(fileURLWithPath: "a").absoluteString + "/")
+@Suite struct UtilsTests {
+    @Test func getParentFileNameWithSlashReturnsFolder() {
+        #expect(Utils.getParentURL(file: "a/b.json").absoluteString == URL(fileURLWithPath: "a").absoluteString + "/")
     }
 
-    func testGetParentFileForURL() {
-        XCTAssertEqual(Utils.getParentURL(web: "http://www.nba.com/b.json").absoluteString, URL(string: "http://www.nba.com/")?.absoluteURL.absoluteString)
+    @Test func getParentFileForURL() {
+        #expect(Utils.getParentURL(web: "http://www.nba.com/b.json").absoluteString == URL(string: "http://www.nba.com/")?.absoluteURL.absoluteString)
     }
 
-    func testFromGlobLines() {
+    @Test func fromGlobLines() {
         var globLines = [String]()
         globLines.append("a")
         globLines.append("*Pod*")
@@ -25,15 +26,15 @@ class UtilsTests: XCTestCase {
         globLines.append("a.swift")
 
         let result = Utils.convertToRegex(fromGlobLines: globLines)
-        XCTAssertEqual(result[0], "a")
-        XCTAssertEqual(result[1], ".*Pod.*")
-        XCTAssertEqual(result[2], "UI.*")
-        XCTAssertEqual(result[3], "a\\.swift")
+        #expect(result[0] == "a")
+        #expect(result[1] == ".*Pod.*")
+        #expect(result[2] == "UI.*")
+        #expect(result[3] == "a\\.swift")
     }
 
-    func testLoadData() {
-        XCTAssertNil(Utils.loadData(type: Arguments.self, file: nil))
-        XCTAssertNil(Utils.loadData(type: Arguments.self, file: "File does not exist"))
-        XCTAssertNotNil(Utils.loadData(type: Arguments.self, file: EXAMPLE_JSON))
+    @Test func loadData() {
+        #expect(Utils.loadData(type: Arguments.self, file: nil) == nil)
+        #expect(Utils.loadData(type: Arguments.self, file: "File does not exist") == nil)
+        #expect(Utils.loadData(type: Arguments.self, file: EXAMPLE_JSON) != nil)
     }
 }

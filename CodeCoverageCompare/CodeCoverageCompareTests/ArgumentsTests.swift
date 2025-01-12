@@ -6,7 +6,8 @@
 //  Copyright © 2021 Michael Charland. All rights reserved.
 //
 
-import XCTest
+import Foundation
+import Testing
 
 private let MOCK_ARGUMENTS = Arguments(
     afterCoverageJSON: "/User/vagrant/fastlane/PostBuildAnalyzer/after/coverage.json",
@@ -17,8 +18,8 @@ private let MOCK_ARGUMENTS = Arguments(
     ignoreFilesFileName: "ignores.txt"
 )
 
-class ArgumentsTests: XCTestCase {
-    func testAllArguments() throws {
+@Suite struct ArgumentsTests {
+    @Test func allArguments() throws {
         let jsonString = """
         {
         "afterCoverageJSON": "/User/vagrant/fastlane/PostBuildAnalyzer/after/coverage.json",
@@ -31,16 +32,16 @@ class ArgumentsTests: XCTestCase {
         """
 
         let data = jsonString.data(using: .utf8)!
-        let args = try XCTUnwrap(JSONDecoder().decode(Arguments.self, from: data))
-        XCTAssertEqual(args.afterCoverageJSON, "/User/vagrant/fastlane/PostBuildAnalyzer/after/coverage.json")
-        XCTAssertEqual(args.afterURLPath, "https://mike011.github.io/after")
-        XCTAssertEqual(args.beforeCoverageJSON, "/User/vagrant/fastlane/PostBuildAnalyzer/before/coverage.json")
-        XCTAssertEqual(args.beforeURLPath, "https://mike011.github.io/before")
-        XCTAssertEqual(args.includeFilesFileName, "/User/vagrant/fastlane/include.txt")
-        XCTAssertEqual(args.ignoreFilesFileName, "/User/vagrant/fastlane/exclude.txt")
+        let args = try JSONDecoder().decode(Arguments.self, from: data)
+        #expect(args.afterCoverageJSON == "/User/vagrant/fastlane/PostBuildAnalyzer/after/coverage.json")
+        #expect(args.afterURLPath == "https://mike011.github.io/after")
+        #expect(args.beforeCoverageJSON == "/User/vagrant/fastlane/PostBuildAnalyzer/before/coverage.json")
+        #expect(args.beforeURLPath == "https://mike011.github.io/before")
+        #expect(args.includeFilesFileName == "/User/vagrant/fastlane/include.txt")
+        #expect(args.ignoreFilesFileName == "/User/vagrant/fastlane/exclude.txt")
     }
 
-    func testNoIncludeOrIgnore() throws {
+    @Test func noIncludeOrIgnore() throws {
         let jsonString = """
         {
         "afterCoverageJSON": "/User/vagrant/fastlane/PostBuildAnalyzer/after/coverage.json",
@@ -51,12 +52,12 @@ class ArgumentsTests: XCTestCase {
         """
 
         let data = jsonString.data(using: .utf8)!
-        let args = try XCTUnwrap(JSONDecoder().decode(Arguments.self, from: data))
-        XCTAssertEqual(args.afterCoverageJSON, "/User/vagrant/fastlane/PostBuildAnalyzer/after/coverage.json")
-        XCTAssertEqual(args.afterURLPath, "https://mike011.github.io/after")
-        XCTAssertEqual(args.beforeCoverageJSON, "/User/vagrant/fastlane/PostBuildAnalyzer/before/coverage.json")
-        XCTAssertEqual(args.beforeURLPath, "https://mike011.github.io/before")
-        XCTAssertNil(args.includeFilesFileName)
-        XCTAssertNil(args.ignoreFilesFileName)
+        let args = try JSONDecoder().decode(Arguments.self, from: data)
+        #expect(args.afterCoverageJSON == "/User/vagrant/fastlane/PostBuildAnalyzer/after/coverage.json")
+        #expect(args.afterURLPath == "https://mike011.github.io/after")
+        #expect(args.beforeCoverageJSON == "/User/vagrant/fastlane/PostBuildAnalyzer/before/coverage.json")
+        #expect(args.beforeURLPath == "https://mike011.github.io/before")
+        #expect(args.includeFilesFileName == nil)
+        #expect(args.ignoreFilesFileName == nil)
     }
 }

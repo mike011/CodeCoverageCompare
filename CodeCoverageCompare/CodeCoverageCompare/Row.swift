@@ -89,7 +89,7 @@ struct Row {
     func getName() -> String {
         var name = sourceFile
         if let period = sourceFile.firstIndex(of: ".") {
-            name = sourceFile.substring(to: period)
+            name = String(sourceFile[..<period])
         }
         return name
     }

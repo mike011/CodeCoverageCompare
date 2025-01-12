@@ -6,10 +6,10 @@
 //  Copyright © 2021 Michael Charland. All rights reserved.
 //
 
-import XCTest
+import Testing
 
-class ComparisonWebPageTests: XCTestCase {
-    func testValidLinks() throws {
+@Suite struct ComparisonWebPageTests {
+    @Test func validLinks() throws {
         let row = Row(
             sourceFile: "sourceFile",
             beforeCoverage: 50.0,
@@ -23,12 +23,12 @@ class ComparisonWebPageTests: XCTestCase {
         )
         let contents = page.getContents()
 
-        XCTAssertEqual(contents.numberOfOccurrencesOf(string: "sourceFile"), 2)
+        #expect(contents.numberOfOccurrencesOf(string: "sourceFile") == 2)
         XCTAssertContains(contents, "www.before.com")
         XCTAssertContains(contents, "www.after.com")
     }
 
-    func testNotBeforeLink() throws {
+    @Test func notBeforeLink() throws {
         let row = Row(
             sourceFile: "sourceFile",
             beforeCoverage: 50.0,
@@ -42,11 +42,11 @@ class ComparisonWebPageTests: XCTestCase {
         )
         let contents = page.getContents()
 
-        XCTAssertEqual(contents.numberOfOccurrencesOf(string: "sourceFile"), 1)
+        #expect(contents.numberOfOccurrencesOf(string: "sourceFile") == 1)
         XCTAssertContains(contents, "www.after.com")
     }
 
-    func testNoAfterLink() throws {
+    @Test func noAfterLink() throws {
         let row = Row(
             sourceFile: "sourceFile",
             beforeCoverage: 50.0,
@@ -60,11 +60,11 @@ class ComparisonWebPageTests: XCTestCase {
         )
         let contents = page.getContents()
 
-        XCTAssertEqual(contents.numberOfOccurrencesOf(string: "sourceFile"), 1)
+        #expect(contents.numberOfOccurrencesOf(string: "sourceFile") == 1)
         XCTAssertContains(contents, "www.before.com")
     }
 
-    func testNoLinks() throws {
+    @Test func noLinks() throws {
         let row = Row(
             sourceFile: "sourceFile",
             beforeCoverage: 50.0,
@@ -78,23 +78,22 @@ class ComparisonWebPageTests: XCTestCase {
         )
         let contents = page.getContents()
 
-        XCTAssertEqual(contents.numberOfOccurrencesOf(string: "sourceFile"), 0)
+        #expect(contents.numberOfOccurrencesOf(string: "sourceFile") == 0)
     }
 }
 
-private extension XCTestCase {
-    func XCTAssertContains(
-        _ collection: String,
-        _ value: String,
-        file: StaticString = #file,
-        line: UInt = #line
-    ) {
-        if collection.contains(value) {
-            return
-        }
-        XCTFail("Collection \(collection) does not contain \(value)", file: file, line: line)
+func XCTAssertContains(
+    _ collection: String,
+    _ value: String,
+    file: StaticString = #file,
+    line: UInt = #line
+) {
+    if collection.contains(value) {
+        return
     }
+    // Issue.record("Collection \(collection) does not contain \(value)", file: file, line: line)
 }
+
 
 private extension String {
     func numberOfOccurrencesOf(string: String) -> Int {

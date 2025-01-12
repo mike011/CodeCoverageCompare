@@ -9,14 +9,14 @@
 import Foundation
 
 @testable import Example
-import XCTest
+import Testing
 
-class ExistingClassCoverageUpTests: XCTestCase {
-    func testFunctionOne() {
+@Suite struct ExistingClassCoverageUpTests {
+    @Test func functionOne() {
         ExistingClassCoverageUp().functionOne()
     }
 
-    func testFunctionTwo() {
+    @Test func functionTwo() {
         ExistingClassCoverageUp().functionTwo()
     }
 }

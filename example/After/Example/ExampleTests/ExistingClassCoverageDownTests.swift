@@ -9,10 +9,10 @@
 import Foundation
 
 @testable import Example
-import XCTest
+import Testing
 
-class ExistingClassCoverageDownTests: XCTestCase {
-    func testFunctionOne() {
+@Suite struct ExistingClassCoverageDownTests {
+    @Test func functionOne() {
         ExistingClassCoverageDown().functionOne()
     }
 }

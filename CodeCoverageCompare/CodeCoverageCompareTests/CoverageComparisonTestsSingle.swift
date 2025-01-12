@@ -6,66 +6,67 @@
 //  Copyright © 2019 charland. All rights reserved.
 //
 
-import XCTest
+import Foundation
+import Testing
 
 /// Makes sure reading the coverage for the before and after arguments works expected
-class CoverageComparisonSingleTests: XCTestCase {
+@Suite struct CoverageComparisonSingleTests {
     // MARK: - No Coverage
 
-    func testNoCoverage() {
+    @Test func noCoverage() {
         let before = Project(coveredLines: 0, lineCoverage: 0, targets: [Target](), executableLines: 0)
         let after = Project(coveredLines: 0, lineCoverage: 0, targets: [Target](), executableLines: 0)
         let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String](), ignoreList: [String]())
         let rows = cc.getFilesChanged()
-        XCTAssertTrue(rows.isEmpty)
+        #expect(rows.isEmpty)
     }
 
     // MARK: - Single File Covered
 
-    func testCoverageAdded() {
+    @Test func coverageAdded() {
         let before = Project(coveredLines: 0, lineCoverage: 0, targets: [Target](), executableLines: 0)
         let after = createProject()
 
         let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String](), ignoreList: [String]())
 
         let rows = cc.getFilesChanged()
-        XCTAssertFalse(rows.isEmpty)
-        XCTAssertEqual(rows.count, 2)
-        XCTAssertEqual(rows.first!.sourceFile, "name")
-        XCTAssertNil(rows.first!.beforeCoverage)
-        XCTAssertEqual(rows.first!.afterCoverage, 1.0)
-        XCTAssertFalse(rows.first!.test)
+        #expect(!rows.isEmpty)
+        #expect(rows.count == 2)
+        #expect(rows.first!.sourceFile == "name")
+        #expect(rows.first!.beforeCoverage == nil)
+        #expect(rows.first!.afterCoverage == 1.0)
+        #expect(!rows.first!.test)
     }
 
-    func testgetFileChangedOverallCoverage() {
+    @Test func getFileChangedOverallCoverage() {
         let before = createProject()
         let after = createProject()
 
         let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String](), ignoreList: [String]())
 
         let rows = cc.getFilesChanged()
-        XCTAssertFalse(rows.isEmpty)
-        XCTAssertEqual(rows.count, 2)
+        #expect(!rows.isEmpty)
+        #expect(rows.count == 2)
 
-        XCTAssertEqual(rows[1].sourceFile, "index")
-        XCTAssertEqual(rows[1].beforeCoverage, 0.1)
-        XCTAssertEqual(rows[1].afterCoverage, 0.1)
-        XCTAssertFalse(rows[1].test)
+        #expect(rows[1].sourceFile == "index")
+        #expect(rows[1].beforeCoverage == 0.1)
+        #expect(rows[1].afterCoverage == 0.1)
+        #expect(!rows[1].test)
     }
 
-    func testCoverageRemoved() {
+    @Test func coverageRemoved() {
         let before = createProject()
         let after = Project(coveredLines: 0, lineCoverage: 0, targets: [Target](), executableLines: 0)
 
         let cc = CoverageComparison(writeLocation: URL(fileURLWithPath: ""), before: before, after: after, fileList: [String](), ignoreList: [String]())
 
         let rows = cc.getFilesChanged()
-        XCTAssertFalse(rows.isEmpty)
-        XCTAssertEqual(rows.count, 1)
-        XCTAssertEqual(rows.first!.sourceFile, "name")
-        XCTAssertEqual(rows.first!.beforeCoverage, 1.0)
-        XCTAssertNil(rows.first!.afterCoverage)
-        XCTAssertFalse(rows.first!.test)
+        #expect(!rows.isEmpty)
+        #expect(rows.count == 1)
+        #expect(rows.first!.sourceFile == "name")
+        #expect(rows.first!.beforeCoverage == 1.0)
+        #expect(rows.first!.afterCoverage == nil)
+        #expect(!rows.first!.test)
     }
 
     func createProject() -> Project {
@@ -78,7 +79,7 @@ class CoverageComparisonSingleTests: XCTestCase {
 
     // MARK: - Multiple files
 
-    func testCoverageAddedForMultipleFiles() {
+    @Test func coverageAddedForMultipleFiles() {
         let before = Project(coveredLines: 0, lineCoverage: 0, targets: [Target](), executableLines: 0)
         let after = createProjectWithMultipleFiles()
 
@@ -86,21 +87,21 @@ class CoverageComparisonSingleTests: XCTestCase {
 
         let rows = cc.getFilesChanged()
 
-        XCTAssertFalse(rows.isEmpty)
-        XCTAssertEqual(rows.count, 2)
+        #expect(!rows.isEmpty)
+        #expect(rows.count == 2)
 
-        XCTAssertEqual(rows[0].sourceFile, "name")
-        XCTAssertNil(rows[0].beforeCoverage)
-        XCTAssertEqual(rows[0].afterCoverage, 1.0)
-        XCTAssertFalse(rows[0].test)
+        #expect(rows[0].sourceFile == "name")
+        #expect(rows[0].beforeCoverage == nil)
+        #expect(rows[0].afterCoverage == 1.0)
+        #expect(!rows[0].test)
 
-        XCTAssertEqual(rows[1].sourceFile, "name2")
-        XCTAssertNil(rows[1].beforeCoverage)
-        XCTAssertEqual(rows[1].afterCoverage, 0.5)
-        XCTAssertFalse(rows[1].test)
+        #expect(rows[1].sourceFile == "name2")
+        #expect(rows[1].beforeCoverage == nil)
+        #expect(rows[1].afterCoverage == 0.5)
+        #expect(!rows[1].test)
     }
 
-    func testCoverageRemovedForMultipleFiles() {
+    @Test func coverageRemovedForMultipleFiles() {
         let before = createProjectWithMultipleFiles()
         let after = Project(coveredLines: 0, lineCoverage: 0, targets: [Target](), executableLines: 0)
 
@@ -108,18 +109,18 @@ class CoverageComparisonSingleTests: XCTestCase {
 
         let rows = Array(cc.getFilesChanged())
 
-        XCTAssertFalse(rows.isEmpty)
-        XCTAssertEqual(rows.count, 2)
+        #expect(!rows.isEmpty)
+        #expect(rows.count == 2)
 
-        XCTAssertEqual(rows[0].sourceFile, "name")
-        XCTAssertEqual(rows[0].beforeCoverage, 1.0)
-        XCTAssertNil(rows[0].afterCoverage)
-        XCTAssertFalse(rows[0].test)
+        #expect(rows[0].sourceFile == "name")
+        #expect(rows[0].beforeCoverage == 1.0)
+        #expect(rows[0].afterCoverage == nil)
+        #expect(!rows[0].test)
 
-        XCTAssertEqual(rows[1].sourceFile, "name2")
-        XCTAssertEqual(rows[1].beforeCoverage, 0.5)
-        XCTAssertNil(rows[1].afterCoverage)
-        XCTAssertFalse(rows[1].test)
+        #expect(rows[1].sourceFile == "name2")
+        #expect(rows[1].beforeCoverage == 0.5)
+        #expect(rows[1].afterCoverage == nil)
+        #expect(!rows[1].test)
     }
 
     func createProjectWithMultipleFiles() -> Project {
@@ -133,7 +134,7 @@ class CoverageComparisonSingleTests: XCTestCase {
 
     // MARK: - Different Targets with Coverage
 
-    func testCoverageAddedToSeperateTarget() {
+    @Test func coverageAddedToSeperateTarget() {
         let before = Project(coveredLines: 0, lineCoverage: 0, targets: [Target](), executableLines: 0)
         let after = createProjectWithTargets()
 
@@ -141,18 +142,18 @@ class CoverageComparisonSingleTests: XCTestCase {
 
         let rows = cc.getFilesChanged()
 
-        XCTAssertFalse(rows.isEmpty)
-        XCTAssertEqual(rows.count, 2)
+        #expect(!rows.isEmpty)
+        #expect(rows.count == 2)
 
-        XCTAssertEqual(rows[0].sourceFile, "name")
-        XCTAssertNil(rows[0].beforeCoverage)
-        XCTAssertEqual(rows[0].afterCoverage, 0.6)
-        XCTAssertFalse(rows[0].test)
+        #expect(rows[0].sourceFile == "name")
+        #expect(rows[0].beforeCoverage == nil)
+        #expect(rows[0].afterCoverage == 0.6)
+        #expect(!rows[0].test)
 
-        XCTAssertEqual(rows[1].sourceFile, "testName")
-        XCTAssertNil(rows[1].beforeCoverage)
-        XCTAssertEqual(rows[1].afterCoverage, 0.8)
-        XCTAssertFalse(rows[1].test)
+        #expect(rows[1].sourceFile == "testName")
+        #expect(rows[1].beforeCoverage == nil)
+        #expect(rows[1].afterCoverage == 0.8)
+        #expect(!rows[1].test)
     }
 
     func createProjectWithTargets() -> Project {
